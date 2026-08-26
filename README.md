@@ -5,9 +5,17 @@
 
 ---
 
-## ✦ Typography Architecture — Helvetica × Reno Mono
+## ✦ Hero Architecture — Full-Bleed Photography × Adaptive Contrast
 
-The website employs a restrained, Swiss-inspired two-font system:
+The hero section features an art-directed architectural photograph with an active **Adaptive Typography Contrast Engine**:
+- **Full-Bleed Responsive Focal Point:** Responsive `<picture>` layer positioned with desktop and mobile-specific focal crops (`object-position`).
+- **Dynamic Luminance Sampling:** When loaded or resized, an offscreen canvas samples the exact pixel area behind the headline, calculates ITU-R BT.709 relative luminance, and automatically switches between light and dark typography themes (`--hero-theme-dark` / `--hero-theme-light`).
+- **Subtle Contrast Scrim:** Soft localized contrast fields protect text readability across mixed-light regions without obscuring the photograph.
+- **Cinematic Parallax:** Smooth scroll-driven parallax scaling (`scale(1.015)` + micro-translation), fully disabled when `prefers-reduced-motion` is enabled.
+
+---
+
+## ✦ Typography Architecture — Helvetica × Reno Mono
 
 - **Primary Typeface (85–90%): Helvetica**
   - Minimal, precise, editorial, and confident.

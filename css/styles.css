@@ -1,6 +1,7 @@
 /* ==========================================================================
    OMID MOHAMMADI — PORTFOLIO DESIGN SYSTEM
-   Typography Architecture: Helvetica × Reno Mono (Swiss Editorial)
+   Typography: Helvetica × Reno Mono (Swiss Editorial)
+   Hero: Full-Bleed Art-Directed Photography + Adaptive Contrast
    ========================================================================== */
 
 /* ==========================================================================
@@ -25,7 +26,7 @@
   --leading-body: 1.62;
 
   /* Fluid Type Scale */
-  --text-hero: clamp(2.65rem, 6.2vw, 5.25rem);
+  --text-hero: clamp(2.65rem, 6vw, 5.25rem);
   --text-h1: clamp(2rem, 3.8vw, 3.25rem);
   --text-h2: clamp(1.5rem, 2.5vw, 2.1rem);
   --text-h3: clamp(1.15rem, 1.6vw, 1.42rem);
@@ -67,6 +68,15 @@
 
   --color-error: #D9483B;
   --color-success: #70A83B;
+
+  /* Adaptive Hero Color Tokens (Defaults to dark text over light atmosphere) */
+  --hero-text-headline: #191919;
+  --hero-text-body: #32352B;
+  --hero-text-eyebrow: #3B3E25;
+  --hero-text-accent: #55572C;
+  --hero-meta-label: #525646;
+  --hero-meta-val: #191919;
+  --hero-border: rgba(25, 25, 25, 0.18);
 
   /* Spacing */
   --space-xs: 8px;
@@ -137,7 +147,7 @@ body::after {
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.035;
+  opacity: 0.032;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -334,7 +344,7 @@ p:last-child {
 }
 
 .nav--scrolled {
-  background: rgba(236, 231, 214, 0.94);
+  background: rgba(236, 231, 214, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--color-onyx-border);
@@ -443,7 +453,6 @@ p:last-child {
   gap: 14px;
 }
 
-/* Status Indicator Pill */
 .status-indicator {
   display: inline-flex;
   align-items: center;
@@ -472,7 +481,6 @@ p:last-child {
   50% { transform: scale(1.3); opacity: 0.6; }
 }
 
-/* Mobile Toggle */
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -522,7 +530,6 @@ p:last-child {
   white-space: nowrap;
 }
 
-/* Primary CTA — Chartreuse Accent */
 .btn--primary {
   background-color: var(--color-chartreuse);
   color: var(--color-onyx);
@@ -557,7 +564,6 @@ p:last-child {
   transform: translateX(3px);
 }
 
-/* Secondary Ghost CTA */
 .btn--ghost {
   background: transparent;
   color: var(--color-onyx);
@@ -583,7 +589,6 @@ p:last-child {
   transform: translateY(-2px);
 }
 
-/* Small Button */
 .btn--sm {
   padding: 9px 18px;
   font-size: 0.76rem;
@@ -603,20 +608,21 @@ p:last-child {
 }
 
 /* ==========================================================================
-   HERO SECTION (HELVETICA HEADLINE × RENO MONO EYEBROW)
+   HERO SECTION — FULL-BLEED ART-DIRECTED CINEMATIC PHOTOGRAPHY
    ========================================================================== */
 .hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 94vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 130px var(--space-gutter) 80px;
-  background: var(--color-eggshell);
+  background-color: var(--color-eggshell);
   overflow: hidden;
 }
 
-.hero__atmosphere {
+/* Full-Bleed Image Wrapper */
+.hero__bg-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -624,20 +630,40 @@ p:last-child {
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
-.hero__atmosphere::before {
-  content: "";
+.hero__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% center;
+  transform: scale(1.015);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              filter var(--duration-slow) ease;
+  filter: contrast(1.03) brightness(0.98);
+}
+
+/* Subtle Contrast Scrim (Preserves Photograph Integrity while Guaranteeing Readability) */
+.hero__scrim {
   position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 90%;
-  height: 85%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
   background:
-    radial-gradient(ellipse at 75% 25%, rgba(107, 109, 59, 0.22) 0%, transparent 60%),
-    radial-gradient(ellipse at 25% 35%, rgba(139, 119, 86, 0.20) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 10%, rgba(200, 217, 43, 0.12) 0%, transparent 45%);
-  filter: blur(50px);
+    radial-gradient(ellipse at 18% 45%, rgba(236, 231, 214, 0.78) 0%, rgba(236, 231, 214, 0.45) 45%, transparent 75%),
+    linear-gradient(to bottom, rgba(236, 231, 214, 0.35) 0%, transparent 40%, rgba(236, 231, 214, 0.6) 100%);
+  transition: background var(--duration-med) ease, opacity var(--duration-med) ease;
+}
+
+/* Dark Region Contrast Scrim Override */
+.hero--theme-light .hero__scrim {
+  background:
+    radial-gradient(ellipse at 22% 45%, rgba(25, 25, 25, 0.72) 0%, rgba(25, 25, 25, 0.4) 50%, transparent 80%),
+    linear-gradient(to bottom, rgba(25, 25, 25, 0.35) 0%, transparent 35%, rgba(25, 25, 25, 0.6) 100%);
 }
 
 .hero__etching {
@@ -647,7 +673,7 @@ p:last-child {
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.05;
+  opacity: 0.04;
   pointer-events: none;
   background-image:
     repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(25, 25, 25, 0.04) 3px, rgba(25, 25, 25, 0.04) 4px),
@@ -657,7 +683,39 @@ p:last-child {
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 980px;
+  max-width: 960px;
+  transition: color var(--duration-med) ease;
+}
+
+/* ==========================================================================
+   ADAPTIVE CONTRAST SYSTEM (DYNAMIC THEMES)
+   ========================================================================== */
+/* Light Image Underneath -> Dark Typography */
+.hero--theme-dark {
+  --hero-text-headline: #191919;
+  --hero-text-body: #34372D;
+  --hero-text-eyebrow: #3B3E25;
+  --hero-text-accent: #55572C;
+  --hero-meta-label: #525646;
+  --hero-meta-val: #191919;
+  --hero-border: rgba(25, 25, 25, 0.18);
+  --hero-btn-ghost: #191919;
+  --hero-btn-ghost-border: #191919;
+  --hero-btn-ghost-bg: transparent;
+}
+
+/* Dark Image Underneath -> Light Ivory Typography */
+.hero--theme-light {
+  --hero-text-headline: #FAF8F2;
+  --hero-text-body: #ECE7D6;
+  --hero-text-eyebrow: #C8D92B;
+  --hero-text-accent: #D4E53B;
+  --hero-meta-label: rgba(236, 231, 214, 0.7);
+  --hero-meta-val: #FAF8F2;
+  --hero-border: rgba(236, 231, 214, 0.2);
+  --hero-btn-ghost: #ECE7D6;
+  --hero-btn-ghost-border: rgba(236, 231, 214, 0.4);
+  --hero-btn-ghost-bg: rgba(0, 0, 0, 0.25);
 }
 
 .hero__kicker {
@@ -673,7 +731,8 @@ p:last-child {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
-  color: var(--color-onyx-muted);
+  color: var(--hero-text-eyebrow);
+  transition: color var(--duration-med) ease;
 }
 
 .hero__headline {
@@ -681,26 +740,41 @@ p:last-child {
   line-height: var(--leading-display);
   margin-bottom: var(--space-md);
   letter-spacing: var(--tracking-display);
-  color: var(--color-onyx);
+  color: var(--hero-text-headline);
   font-weight: 700;
+  text-shadow: 0 1px 12px rgba(236, 231, 214, 0.2);
+  transition: color var(--duration-med) ease, text-shadow var(--duration-med) ease;
+}
+
+.hero--theme-light .hero__headline {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
 }
 
 .hero__headline .text-accent {
-  color: var(--color-olive-dark);
+  color: var(--hero-text-accent);
+  transition: color var(--duration-med) ease;
 }
 
 .hero__subline {
   font-family: var(--font-primary);
   font-size: var(--text-body-lg);
   line-height: 1.55;
-  color: var(--color-onyx-muted);
+  color: var(--hero-text-body);
   max-width: 680px;
   margin-bottom: var(--space-lg);
+  transition: color var(--duration-med) ease;
 }
 
 .hero__subline strong {
-  color: var(--color-onyx);
-  font-weight: 600;
+  color: var(--hero-text-headline);
+}
+
+.hero .btn--ghost {
+  color: var(--hero-btn-ghost);
+  border-color: var(--hero-btn-ghost-border);
+  background-color: var(--hero-btn-ghost-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .hero__footer-meta {
@@ -709,8 +783,9 @@ p:last-child {
   gap: 28px;
   margin-top: var(--space-xl);
   padding-top: var(--space-md);
-  border-top: var(--border-faint);
+  border-top: 1px solid var(--hero-border);
   flex-wrap: wrap;
+  transition: border-color var(--duration-med) ease;
 }
 
 .hero__meta-item {
@@ -723,15 +798,17 @@ p:last-child {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   text-transform: uppercase;
-  color: var(--color-onyx-muted);
+  color: var(--hero-meta-label);
   letter-spacing: var(--tracking-label);
+  transition: color var(--duration-med) ease;
 }
 
 .hero__meta-value {
   font-family: var(--font-primary);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-onyx);
+  color: var(--hero-meta-val);
+  transition: color var(--duration-med) ease;
 }
 
 /* ==========================================================================
@@ -1945,8 +2022,24 @@ p:last-child {
   }
 
   .hero {
-    min-height: auto;
-    padding: 105px var(--space-gutter) 56px;
+    min-height: 88vh;
+    padding: 100px var(--space-gutter) 50px;
+  }
+
+  .hero__bg-image {
+    object-position: 70% 30%;
+  }
+
+  .hero__scrim {
+    background:
+      radial-gradient(ellipse at 50% 35%, rgba(236, 231, 214, 0.88) 0%, rgba(236, 231, 214, 0.65) 55%, transparent 90%),
+      linear-gradient(to bottom, rgba(236, 231, 214, 0.4) 0%, rgba(236, 231, 214, 0.7) 100%);
+  }
+
+  .hero--theme-light .hero__scrim {
+    background:
+      radial-gradient(ellipse at 50% 35%, rgba(25, 25, 25, 0.8) 0%, rgba(25, 25, 25, 0.55) 55%, transparent 90%),
+      linear-gradient(to bottom, rgba(25, 25, 25, 0.4) 0%, rgba(25, 25, 25, 0.7) 100%);
   }
 
   .hero__footer-meta {
@@ -1999,6 +2092,10 @@ p:last-child {
 
   .reveal {
     opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero__bg-image {
     transform: none !important;
   }
 

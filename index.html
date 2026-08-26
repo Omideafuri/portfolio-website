@@ -22,6 +22,9 @@
   <meta name="twitter:title" content="Omid Mohammadi — Premium Web & E-Commerce Developer">
   <meta name="twitter:description" content="I build websites that look expensive — and work like serious products. Next.js, React, TypeScript, PostgreSQL, Prisma.">
 
+  <!-- Preload Critical Hero Image for Instant Render -->
+  <link rel="preload" as="image" href="assets/images/hero-editorial.jpg" fetchpriority="high">
+
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,11 +112,19 @@
   <main id="main-content">
 
     <!-- ==================================================================
-         HERO SECTION: HELVETICA HEADLINE × RENO MONO EYEBROW
+         HERO SECTION: FULL-BLEED IMAGE + ADAPTIVE TYPOGRAPHY
          ================================================================== -->
-    <section class="hero" id="hero" aria-label="Introduction">
-      <div class="hero__atmosphere" aria-hidden="true"></div>
-      <div class="hero__etching" aria-hidden="true"></div>
+    <section class="hero hero--theme-dark" id="hero" aria-label="Introduction">
+      
+      <!-- Full-Bleed Art-Directed Photographic Layer -->
+      <div class="hero__bg-wrap" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/images/hero-editorial.jpg">
+          <img src="assets/images/hero-editorial.jpg" alt="" class="hero__bg-image" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero__scrim"></div>
+        <div class="hero__etching"></div>
+      </div>
 
       <div class="container hero__content">
 
@@ -161,7 +172,7 @@
           </div>
           <div class="hero__meta-item">
             <span class="hero__meta-label">STATUS</span>
-            <span class="hero__meta-value" style="color:var(--color-olive-dark);">Open for Selected Commissions</span>
+            <span class="hero__meta-value">Open for Selected Commissions</span>
           </div>
         </div>
 
@@ -1128,7 +1139,7 @@
           <!-- Direct Fallback Email Link -->
           <div class="direct-email-fallback reveal">
             Prefer direct email? Reach out at: 
-            <a href="mailto:omideafuri@gmail.com?subject=Project%20Inquiry%20for%20Omid%20Mohammadi">omideafuri@gmail.com</a>
+            <a href="mailto:omideafuri@gmail.com?subject=Project%20Inquiry%20from%20${encodeURIComponent(nameInput.value)}">omideafuri@gmail.com</a>
           </div>
 
         </div>
