@@ -1,40 +1,73 @@
-# Atelier & Co. — Portfolio Website
+# Omid — Freelance Web Designer & Front-End Developer Portfolio
 
-> **Modern Editorial Antiquity** — A high-converting portfolio website combining architectural modernism with vintage, earthy elegance.
+> **"Websites that make good businesses look undeniable."**  
+> A high-converting personal freelance client acquisition website combining modern digital design, editorial typography, and high-performance front-end development.
+
+---
+
+## 🎯 Conversion Strategy & Architecture
+
+This website is engineered around the conversion sequence:
+`VISITOR → TRUST → INTEREST → CONTACT → CLIENT`
+
+- **Within 5 Seconds:** Understands who I am (Omid, independent designer/developer) and my core value proposition.
+- **Within 10 Seconds:** Understands what I do (design + build high-performance websites for businesses & founders).
+- **Within 20 Seconds:** Sees real, authentic case studies (Zaravi Gold, Colorado) with 01-04 challenge/direction/build/result breakdowns.
+- **Within 30 Seconds:** Understands my specific services, 4-step process, and hybrid design+code advantage.
+- **Within 60 Seconds:** Has an ultra-low-friction pathway to submit a project inquiry through a functional lead form or direct email.
+
+---
 
 ## 🎨 Design System & Palette
 
-- **Primary Background (Eggshell):** `#ECE7D6` — Warm, tactile paper canvas
-- **Secondary Backgrounds:**
-  - **Olive:** `#6B6D3B` — Mid-tone horizontal bands and proof strips
-  - **Moss:** `#2E3821` — Deep grounding sections and case study showcase
-- **Typography & High Contrast (Onyx):** `#191919` — Architectural structure and 1px hairlines
-- **Accents & CTAs (Chartreuse):** `#C8D92B` — High-converting focal triggers
+- **Canvas & High Readability (Eggshell):** `#ECE7D6` / `#F5F2E9`
+- **Mid-Tone Banding (Olive):** `#6B6D3B` (Why Work With Me, Value Strips)
+- **Deep Contrast Showcase (Moss):** `#2E3821` (Selected Work, Lead Generation)
+- **Structure & Typography (Onyx):** `#191919`
+- **Conversion Accent & CTAs (Chartreuse):** `#C8D92B`
 
-## 🏛 Typography Architecture
+---
 
-- **Display Headings:** `Syne` / `Outward` / `Vercetti` style — Bold, structural sans-serif with monumental proportions
-- **Editorial Sub-Headings & Quotes:** `Newsreader` / `Instrument Serif` (Italic) — Warm, literary flair
-- **Body & Long-form Copy:** `EB Garamond` / `Newsreader` — Exceptional readability
+## 🛠 Tech Stack
 
-## 📐 Page Structure
+- **Markup & Semantics:** HTML5, Accessible Landmarks (`<main>`, `<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`), Schema.org JSON-LD structured data.
+- **Styles & Layout:** Modular CSS3, CSS Grid, Flexbox, Fluid Clamping, CSS Variables, Grain Texture Overlay, `prefers-reduced-motion` compliance.
+- **Typography:** `Syne` (Structural Bold Grotesque), `Newsreader` (Editorial Serif), `EB Garamond` (Body Copy), `JetBrains Mono` (Technical Metadata).
+- **Interactions & Scripts:** Vanilla JavaScript (ES6+), IntersectionObserver for scroll reveals, ScrollSpy navigation, custom event analytics dispatcher.
+- **Lead Generation:** Async form handler supporting Web3Forms / Formspree with live validation, loading feedback, success states, and mailto fallback.
 
-1. **Global Navigation:** Architectural header with monogram, sticky micro-CTA, and mobile menu
-2. **Hero:** Atmospheric oil-cloud gradients, fine-line hatching texture, and primary Chartreuse CTA
-3. **Proof Strip:** Client and institutional partner marks on an Olive full-width band
-4. **About & Thesis:** Split-screen layout with arched frame, topographic contour overlay, and labyrinth accent
-5. **Selected Commissions:** 2-column portfolio grid on Deep Moss with custom masks and filter tabs
-6. **Testimonial Band:** Editorial blockquote flanked by vintage crest dividers
-7. **Methodology:** 3-column block grid featuring custom pen-and-ink vector etchings
-8. **Private Application / Intake:** High-end boutique form with underline inputs and Chartreuse submit trigger
-9. **Archival Footer:** 4-column colophon directory with central wax seal monogram
+---
 
-## 🚀 Local Development
-
-To run locally with Python:
+## 🚀 Running Locally
 
 ```bash
+# Using Python
 python -m http.server 8080
+
+# Or using Node/npx
+npx serve .
 ```
 
-Then visit [http://localhost:8080](http://localhost:8080).
+Open [http://localhost:8080](http://localhost:8080) in your browser.
+
+---
+
+## 📬 Contact Form Configuration
+
+To connect the lead intake form to your email inbox:
+
+1. **Option A (Web3Forms - Recommended, Zero Server):**
+   - Get a free Access Key from [web3forms.com](https://web3forms.com).
+   - In `index.html`, update the hidden input value:
+     ```html
+     <input type="hidden" name="access_key" value="YOUR_ACTUAL_ACCESS_KEY_HERE">
+     ```
+   - In `js/main.js`, update `CONFIG.defaultAccessKey`.
+
+2. **Option B (Formspree):**
+   - Change the form `action` attribute in `index.html` to:
+     ```html
+     <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+     ```
+
+3. **Fallback:** If offline or in testing mode without an API key, the form gracefully validates, displays feedback, and offers a direct pre-filled `mailto:` link to `omideafuri@gmail.com`.

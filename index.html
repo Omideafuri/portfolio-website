@@ -3,887 +3,938 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atelier & Co. — Strategic Creative Direction</title>
-  <meta name="description" content="Bespoke brand architecture, digital flagships, and strategic creative direction for visionary enterprises and category leaders.">
+  
+  <!-- SEO & Authority Metadata -->
+  <title>Omid — Freelance Web Designer & Front-End Developer</title>
+  <meta name="description" content="I design and build high-performance websites for businesses, brands, and ambitious founders. Combining distinct visual identity, thoughtful UX, and modern frontend development.">
+  <meta name="author" content="Omid">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical & Social Meta -->
+  <link rel="canonical" href="https://omideafuri.github.io/portfolio-website/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Omid — Freelance Web Designer & Front-End Developer">
+  <meta property="og:description" content="Websites that make good businesses look undeniable. High-performance design & development.">
+  <meta property="og:url" content="https://omideafuri.github.io/portfolio-website/">
+  <meta property="og:site_name" content="Omid Portfolio">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Omid — Freelance Web Designer & Front-End Developer">
+  <meta name="twitter:description" content="Websites that make good businesses look undeniable. High-performance design & development.">
 
-  <!-- Preload key fonts -->
+  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <!-- Favicon (Inline Vector SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23191919'/><text x='50' y='68' font-family='sans-serif' font-size='56' font-weight='bold' fill='%23C8D92B' text-anchor='middle'>O</text></svg>">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Omid",
+    "jobTitle": "Freelance Web Designer & Front-End Developer",
+    "url": "https://omideafuri.github.io/portfolio-website/",
+    "sameAs": [
+      "https://github.com/Omideafuri"
+    ],
+    "knowsAbout": ["Web Design", "Front-End Development", "UI/UX Design", "React", "Next.js", "JavaScript", "CSS3", "HTML5"]
+  }
+  </script>
 </head>
 <body>
 
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ====================================================================
-       NAVIGATION
+       GLOBAL HEADER & NAVIGATION
        ==================================================================== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <header class="nav" role="banner">
     <div class="nav__inner">
 
-      <!-- Logo / Monogram -->
-      <a href="#" class="nav__logo" aria-label="Atelier & Co. Home">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="30" height="30" rx="2" stroke="#191919" stroke-width="1.2"/>
-          <path d="M10 22L16 8L22 22" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="12" y1="18" x2="20" y2="18" stroke="#191919" stroke-width="1.2"/>
-          <circle cx="16" cy="24" r="1.2" fill="#C8D92B"/>
-        </svg>
-        <span>Atelier & Co.</span>
+      <!-- Brand / Monogram -->
+      <a href="#hero" class="nav__brand" aria-label="Omid - Home">
+        <span class="nav__logo-badge" aria-hidden="true">O</span>
+        <div class="nav__brand-info">
+          <span class="nav__brand-name">Omid</span>
+          <span class="nav__brand-role">Designer & Developer</span>
+        </div>
       </a>
 
-      <!-- Navigation Links -->
-      <div class="nav__links">
+      <!-- Desktop Navigation Links -->
+      <nav class="nav__links" id="primary-navigation" aria-label="Primary">
+        <a href="#work" class="nav__link">Selected Work</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#why-me" class="nav__link">Why Me</a>
+        <a href="#process" class="nav__link">Process</a>
         <a href="#about" class="nav__link">About</a>
-        <a href="#portfolio" class="nav__link">Selected Work</a>
-        <a href="#methodology" class="nav__link">Methodology</a>
-        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions & Availability Badge -->
+      <div class="nav__actions">
+        <div class="status-indicator" title="Current freelance capacity">
+          <span class="status-dot"></span>
+          <span>Available for Projects</span>
+        </div>
         <a href="#contact" class="btn btn--primary btn--sm nav__cta">
-          <span>Engage</span>
+          <span>Start a Project</span>
           <span class="btn__arrow">→</span>
         </a>
-      </div>
 
-      <!-- Mobile Toggle -->
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-  </nav>
-
-
-  <!-- ====================================================================
-       HERO SECTION
-       ==================================================================== -->
-  <section class="hero" id="hero">
-
-    <!-- Atmospheric Oil-Painting Cloud Background -->
-    <div class="hero__atmosphere" aria-hidden="true"></div>
-
-    <!-- Fine-line etching hatching overlay -->
-    <div class="hero__etching" aria-hidden="true"></div>
-
-    <!-- Content -->
-    <div class="hero__content">
-
-      <!-- Kicker with crest -->
-      <div class="hero__kicker reveal">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M9 1L11.5 6.5L17 9L11.5 11.5L9 17L6.5 11.5L1 9L6.5 6.5L9 1Z" stroke="#4A4C46" stroke-width="0.8" fill="none"/>
-          <circle cx="9" cy="9" r="1.5" fill="#4A4C46" opacity="0.4"/>
-        </svg>
-        <span class="hero__kicker-text">Private Advisory & Creative Direction</span>
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M9 1L11.5 6.5L17 9L11.5 11.5L9 17L6.5 11.5L1 9L6.5 6.5L9 1Z" stroke="#4A4C46" stroke-width="0.8" fill="none"/>
-          <circle cx="9" cy="9" r="1.5" fill="#4A4C46" opacity="0.4"/>
-        </svg>
-      </div>
-
-      <!-- Monumental Headline -->
-      <h1 class="hero__headline font-display reveal reveal--delay-1">
-        Where Architectural<br>
-        Rigor Meets<br>
-        <span class="serif-accent">Historic Prestige.</span>
-      </h1>
-
-      <!-- Subline -->
-      <p class="hero__subline reveal reveal--delay-2">
-        Curating high-authority identities, bespoke digital platforms, and enduring brand
-        flagships for industry leaders and visionary enterprises.
-      </p>
-
-      <!-- CTA Group -->
-      <div class="hero__cta-group reveal reveal--delay-3">
-        <a href="#contact" class="btn btn--primary">
-          <span>Start the Conversation</span>
-          <span class="btn__arrow">→</span>
-        </a>
-        <span class="hero__trust-badge">By referral & direct commission only</span>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="nav__toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
     </div>
-
-    <!-- Bottom decorative border with etched motif -->
-    <svg style="position:absolute;bottom:0;left:0;width:100%;z-index:2" height="2" viewBox="0 0 1440 2" preserveAspectRatio="none" aria-hidden="true">
-      <line x1="0" y1="1" x2="1440" y2="1" stroke="#191919" stroke-width="1"/>
-    </svg>
-
-  </section>
-
+  </header>
 
   <!-- ====================================================================
-       PROOF STRIP — CLIENT ASSOCIATIONS
+       MAIN CONTENT CONTAINER
        ==================================================================== -->
-  <section class="proof-strip" aria-label="Trusted clients">
-    <p class="proof-strip__label">Trusted by Category Founders & Institutional Leaders</p>
-    <div class="proof-strip__logos">
-      <span class="proof-strip__logo">Meridian Group</span>
-      <span class="proof-strip__logo">◆</span>
-      <span class="proof-strip__logo">Vale Aerospace</span>
-      <span class="proof-strip__logo">◆</span>
-      <span class="proof-strip__logo">Sterling & Hale</span>
-      <span class="proof-strip__logo">◆</span>
-      <span class="proof-strip__logo">Prescott Capital</span>
-      <span class="proof-strip__logo">◆</span>
-      <span class="proof-strip__logo">Sable Ventures</span>
-    </div>
-  </section>
+  <main id="main-content">
 
+    <!-- ==================================================================
+         HERO SECTION: CLEAR PERSONAL VALUE PROPOSITION
+         ================================================================== -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="hero__atmosphere" aria-hidden="true"></div>
+      <div class="hero__etching" aria-hidden="true"></div>
 
-  <!-- ====================================================================
-       ABOUT SECTION — SPLIT SCREEN
-       ==================================================================== -->
-  <section class="about section-padding" id="about">
+      <div class="container hero__content">
 
-    <!-- Topographic background texture -->
-    <div class="about__topo" aria-hidden="true">
-      <svg viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 200 Q150 150 250 200 T450 180 T550 220" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.3"/>
-        <path d="M30 260 Q180 200 300 260 T500 240 T580 270" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.25"/>
-        <path d="M60 320 Q200 280 320 330 T520 300 T560 340" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.2"/>
-        <path d="M40 380 Q160 340 280 390 T480 360 T570 400" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.15"/>
-        <path d="M70 440 Q190 400 310 450 T510 420 T590 460" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.12"/>
-        <path d="M50 500 Q170 460 290 510 T490 480 T570 520" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.1"/>
-        <path d="M80 560 Q200 520 320 570 T520 540 T600 580" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.08"/>
-        <path d="M40 620 Q180 580 300 630 T500 600 T580 640" stroke="#191919" stroke-width="0.5" fill="none" opacity="0.06"/>
-      </svg>
-    </div>
+        <!-- Kicker with status -->
+        <div class="hero__kicker reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="hero__kicker-tag">Independent Web Designer & Front-End Developer</span>
+        </div>
 
-    <div class="container">
-      <div class="split-grid">
+        <!-- High-Impact Outcome Headline -->
+        <h1 class="hero__headline font-display reveal reveal--delay-1">
+          Websites that make good businesses look <span class="serif-accent">undeniable.</span>
+        </h1>
 
-        <!-- Text Column -->
-        <div>
-          <p class="text-meta about__kicker reveal">
-            <span class="section-number">01</span>
-          </p>
-          <h2 class="about__title font-display reveal reveal--delay-1">
-            A Salve for<br>Brand Chaos
-          </h2>
-          <p class="about__text reveal reveal--delay-2">
-            Sit across from a creative strategist who deeply understands the intersection 
-            of brand architecture, intellectual depth, and commercial leverage. We don't iterate 
-            on templates — we draft definitive identities grounded in enduring positioning 
-            that compounds over decades.
-          </p>
-          <p class="about__text reveal reveal--delay-2">
-            Every engagement begins with rigorous strategic inquiry: mapping competitive 
-            landscapes, articulating latent brand narratives, and defining the precise 
-            visual and verbal language that elevates you from participant to category leader.
-          </p>
-          <a href="#methodology" class="btn btn--ghost reveal reveal--delay-3">
-            <span>Explore Our Philosophy</span>
-            <span class="btn__arrow" style="background:var(--color-eggshell-warm);color:var(--color-onyx)">→</span>
+        <!-- Clear, No-BS Supporting Value Narrative -->
+        <p class="hero__subline reveal reveal--delay-2">
+          I design and build <strong>high-performance websites</strong> for businesses, brands, and ambitious founders — combining distinct visual identity, thoughtful UX, and clean modern development to turn visitors into paying clients.
+        </p>
+
+        <!-- Primary & Secondary CTAs -->
+        <div class="btn-group reveal reveal--delay-3">
+          <a href="#contact" class="btn btn--primary">
+            <span>Start a Project</span>
+            <span class="btn__arrow">→</span>
+          </a>
+          <a href="#work" class="btn btn--ghost">
+            <span>View My Work</span>
+            <span class="btn__arrow" style="background:var(--color-eggshell-warm);color:var(--color-onyx)">↓</span>
           </a>
         </div>
 
-        <!-- Artwork Column -->
-        <div class="about__artwork reveal reveal--delay-2">
-
-          <!-- Arch-framed artwork -->
-          <div class="about__artwork-frame">
-            <!-- Placeholder: Replace with actual editorial portrait or architectural photography -->
-            <svg viewBox="0 0 420 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background:linear-gradient(180deg, #8B7756 0%, #A69478 30%, #C2B59C 50%, #D4C8B0 70%, #ECE7D6 100%);">
-              <!-- Pastoral landscape sketch -->
-              <g opacity="0.35" stroke="#191919" fill="none" stroke-width="0.8">
-                <!-- Rolling hills -->
-                <path d="M0 380 Q50 340 100 360 T200 350 T300 370 T420 340 L420 560 L0 560 Z" fill="#6B6D3B" opacity="0.3"/>
-                <path d="M0 400 Q80 370 150 390 T280 380 T420 370 L420 560 L0 560 Z" fill="#2E3821" opacity="0.25"/>
-                <!-- Trees -->
-                <path d="M80 330 Q85 300 90 330" stroke-width="0.6"/>
-                <ellipse cx="85" cy="295" rx="18" ry="30" stroke-width="0.5"/>
-                <path d="M200 340 Q205 310 210 340" stroke-width="0.6"/>
-                <ellipse cx="205" cy="305" rx="15" ry="25" stroke-width="0.5"/>
-                <path d="M320 320 Q325 280 330 320" stroke-width="0.6"/>
-                <ellipse cx="325" cy="275" rx="22" ry="35" stroke-width="0.5"/>
-                <!-- Clouds -->
-                <ellipse cx="120" cy="120" rx="60" ry="25" stroke-width="0.4" opacity="0.5"/>
-                <ellipse cx="300" cy="100" rx="50" ry="20" stroke-width="0.4" opacity="0.4"/>
-                <ellipse cx="200" cy="80" rx="40" ry="18" stroke-width="0.4" opacity="0.3"/>
-                <!-- Distant mountains -->
-                <path d="M0 360 L40 310 L80 340 L130 290 L180 330 L240 300 L300 340 L350 310 L420 350" stroke-width="0.5" opacity="0.4"/>
-                <!-- Hatching texture for sky -->
-                <g opacity="0.12">
-                  <line x1="0" y1="180" x2="420" y2="178" stroke-width="0.3"/>
-                  <line x1="0" y1="195" x2="420" y2="193" stroke-width="0.3"/>
-                  <line x1="0" y1="210" x2="420" y2="208" stroke-width="0.3"/>
-                  <line x1="0" y1="225" x2="420" y2="223" stroke-width="0.3"/>
-                  <line x1="0" y1="240" x2="420" y2="238" stroke-width="0.3"/>
-                  <line x1="0" y1="255" x2="420" y2="253" stroke-width="0.3"/>
-                </g>
-              </g>
-            </svg>
+        <!-- Trust & Meta Footer -->
+        <div class="hero__footer-meta reveal reveal--delay-3">
+          <div class="hero__meta-item">
+            <span class="hero__meta-label">Discipline</span>
+            <span class="hero__meta-value">UI/UX Design + Full Front-End Build</span>
           </div>
-
-          <!-- Floating accent card with maze/labyrinth texture -->
-          <div class="about__accent-card">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="35" stroke="#ECE7D6" stroke-width="0.6" opacity="0.5"/>
-              <circle cx="40" cy="40" r="28" stroke="#ECE7D6" stroke-width="0.6" opacity="0.4"/>
-              <circle cx="40" cy="40" r="21" stroke="#ECE7D6" stroke-width="0.6" opacity="0.35"/>
-              <circle cx="40" cy="40" r="14" stroke="#ECE7D6" stroke-width="0.6" opacity="0.3"/>
-              <circle cx="40" cy="40" r="7" stroke="#ECE7D6" stroke-width="0.6" opacity="0.25"/>
-              <circle cx="40" cy="40" r="2" fill="#ECE7D6" opacity="0.3"/>
-              <!-- Maze entry paths -->
-              <line x1="40" y1="5" x2="40" y2="12" stroke="#ECE7D6" stroke-width="0.6" opacity="0.5"/>
-              <line x1="75" y1="40" x2="68" y2="40" stroke="#ECE7D6" stroke-width="0.6" opacity="0.4"/>
-              <line x1="40" y1="75" x2="40" y2="68" stroke="#ECE7D6" stroke-width="0.6" opacity="0.35"/>
-              <line x1="5" y1="40" x2="12" y2="40" stroke="#ECE7D6" stroke-width="0.6" opacity="0.3"/>
-            </svg>
+          <div class="hero__meta-item">
+            <span class="hero__meta-label">Focus</span>
+            <span class="hero__meta-value">Fast, High-Converting Digital Flagships</span>
           </div>
-
+          <div class="hero__meta-item">
+            <span class="hero__meta-label">Current Status</span>
+            <span class="hero__meta-value" style="color:var(--color-olive-dark);">Open for Q3/Q4 Commissions</span>
+          </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- ====================================================================
-       CREST DIVIDER
-       ==================================================================== -->
-  <div class="crest-divider" aria-hidden="true">
-    <span class="crest-divider__line"></span>
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 2L16.5 7.5L22 10L16.5 12.5L14 18L11.5 12.5L6 10L11.5 7.5L14 2Z" stroke="#191919" stroke-width="0.6" fill="none"/>
-      <path d="M14 10L16 13L20 14L16 15L14 18L12 15L8 14L12 13L14 10Z" stroke="#191919" stroke-width="0.4" fill="none" opacity="0.5"/>
-      <!-- Laurel sprigs -->
-      <path d="M4 20 Q7 17 10 19" stroke="#6B6D3B" stroke-width="0.5" fill="none"/>
-      <path d="M4 22 Q7 19 10 21" stroke="#6B6D3B" stroke-width="0.5" fill="none"/>
-      <path d="M24 20 Q21 17 18 19" stroke="#6B6D3B" stroke-width="0.5" fill="none"/>
-      <path d="M24 22 Q21 19 18 21" stroke="#6B6D3B" stroke-width="0.5" fill="none"/>
-    </svg>
-    <span class="crest-divider__line"></span>
-  </div>
-
-
-  <!-- ====================================================================
-       PORTFOLIO / CASE STUDIES — DEEP MOSS BAND
-       ==================================================================== -->
-  <section class="portfolio section-padding band-moss" id="portfolio">
-    <div class="container">
-
-      <!-- Section Header -->
-      <div class="portfolio__header reveal">
-        <div>
-          <p class="text-meta text-meta--light" style="margin-bottom:8px">
-            <span class="section-number" style="color:rgba(236,231,214,0.5)">02</span>
-          </p>
-          <h2 class="portfolio__title font-display">Selected<br>Commissions</h2>
-          <p class="portfolio__subtitle">2024 — 2026</p>
-        </div>
-
-        <div class="portfolio__filters">
-          <button class="portfolio__filter portfolio__filter--active" data-filter="all">All</button>
-          <button class="portfolio__filter" data-filter="brand">Brand Systems</button>
-          <button class="portfolio__filter" data-filter="digital">Digital Flagships</button>
-          <button class="portfolio__filter" data-filter="strategy">Strategy</button>
-        </div>
-      </div>
-
-      <!-- Case Study Grid -->
-      <div class="portfolio__grid stagger-children">
-
-        <!-- Case Study 01 — Arch Frame -->
-        <article class="case-card case-card--arch reveal" data-category="brand">
-          <div class="case-card__image">
-            <!-- Placeholder: Arch-masked editorial imagery -->
-            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background: linear-gradient(135deg, #6B6D3B 0%, #4A5030 40%, #2E3821 100%);">
-              <g opacity="0.25" stroke="#ECE7D6" fill="none" stroke-width="0.6">
-                <!-- Architectural arch motif -->
-                <path d="M200 450 L200 200 Q200 80 300 80 Q400 80 400 200 L400 450" stroke-width="0.8"/>
-                <path d="M220 450 L220 210 Q220 100 300 100 Q380 100 380 210 L380 450" stroke-width="0.5"/>
-                <!-- Decorative keystone -->
-                <path d="M290 80 L300 65 L310 80" stroke-width="0.6"/>
-                <!-- Interior hatching -->
-                <g opacity="0.3">
-                  <line x1="240" y1="180" x2="360" y2="180" stroke-width="0.3"/>
-                  <line x1="235" y1="200" x2="365" y2="200" stroke-width="0.3"/>
-                  <line x1="230" y1="220" x2="370" y2="220" stroke-width="0.3"/>
-                  <line x1="225" y1="240" x2="375" y2="240" stroke-width="0.3"/>
-                  <line x1="222" y1="260" x2="378" y2="260" stroke-width="0.3"/>
-                  <line x1="220" y1="280" x2="380" y2="280" stroke-width="0.3"/>
-                  <line x1="220" y1="300" x2="380" y2="300" stroke-width="0.3"/>
-                  <line x1="220" y1="320" x2="380" y2="320" stroke-width="0.3"/>
-                </g>
-                <!-- Columns -->
-                <rect x="195" y="200" width="10" height="250" stroke-width="0.4" opacity="0.5"/>
-                <rect x="395" y="200" width="10" height="250" stroke-width="0.4" opacity="0.5"/>
-                <!-- Floor tiles -->
-                <line x1="220" y1="440" x2="380" y2="440" stroke-width="0.3" opacity="0.4"/>
-                <line x1="250" y1="440" x2="250" y2="450" stroke-width="0.3" opacity="0.3"/>
-                <line x1="300" y1="440" x2="300" y2="450" stroke-width="0.3" opacity="0.3"/>
-                <line x1="350" y1="440" x2="350" y2="450" stroke-width="0.3" opacity="0.3"/>
-              </g>
-              <!-- Title overlay -->
-              <text x="300" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#ECE7D6" opacity="0.4" font-style="italic">Meridian Club</text>
-            </svg>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__meta">01 // Brand Architecture</p>
-            <h3 class="case-card__title font-display">The Meridian Club</h3>
-            <p class="case-card__desc">
-              Complete identity system, bespoke web platform, and physical collateral suite 
-              for a private membership network spanning three continents.
-            </p>
-            <span class="case-card__metric">+320% Qualified Inquiries</span>
-          </div>
-        </article>
-
-        <!-- Case Study 02 — Rectangular Frame -->
-        <article class="case-card case-card--rect reveal" data-category="digital">
-          <div class="case-card__image">
-            <!-- Placeholder: Rectangular editorial imagery -->
-            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background: linear-gradient(160deg, #8B7756 0%, #6B6D3B 50%, #2E3821 100%);">
-              <g opacity="0.2" stroke="#ECE7D6" fill="none" stroke-width="0.5">
-                <!-- Abstract topographic / data vis lines -->
-                <path d="M0 150 Q100 100 200 150 T400 130 T600 160" stroke-width="0.6"/>
-                <path d="M0 200 Q150 160 300 200 T600 180" stroke-width="0.5"/>
-                <path d="M0 250 Q100 220 200 260 T400 240 T600 270" stroke-width="0.4"/>
-                <path d="M0 300 Q150 270 300 310 T600 290" stroke-width="0.4"/>
-                <path d="M0 350 Q100 320 200 360 T400 340 T600 370" stroke-width="0.3"/>
-                <!-- Grid overlay -->
-                <g opacity="0.15">
-                  <line x1="100" y1="0" x2="100" y2="450"/>
-                  <line x1="200" y1="0" x2="200" y2="450"/>
-                  <line x1="300" y1="0" x2="300" y2="450"/>
-                  <line x1="400" y1="0" x2="400" y2="450"/>
-                  <line x1="500" y1="0" x2="500" y2="450"/>
-                </g>
-                <!-- Data points -->
-                <circle cx="150" cy="130" r="3" fill="#C8D92B" opacity="0.6"/>
-                <circle cx="300" cy="195" r="3" fill="#C8D92B" opacity="0.6"/>
-                <circle cx="450" cy="165" r="3" fill="#C8D92B" opacity="0.6"/>
-              </g>
-              <text x="300" y="400" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#ECE7D6" opacity="0.4" font-style="italic">Vale Aerospace</text>
-            </svg>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__meta">02 // Strategic Repositioning</p>
-            <h3 class="case-card__title font-display">Vale Aerospace</h3>
-            <p class="case-card__desc">
-              Full strategic repositioning and digital flagship for a defense-adjacent 
-              technology firm navigating Series B and institutional capital markets.
-            </p>
-            <span class="case-card__metric">$45M Capital Round Closed</span>
-          </div>
-        </article>
-
-        <!-- Case Study 03 -->
-        <article class="case-card case-card--rect reveal" data-category="strategy">
-          <div class="case-card__image">
-            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background: linear-gradient(180deg, #A69478 0%, #8B7756 60%, #6B6D3B 100%);">
-              <g opacity="0.22" stroke="#ECE7D6" fill="none" stroke-width="0.5">
-                <!-- Botanical illustration -->
-                <path d="M300 420 L300 200" stroke-width="0.7"/>
-                <!-- Leaves -->
-                <path d="M300 350 Q260 310 240 330 Q260 320 300 350" stroke-width="0.5"/>
-                <path d="M300 320 Q340 280 360 300 Q340 290 300 320" stroke-width="0.5"/>
-                <path d="M300 290 Q255 250 235 270 Q255 260 300 290" stroke-width="0.5"/>
-                <path d="M300 260 Q345 220 365 240 Q345 230 300 260" stroke-width="0.5"/>
-                <!-- Flower head -->
-                <circle cx="300" cy="190" r="30" stroke-width="0.5"/>
-                <circle cx="300" cy="190" r="20" stroke-width="0.4"/>
-                <circle cx="300" cy="190" r="10" stroke-width="0.3"/>
-                <circle cx="300" cy="190" r="4" fill="#C8D92B" opacity="0.4"/>
-                <!-- Petal suggestions -->
-                <path d="M300 160 Q310 150 300 140" stroke-width="0.3"/>
-                <path d="M330 190 Q340 180 330 170" stroke-width="0.3"/>
-                <path d="M270 190 Q260 180 270 170" stroke-width="0.3"/>
-              </g>
-              <text x="300" y="400" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#ECE7D6" opacity="0.4" font-style="italic">Prescott Capital</text>
-            </svg>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__meta">03 // Private Wealth</p>
-            <h3 class="case-card__title font-display">Prescott Capital</h3>
-            <p class="case-card__desc">
-              Heritage-forward brand system and investor-facing digital presence for a 
-              multi-generational family office repositioning for next-gen wealth advisory.
-            </p>
-            <span class="case-card__metric">+140% Enterprise Value</span>
-          </div>
-        </article>
-
-        <!-- Case Study 04 -->
-        <article class="case-card case-card--arch reveal" data-category="brand">
-          <div class="case-card__image">
-            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background: linear-gradient(145deg, #4A5030 0%, #2E3821 50%, #191919 100%);">
-              <g opacity="0.2" stroke="#ECE7D6" fill="none" stroke-width="0.5">
-                <!-- Pastoral sheep field scene -->
-                <!-- Fence -->
-                <line x1="50" y1="350" x2="550" y2="340" stroke-width="0.4"/>
-                <line x1="100" y1="345" x2="100" y2="370" stroke-width="0.4"/>
-                <line x1="200" y1="343" x2="200" y2="368" stroke-width="0.4"/>
-                <line x1="300" y1="341" x2="300" y2="366" stroke-width="0.4"/>
-                <line x1="400" y1="339" x2="400" y2="364" stroke-width="0.4"/>
-                <line x1="500" y1="337" x2="500" y2="362" stroke-width="0.4"/>
-                <!-- Sheep (simplified) -->
-                <ellipse cx="150" cy="320" rx="20" ry="12" stroke-width="0.5"/>
-                <circle cx="135" cy="315" r="6" stroke-width="0.4"/>
-                <ellipse cx="350" cy="315" rx="18" ry="11" stroke-width="0.5"/>
-                <circle cx="336" cy="310" r="5.5" stroke-width="0.4"/>
-                <ellipse cx="480" cy="310" rx="17" ry="10" stroke-width="0.5"/>
-                <circle cx="468" cy="305" r="5" stroke-width="0.4"/>
-                <!-- Large tree -->
-                <path d="M500 300 L500 180" stroke-width="0.8"/>
-                <ellipse cx="500" cy="150" rx="50" ry="60" stroke-width="0.5"/>
-                <ellipse cx="480" cy="170" rx="30" ry="35" stroke-width="0.3" opacity="0.5"/>
-                <ellipse cx="520" cy="160" rx="28" ry="32" stroke-width="0.3" opacity="0.5"/>
-              </g>
-              <text x="300" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#ECE7D6" opacity="0.4" font-style="italic">Sterling & Hale</text>
-            </svg>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__meta">04 // Brand & Digital</p>
-            <h3 class="case-card__title font-display">Sterling & Hale</h3>
-            <p class="case-card__desc">
-              End-to-end creative direction for a heritage agricultural consortium 
-              entering luxury direct-to-consumer markets with artisanal product lines.
-            </p>
-            <span class="case-card__metric">12 Markets Launched</span>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ====================================================================
-       TESTIMONIAL BAND
-       ==================================================================== -->
-  <section class="testimonial section-padding band-olive" aria-label="Testimonial">
-    <div class="container container--narrow">
-      <div class="crest-divider crest-divider--light" aria-hidden="true" style="margin-bottom:var(--space-lg)">
-        <span class="crest-divider__line" style="background:rgba(236,231,214,0.2)"></span>
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 2L13 7L18 9L13 11L11 16L9 11L4 9L9 7L11 2Z" stroke="#ECE7D6" stroke-width="0.5" opacity="0.4"/>
-        </svg>
-        <span class="crest-divider__line" style="background:rgba(236,231,214,0.2)"></span>
-      </div>
-
-      <blockquote class="testimonial__quote reveal">
-        Working with Atelier was not simply a design engagement — it was a strategic 
-        inflection point. They articulated what we couldn't about ourselves and built a 
-        platform that speaks with the authority we've always deserved.
-      </blockquote>
-      <cite class="testimonial__attribution reveal reveal--delay-1">
-        — James Hargrove, Managing Partner, Prescott Capital
-      </cite>
-    </div>
-  </section>
-
-
-  <!-- ====================================================================
-       METHODOLOGY / THREE PILLARS
-       ==================================================================== -->
-  <section class="methodology section-padding" id="methodology">
-    <div class="container">
-
-      <!-- Section Header -->
-      <div class="methodology__header reveal">
-        <p class="text-meta" style="margin-bottom:12px">
-          <span class="section-number">03</span>
-        </p>
-        <h2 class="methodology__title font-display">Our Three Pillars</h2>
-        <p class="methodology__subtitle">
-          The disciplined framework behind every engagement — where rigorous inquiry, 
-          bespoke craft, and commercial precision converge.
-        </p>
-      </div>
-
-      <!-- Crest divider -->
-      <div class="crest-divider" aria-hidden="true" style="margin-bottom:var(--space-xl)">
-        <span class="crest-divider__line"></span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L14 8L20 10L14 12L12 18L10 12L4 10L10 8L12 2Z" stroke="#6B6D3B" stroke-width="0.6"/>
-        </svg>
-        <span class="crest-divider__line"></span>
-      </div>
-
-      <!-- Three Pillars Grid -->
-      <div class="three-col-grid stagger-children">
-
-        <!-- Pillar 01 -->
-        <div class="pillar reveal">
-          <div class="pillar__illustration">
-            <!-- Pen-and-ink Library Interior sketch -->
-            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="#191919" stroke-width="0.6" opacity="0.55">
-                <!-- Room outline -->
-                <rect x="40" y="40" width="240" height="180" stroke-width="0.4"/>
-                <!-- Bookshelves -->
-                <rect x="50" y="50" width="60" height="160" stroke-width="0.4"/>
-                <line x1="50" y1="80" x2="110" y2="80" stroke-width="0.3"/>
-                <line x1="50" y1="110" x2="110" y2="110" stroke-width="0.3"/>
-                <line x1="50" y1="140" x2="110" y2="140" stroke-width="0.3"/>
-                <line x1="50" y1="170" x2="110" y2="170" stroke-width="0.3"/>
-                <!-- Books (vertical lines) -->
-                <g stroke-width="0.25" opacity="0.6">
-                  <line x1="55" y1="55" x2="55" y2="78"/><line x1="60" y1="53" x2="60" y2="78"/>
-                  <line x1="65" y1="54" x2="65" y2="78"/><line x1="70" y1="52" x2="70" y2="78"/>
-                  <line x1="75" y1="55" x2="75" y2="78"/><line x1="80" y1="53" x2="80" y2="78"/>
-                  <line x1="85" y1="54" x2="85" y2="78"/><line x1="90" y1="56" x2="90" y2="78"/>
-                  <line x1="95" y1="52" x2="95" y2="78"/><line x1="100" y1="55" x2="100" y2="78"/>
-                  <line x1="55" y1="85" x2="55" y2="108"/><line x1="62" y1="83" x2="62" y2="108"/>
-                  <line x1="69" y1="84" x2="69" y2="108"/><line x1="76" y1="82" x2="76" y2="108"/>
-                  <line x1="83" y1="85" x2="83" y2="108"/><line x1="90" y1="83" x2="90" y2="108"/>
-                  <line x1="97" y1="84" x2="97" y2="108"/>
-                </g>
-                <!-- Desk -->
-                <rect x="140" y="150" width="120" height="8" stroke-width="0.4"/>
-                <line x1="150" y1="158" x2="150" y2="210" stroke-width="0.3"/>
-                <line x1="250" y1="158" x2="250" y2="210" stroke-width="0.3"/>
-                <!-- Window -->
-                <rect x="140" y="50" width="80" height="70" stroke-width="0.4"/>
-                <line x1="180" y1="50" x2="180" y2="120" stroke-width="0.3"/>
-                <line x1="140" y1="85" x2="220" y2="85" stroke-width="0.3"/>
-                <!-- Window arch -->
-                <path d="M140 50 Q180 30 220 50" stroke-width="0.4"/>
-                <!-- Lamp on desk -->
-                <line x1="200" y1="130" x2="200" y2="150" stroke-width="0.3"/>
-                <path d="M190 130 Q200 120 210 130" stroke-width="0.4"/>
-                <!-- Floor hatching -->
-                <g opacity="0.15">
-                  <line x1="40" y1="215" x2="280" y2="215" stroke-width="0.2"/>
-                  <line x1="40" y1="218" x2="280" y2="218" stroke-width="0.2"/>
-                </g>
-              </g>
-            </svg>
-          </div>
-          <span class="pillar__number section-number">01</span>
-          <h3 class="pillar__title font-display">Intellectual<br>Depth</h3>
-          <p class="pillar__desc">
-            Every engagement begins with rigorous strategic inquiry — mapping competitive 
-            landscapes, extracting latent brand narratives, and defining precise positioning 
-            that compounds over decades.
-          </p>
-          <p class="pillar__footnote">Research-first · Narrative-driven</p>
-        </div>
-
-        <!-- Pillar 02 -->
-        <div class="pillar reveal">
-          <div class="pillar__illustration">
-            <!-- Pen-and-ink Gateway/Arch sketch -->
-            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="#191919" stroke-width="0.6" opacity="0.55">
-                <!-- Grand arch gateway -->
-                <path d="M100 220 L100 60 Q160 10 220 60 L220 220" stroke-width="0.7"/>
-                <path d="M110 220 L110 65 Q160 20 210 65 L210 220" stroke-width="0.5"/>
-                <!-- Keystone -->
-                <path d="M155 15 L160 5 L165 15" stroke-width="0.5"/>
-                <!-- Quoin stones -->
-                <rect x="90" y="60" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="90" y="85" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="90" y="110" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="90" y="135" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="218" y="60" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="218" y="85" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="218" y="110" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <rect x="218" y="135" width="12" height="20" stroke-width="0.3" opacity="0.4"/>
-                <!-- Path through gate -->
-                <line x1="140" y1="220" x2="130" y2="240" stroke-width="0.3" opacity="0.3"/>
-                <line x1="160" y1="220" x2="160" y2="240" stroke-width="0.3" opacity="0.3"/>
-                <line x1="180" y1="220" x2="190" y2="240" stroke-width="0.3" opacity="0.3"/>
-                <!-- Beyond gate: trees hint -->
-                <ellipse cx="160" cy="140" rx="25" ry="30" stroke-width="0.3" opacity="0.25"/>
-                <line x1="160" y1="170" x2="160" y2="220" stroke-width="0.25" opacity="0.2"/>
-                <!-- Walls extending -->
-                <line x1="90" y1="60" x2="40" y2="65" stroke-width="0.4"/>
-                <line x1="90" y1="220" x2="40" y2="220" stroke-width="0.4"/>
-                <line x1="230" y1="60" x2="280" y2="65" stroke-width="0.4"/>
-                <line x1="230" y1="220" x2="280" y2="220" stroke-width="0.4"/>
-                <!-- Wall hatching -->
-                <g opacity="0.1">
-                  <line x1="40" y1="70" x2="40" y2="220" stroke-width="0.3"/>
-                  <line x1="50" y1="68" x2="50" y2="220" stroke-width="0.3"/>
-                  <line x1="60" y1="67" x2="60" y2="220" stroke-width="0.3"/>
-                  <line x1="70" y1="65" x2="70" y2="220" stroke-width="0.3"/>
-                  <line x1="80" y1="63" x2="80" y2="220" stroke-width="0.3"/>
-                </g>
-              </g>
-            </svg>
-          </div>
-          <span class="pillar__number section-number">02</span>
-          <h3 class="pillar__title font-display">Bespoke<br>Craft</h3>
-          <p class="pillar__desc">
-            Zero templates. Every visual system, typography pairing, and interaction pattern 
-            is custom-drafted from first principles — tailored exclusively to your strategic 
-            positioning and market context.
-          </p>
-          <p class="pillar__footnote">100% Custom Architecture · Zero Templates</p>
-        </div>
-
-        <!-- Pillar 03 -->
-        <div class="pillar reveal">
-          <div class="pillar__illustration">
-            <!-- Pen-and-ink Valley/Landscape sketch -->
-            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="#191919" stroke-width="0.6" opacity="0.55">
-                <!-- Mountains -->
-                <path d="M0 180 L60 60 L100 120 L140 40 L180 100 L220 50 L280 110 L320 70 L320 240 L0 240 Z" stroke-width="0.5" fill="none"/>
-                <!-- Mid-ground hills -->
-                <path d="M0 200 Q40 170 80 190 T160 180 T240 195 T320 175" stroke-width="0.4"/>
-                <!-- Foreground rolling field -->
-                <path d="M0 220 Q60 200 120 215 T240 210 T320 220" stroke-width="0.4"/>
-                <!-- River/path winding through -->
-                <path d="M160 240 Q150 210 170 190 Q180 170 160 150 Q145 130 160 110" stroke-width="0.5" opacity="0.5"/>
-                <!-- Hatching on mountains -->
-                <g opacity="0.15">
-                  <line x1="80" y1="100" x2="100" y2="120" stroke-width="0.2"/>
-                  <line x1="85" y1="100" x2="105" y2="120" stroke-width="0.2"/>
-                  <line x1="90" y1="100" x2="110" y2="120" stroke-width="0.2"/>
-                  <line x1="150" y1="60" x2="170" y2="100" stroke-width="0.2"/>
-                  <line x1="155" y1="60" x2="175" y2="100" stroke-width="0.2"/>
-                  <line x1="225" y1="60" x2="260" y2="110" stroke-width="0.2"/>
-                  <line x1="230" y1="60" x2="265" y2="110" stroke-width="0.2"/>
-                </g>
-                <!-- Birds -->
-                <path d="M70 50 Q75 45 80 50" stroke-width="0.3" opacity="0.4"/>
-                <path d="M90 45 Q94 41 98 45" stroke-width="0.3" opacity="0.35"/>
-                <path d="M75 42 Q78 39 81 42" stroke-width="0.3" opacity="0.3"/>
-                <!-- Trees in valley -->
-                <g opacity="0.3">
-                  <ellipse cx="100" cy="185" rx="8" ry="12" stroke-width="0.3"/>
-                  <line x1="100" y1="197" x2="100" y2="210" stroke-width="0.2"/>
-                  <ellipse cx="240" cy="190" rx="7" ry="10" stroke-width="0.3"/>
-                  <line x1="240" y1="200" x2="240" y2="212" stroke-width="0.2"/>
-                </g>
-                <!-- Sun rays -->
-                <circle cx="260" cy="30" r="12" stroke-width="0.3" opacity="0.25"/>
-                <g opacity="0.12" stroke-width="0.2">
-                  <line x1="260" y1="12" x2="260" y2="5"/>
-                  <line x1="272" y1="18" x2="278" y2="14"/>
-                  <line x1="278" y1="30" x2="285" y2="30"/>
-                  <line x1="248" y1="18" x2="242" y2="14"/>
-                  <line x1="242" y1="30" x2="235" y2="30"/>
-                </g>
-              </g>
-            </svg>
-          </div>
-          <span class="pillar__number section-number">03</span>
-          <h3 class="pillar__title font-display">Compound<br>ROI</h3>
-          <p class="pillar__desc">
-            Beautiful work that doesn't convert is decoration. Every decision — from 
-            typography hierarchies to CTA placement — is engineered to drive measurable 
-            commercial outcomes and long-term brand equity.
-          </p>
-          <p class="pillar__footnote">Measurable Impact · Long-term Equity</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ====================================================================
-       CONTACT / PRIVATE APPLICATION — MOSS BAND
-       ==================================================================== -->
-  <section class="contact section-padding" id="contact">
-
-    <!-- Background etching -->
-    <div class="contact__backdrop" aria-hidden="true">
-      <svg viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-        <g stroke="#ECE7D6" stroke-width="0.4" opacity="0.25">
-          <path d="M100 600 L100 200 Q250 50 400 200 L400 600"/>
-          <path d="M120 600 L120 210 Q250 70 380 210 L380 600"/>
-          <path d="M140 600 L140 220 Q250 90 360 220 L360 600"/>
-          <!-- Hatching fill -->
-          <g opacity="0.15">
-            <line x1="140" y1="280" x2="360" y2="280"/>
-            <line x1="135" y1="300" x2="365" y2="300"/>
-            <line x1="130" y1="320" x2="370" y2="320"/>
-            <line x1="125" y1="340" x2="375" y2="340"/>
-            <line x1="122" y1="360" x2="378" y2="360"/>
-            <line x1="120" y1="380" x2="380" y2="380"/>
-            <line x1="120" y1="400" x2="380" y2="400"/>
-            <line x1="120" y1="420" x2="380" y2="420"/>
-            <line x1="120" y1="440" x2="380" y2="440"/>
-            <line x1="120" y1="460" x2="380" y2="460"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-
-    <div class="container">
-      <div class="contact__inner">
-
-        <!-- Crest -->
-        <div class="crest-divider crest-divider--light reveal" aria-hidden="true" style="margin-bottom:var(--space-lg)">
-          <span class="crest-divider__line" style="background:rgba(236,231,214,0.15)"></span>
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <path d="M16 4L19 11L26 14L19 17L16 24L13 17L6 14L13 11L16 4Z" stroke="#C8D92B" stroke-width="0.6" opacity="0.5"/>
-            <path d="M16 8L18 12.5L22.5 14L18 15.5L16 20L14 15.5L9.5 14L14 12.5L16 8Z" stroke="#ECE7D6" stroke-width="0.4" opacity="0.3"/>
-            <!-- Laurel -->
-            <path d="M4 26 Q8 22 12 25" stroke="#6B6D3B" stroke-width="0.4" opacity="0.5"/>
-            <path d="M4 28 Q8 24 12 27" stroke="#6B6D3B" stroke-width="0.4" opacity="0.4"/>
-            <path d="M28 26 Q24 22 20 25" stroke="#6B6D3B" stroke-width="0.4" opacity="0.5"/>
-            <path d="M28 28 Q24 24 20 27" stroke="#6B6D3B" stroke-width="0.4" opacity="0.4"/>
-          </svg>
-          <span class="crest-divider__line" style="background:rgba(236,231,214,0.15)"></span>
-        </div>
-
-        <p class="text-meta text-meta--light reveal" style="margin-bottom:12px">
-          <span class="section-number" style="color:rgba(236,231,214,0.4)">04</span>
-        </p>
-
-        <h2 class="contact__title font-display reveal reveal--delay-1">
-          Ready to Build Your<br>Definitive Flagship?
-        </h2>
-
-        <p class="contact__subtitle reveal reveal--delay-2">
-          Available for select commissions and advisory partnerships. 
-          Share your vision, and we'll determine if there's alignment.
-        </p>
-
-        <!-- Intake Form -->
-        <form class="intake-form reveal reveal--delay-3" action="#" method="post" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
-            </div>
-            <div class="form-field">
-              <label for="org">Organization</label>
-              <input type="text" id="org" name="organization" placeholder="Company or venture">
+    <!-- ==================================================================
+         VALUE PROPOSITION STRIP (GENUINE ADVANTAGES)
+         ================================================================== -->
+    <section class="value-strip" aria-label="Core advantages">
+      <div class="container">
+        <div class="value-strip__grid">
+          
+          <div class="value-item">
+            <span class="value-item__icon">✦</span>
+            <div>
+              <p class="value-item__title">Design + Development</p>
+              <p class="value-item__desc">One unified workflow, zero handoff friction</p>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          <div class="value-item">
+            <span class="value-item__icon">✦</span>
+            <div>
+              <p class="value-item__title">Conversion-Focused</p>
+              <p class="value-item__desc">Engineered to drive real inquiries and sales</p>
             </div>
+          </div>
+
+          <div class="value-item">
+            <span class="value-item__icon">✦</span>
+            <div>
+              <p class="value-item__title">Clean Modern Code</p>
+              <p class="value-item__desc">Fast, accessible, and easily maintainable</p>
+            </div>
+          </div>
+
+          <div class="value-item">
+            <span class="value-item__icon">✦</span>
+            <div>
+              <p class="value-item__title">Direct Communication</p>
+              <p class="value-item__desc">Work directly with the builder, not account managers</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SELECTED WORK: REAL PROFESSIONAL CASE STUDIES (DEEP MOSS BAND)
+         ================================================================== -->
+    <section class="portfolio section-padding band-moss" id="work" aria-label="Selected Projects">
+      <div class="container">
+
+        <!-- Portfolio Header -->
+        <div class="portfolio__header reveal">
+          <div>
+            <p class="text-meta text-meta--light" style="margin-bottom:8px">Portfolio Showcase</p>
+            <h2 class="portfolio__title font-display">Featured Projects</h2>
+            <p class="portfolio__subtitle">Real solutions engineered for clarity, aesthetic distinction, and conversion.</p>
+          </div>
+          <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-light btn--sm">
+            <span>Explore All on GitHub</span>
+            <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Case Studies List -->
+        <div class="portfolio__list">
+
+          <!-- CASE STUDY 01: ZARAVI GOLD -->
+          <article class="case-study reveal">
+            <!-- Visual Mockup Column -->
+            <div class="case-study__visual">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-url">zaravigold.com — Luxury Atelier & E-Commerce</span>
+                </div>
+                <div class="browser-screen">
+                  <!-- Custom SVG UI Showcase -->
+                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zaravi Gold preview">
+                    <rect width="520" height="325" fill="#181914"/>
+                    <!-- Ambient gold glow -->
+                    <circle cx="260" cy="140" r="120" fill="#C8D92B" opacity="0.08" filter="blur(30px)"/>
+                    <!-- Header -->
+                    <rect x="24" y="20" width="80" height="12" rx="2" fill="#ECE7D6" opacity="0.8"/>
+                    <rect x="360" y="20" width="136" height="12" rx="2" fill="#ECE7D6" opacity="0.4"/>
+                    <!-- Hero Section -->
+                    <text x="260" y="95" text-anchor="middle" font-family="'Newsreader', serif" font-size="24" fill="#ECE7D6" font-style="italic">Artisanal Gold & Precious Craft</text>
+                    <text x="260" y="118" text-anchor="middle" font-family="'Syne', sans-serif" font-size="11" fill="#C8D92B" letter-spacing="3">BESPOKE COLLECTION 2026</text>
+                    <!-- Product Showcase Cards -->
+                    <g transform="translate(40, 145)">
+                      <!-- Product Card 1 -->
+                      <rect x="0" y="0" width="130" height="150" rx="4" fill="#24261D" stroke="rgba(236,231,214,0.15)" stroke-width="1"/>
+                      <circle cx="65" cy="55" r="32" stroke="#C8D92B" stroke-width="2" fill="none" opacity="0.7"/>
+                      <circle cx="65" cy="55" r="24" stroke="#ECE7D6" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.5"/>
+                      <rect x="15" y="105" width="100" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
+                      <rect x="35" y="122" width="60" height="14" rx="7" fill="#C8D92B" opacity="0.9"/>
+                      
+                      <!-- Product Card 2 -->
+                      <rect x="150" y="0" width="140" height="150" rx="4" fill="#24261D" stroke="rgba(200,217,43,0.3)" stroke-width="1"/>
+                      <path d="M220 30 L240 75 L200 75 Z" stroke="#C8D92B" stroke-width="2" fill="none" opacity="0.8"/>
+                      <circle cx="220" cy="58" r="10" fill="#ECE7D6" opacity="0.6"/>
+                      <rect x="170" y="105" width="100" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
+                      <rect x="190" y="122" width="60" height="14" rx="7" fill="#C8D92B" opacity="0.9"/>
+
+                      <!-- Product Card 3 -->
+                      <rect x="310" y="0" width="130" height="150" rx="4" fill="#24261D" stroke="rgba(236,231,214,0.15)" stroke-width="1"/>
+                      <ellipse cx="375" cy="55" rx="30" ry="20" stroke="#C8D92B" stroke-width="1.8" fill="none" opacity="0.7"/>
+                      <rect x="325" y="105" width="100" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
+                      <rect x="345" y="122" width="60" height="14" rx="7" fill="#C8D92B" opacity="0.9"/>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Case Study Content Column -->
+            <div class="case-study__content">
+              <div>
+                <div class="case-study__meta">
+                  <span class="case-study__category">E-Commerce & Digital Flagship</span>
+                  <span class="case-study__year">Featured Project</span>
+                </div>
+                <h3 class="case-study__title font-display">Zaravi Gold</h3>
+                
+                <div class="case-study__role-strip">
+                  <span class="role-tag"><strong>Role:</strong> UI/UX Design & Front-End Build</span>
+                  <span class="role-tag"><strong>Focus:</strong> Brand Elegance + Fast Checkout UX</span>
+                </div>
+
+                <p class="case-step__text" style="margin-bottom:var(--space-md);">
+                  An exclusive digital boutique for an artisanal jewelry atelier, replacing generic e-commerce templates with a warm, editorial luxury shopping experience.
+                </p>
+
+                <!-- Detailed 4-Step Breakdown -->
+                <div class="case-study__breakdown">
+                  <div class="case-step">
+                    <span class="case-step__num">01 Challenge</span>
+                    <h4 class="case-step__label">The Problem</h4>
+                    <p class="case-step__text">Standard storefront themes felt transactional and cheapened the perception of handcrafted high-value jewelry.</p>
+                  </div>
+                  <div class="case-step">
+                    <span class="case-step__num">02 Direction</span>
+                    <h4 class="case-step__label">The Strategy</h4>
+                    <p class="case-step__text">Designed an editorial art-directed layout with warm gold/olive tones, high-contrast typography, and rich macro product details.</p>
+                  </div>
+                  <div class="case-step">
+                    <span class="case-step__num">03 The Build</span>
+                    <h4 class="case-step__label">Technical Execution</h4>
+                    <p class="case-step__text">Built with modern responsive frontend architecture, optimized image delivery, and smooth micro-interactions.</p>
+                  </div>
+                  <div class="case-step">
+                    <span class="case-step__num">04 Outcome</span>
+                    <h4 class="case-step__label">The Result</h4>
+                    <p class="case-step__text">Repositioned the digital experience into an unmistakable premium brand asset that builds immediate customer trust.</p>
+                  </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="tech-pill-list">
+                  <span class="tech-pill">Next.js / React</span>
+                  <span class="tech-pill">Tailwind CSS</span>
+                  <span class="tech-pill">Figma Design</span>
+                  <span class="tech-pill">E-Commerce UX</span>
+                  <span class="tech-pill">Performance Optimization</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div class="case-study__actions">
+                <a href="#contact" class="btn btn--primary btn--sm">
+                  <span>Inquire About Similar Project</span>
+                  <span class="btn__arrow">→</span>
+                </a>
+                <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-light btn--sm">
+                  <span>View Code on GitHub</span>
+                  <span class="btn__arrow">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 02: COLORADO EXPLORER -->
+          <article class="case-study reveal">
+            <!-- Visual Mockup Column -->
+            <div class="case-study__visual">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-url">colorado-explorer.app — Destination Platform</span>
+                </div>
+                <div class="browser-screen">
+                  <!-- Custom SVG UI Showcase -->
+                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Colorado Explorer preview">
+                    <rect width="520" height="325" fill="#1C2314"/>
+                    <!-- Mountain Vectors -->
+                    <path d="M0 220 L120 100 L200 170 L340 70 L440 180 L520 120 L520 325 L0 325 Z" fill="#28321C" stroke="rgba(236,231,214,0.2)" stroke-width="1"/>
+                    <path d="M0 260 Q140 220 280 250 T520 240 L520 325 L0 325 Z" fill="#3D4A2D" opacity="0.6"/>
+                    <!-- Topographic Lines -->
+                    <path d="M20 70 Q140 40 260 75 T500 50" stroke="#C8D92B" stroke-width="0.75" opacity="0.4" fill="none"/>
+                    <path d="M30 95 Q150 65 270 100 T510 75" stroke="#C8D92B" stroke-width="0.75" opacity="0.3" fill="none"/>
+                    <!-- Hero Content -->
+                    <text x="50" y="80" font-family="'Syne', sans-serif" font-size="22" font-weight="bold" fill="#ECE7D6">COLORADO</text>
+                    <text x="50" y="105" font-family="'Newsreader', serif" font-size="14" fill="#ECE7D6" font-style="italic" opacity="0.8">Alpine Guides & Expedition Planning</text>
+                    <!-- UI Filter Bar -->
+                    <g transform="translate(50, 130)">
+                      <rect x="0" y="0" width="110" height="26" rx="13" fill="#C8D92B"/>
+                      <text x="55" y="17" text-anchor="middle" font-family="'Syne', sans-serif" font-size="9" font-weight="bold" fill="#191919">ALL REGIONS</text>
+                      <rect x="120" y="0" width="100" height="26" rx="13" fill="rgba(255,255,255,0.08)" stroke="rgba(236,231,214,0.3)"/>
+                      <text x="170" y="17" text-anchor="middle" font-family="'Syne', sans-serif" font-size="9" font-weight="bold" fill="#ECE7D6">SUMMITS</text>
+                      <rect x="230" y="0" width="100" height="26" rx="13" fill="rgba(255,255,255,0.08)" stroke="rgba(236,231,214,0.3)"/>
+                      <text x="280" y="17" text-anchor="middle" font-family="'Syne', sans-serif" font-size="9" font-weight="bold" fill="#ECE7D6">CABINS</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Case Study Content Column -->
+            <div class="case-study__content">
+              <div>
+                <div class="case-study__meta">
+                  <span class="case-study__category">Editorial & Travel Discovery</span>
+                  <span class="case-study__year">Web Application</span>
+                </div>
+                <h3 class="case-study__title font-display">Colorado</h3>
+                
+                <div class="case-study__role-strip">
+                  <span class="role-tag"><strong>Role:</strong> Digital Art Direction & Responsive Web Build</span>
+                  <span class="role-tag"><strong>Focus:</strong> Interactive Content & Speed</span>
+                </div>
+
+                <p class="case-step__text" style="margin-bottom:var(--space-md);">
+                  An immersive editorial exploration platform for alpine travel, trail discovery, and regional excursion booking with seamless mobile ergonomics.
+                </p>
+
+                <!-- Detailed 4-Step Breakdown -->
+                <div class="case-study__breakdown">
+                  <div class="case-step">
+                    <span class="case-step__num">01 Challenge</span>
+                    <h4 class="case-step__label">The Problem</h4>
+                    <p class="case-step__text">Travel discovery websites frequently suffer from slow load times, bloated ads, and cluttered mobile navigation.</p>
+                  </div>
+                  <div class="case-step">
+                    <span class="case-step__num">02 Direction</span>
+                    <h4 class="case-step__label">The Strategy</h4>
+                    <p class="case-step__text">Crafted an editorial magazine aesthetic with high-readability typography, topographic motifs, and clean filter pathways.</p>
+                  </div>
+                  <div class="case-step">
+                    <span class="case-step__num">03 The Build</span>
+                    <h4 class="case-step__label">Technical Execution</h4>
+                    <p class="case-step__text">Engineered with lightweight semantic markup, CSS Grid layouts, and responsive touch gestures across viewports.</p>
+                  </div>
+                  <div class="case-step">
+                    <span class="case-step__num">04 Outcome</span>
+                    <h4 class="case-step__label">The Result</h4>
+                    <p class="case-step__text">Delivered a blistering-fast experience that encourages spontaneous exploration and frictionless booking inquiries.</p>
+                  </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="tech-pill-list">
+                  <span class="tech-pill">Semantic HTML5</span>
+                  <span class="tech-pill">Modular CSS3 Grid</span>
+                  <span class="tech-pill">JavaScript ES6+</span>
+                  <span class="tech-pill">Responsive Design</span>
+                  <span class="tech-pill">Interactive UI</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div class="case-study__actions">
+                <a href="#contact" class="btn btn--primary btn--sm">
+                  <span>Start Your Website</span>
+                  <span class="btn__arrow">→</span>
+                </a>
+                <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-light btn--sm">
+                  <span>View Code on GitHub</span>
+                  <span class="btn__arrow">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SERVICES SECTION: WHAT I BUILD (EGGSHELL CANVAS)
+         ================================================================== -->
+    <section class="services section-padding" id="services" aria-label="Services offered">
+      <div class="container">
+
+        <div class="services__header reveal">
+          <p class="text-meta" style="margin-bottom:8px">Capabilities & Deliverables</p>
+          <h2 class="services__title font-display">Services Engineered for Growth</h2>
+          <p class="services__subtitle">
+            From initial strategy and visual design to clean, performant code — I take full ownership of your digital web flagship.
+          </p>
+        </div>
+
+        <div class="three-col-grid">
+
+          <!-- Service 01 -->
+          <div class="service-card reveal">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">01</span>
+                <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <line x1="3" y1="9" x2="21" y2="9"/>
+                  <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title font-display">Custom Web Design</h3>
+              <p class="service-card__desc">
+                High-end, custom interface design that communicates your authority. No cookie-cutter templates or generic SaaS layouts.
+              </p>
+            </div>
+            <div class="service-card__deliverables">
+              <span class="service-item">Complete UI/UX Direction & Wireframing</span>
+              <span class="service-item">Bespoke Design Systems & Typography</span>
+              <span class="service-item">Mobile-First Responsive Layouts</span>
+              <span class="service-item">Interactive Figma Prototypes</span>
+            </div>
+          </div>
+
+          <!-- Service 02 -->
+          <div class="service-card reveal reveal--delay-1">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">02</span>
+                <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title font-display">Front-End Development</h3>
+              <p class="service-card__desc">
+                Fast, responsive, and accessible code built with contemporary standards. Clean code that scales smoothly as your business grows.
+              </p>
+            </div>
+            <div class="service-card__deliverables">
+              <span class="service-item">React / Next.js / Modern JS</span>
+              <span class="service-item">Semantic HTML5 & Modular CSS / Tailwind</span>
+              <span class="service-item">Speed & Core Web Vitals Optimization</span>
+              <span class="service-item">Accessibility (WCAG AA Compliance)</span>
+            </div>
+          </div>
+
+          <!-- Service 03 -->
+          <div class="service-card reveal reveal--delay-2">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">03</span>
+                <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                  <path d="M2 12h20"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title font-display">Redesigns & Landing Pages</h3>
+              <p class="service-card__desc">
+                Transforming outdated, low-converting sites into high-impact digital experiences that clearly explain what you do and why it matters.
+              </p>
+            </div>
+            <div class="service-card__deliverables">
+              <span class="service-item">High-Converting Launch & Campaign Pages</span>
+              <span class="service-item">Complete Brand & Website Redesigns</span>
+              <span class="service-item">Conversion Flow & UX Friction Audits</span>
+              <span class="service-item">Lead Intake & Analytics Integration</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         WHY WORK WITH ME: DIFFERENTIATORS (OLIVE BAND)
+         ================================================================== -->
+    <section class="why-me section-padding band-olive" id="why-me" aria-label="Why hire me">
+      <div class="container">
+
+        <div class="why-me__header reveal">
+          <p class="text-meta text-meta--light" style="margin-bottom:8px">The Independent Advantage</p>
+          <h2 class="why-me__title font-display">Why Work With Me</h2>
+          <p class="why-me__subtitle">
+            A rare combination of visual taste, engineering rigor, and practical business awareness.
+          </p>
+        </div>
+
+        <div class="three-col-grid">
+
+          <!-- Pillar 01 -->
+          <div class="pillar-box reveal">
+            <span class="pillar-box__num">01 / HYBRID WORKFLOW</span>
+            <h3 class="pillar-box__title font-display">Design + Development</h3>
+            <p class="pillar-box__desc">
+              You don't have to manage a designer who doesn't know how to code and a developer who has no eye for aesthetics. I design what can be built, and build exactly what was designed.
+            </p>
+            <p class="pillar-box__highlight">✓ Zero lost-in-translation handoffs</p>
+          </div>
+
+          <!-- Pillar 02 -->
+          <div class="pillar-box reveal reveal--delay-1">
+            <span class="pillar-box__num">02 / CRAFTSMANSHIP</span>
+            <h3 class="pillar-box__title font-display">Detail-Driven Execution</h3>
+            <p class="pillar-box__desc">
+              Typography hierarchies, micro-spacing, responsive ergonomics, and smooth transitions are crafted with obsessive care. The subtle details are what make visitors trust your business.
+            </p>
+            <p class="pillar-box__highlight">✓ Flawless mobile & desktop polish</p>
+          </div>
+
+          <!-- Pillar 03 -->
+          <div class="pillar-box reveal reveal--delay-2">
+            <span class="pillar-box__num">03 / BUSINESS FIRST</span>
+            <h3 class="pillar-box__title font-display">Conversion-Aware</h3>
+            <p class="pillar-box__desc">
+              A website should not just win design compliments — it must serve as your most effective 24/7 salesperson. Every layout is structured around visitor psychology and clear action triggers.
+            </p>
+            <p class="pillar-box__highlight">✓ Engineered to generate inquiries</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         PROCESS: 4 SIMPLE STEPS (EGGSHELL CANVAS)
+         ================================================================== -->
+    <section class="process section-padding" id="process" aria-label="Working process">
+      <div class="container">
+
+        <div class="process__header reveal">
+          <p class="text-meta" style="margin-bottom:8px">Structured & Transparent</p>
+          <h2 class="process__title font-display">How We Work Together</h2>
+          <p class="services__subtitle">
+            A straightforward, 4-step framework with clear milestones and regular communication at every stage.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <!-- Step 01 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">01</span>
+            <h3 class="process-step__title font-display">Discover</h3>
+            <p class="process-step__desc">
+              We discuss your business model, target audience, competitive landscape, and primary conversion objectives.
+            </p>
+            <span class="process-step__output">Milestone: Strategic Brief</span>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="process-step reveal reveal--delay-1">
+            <span class="process-step__number">02</span>
+            <h3 class="process-step__title font-display">Define</h3>
+            <p class="process-step__desc">
+              We establish the information architecture, content structure, visual art direction, and key wireframes.
+            </p>
+            <span class="process-step__output">Milestone: Design Prototypes</span>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="process-step reveal reveal--delay-2">
+            <span class="process-step__number">03</span>
+            <h3 class="process-step__title font-display">Build</h3>
+            <p class="process-step__desc">
+              I develop the approved design with clean, responsive code, integrating animations, forms, and performance optimizations.
+            </p>
+            <span class="process-step__output">Milestone: Live Staging Link</span>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="process-step reveal reveal--delay-3">
+            <span class="process-step__number">04</span>
+            <h3 class="process-step__title font-display">Refine & Launch</h3>
+            <p class="process-step__desc">
+              Thorough cross-device testing, SEO review, speed optimization, and smooth domain deployment to your live server.
+            </p>
+            <span class="process-step__output">Milestone: Production Handover</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         ABOUT ME & TECHNOLOGY STACK (SPLIT SCREEN)
+         ================================================================== -->
+    <section class="about-me section-padding" id="about" aria-label="About Omid">
+      <div class="container">
+        <div class="split-grid">
+
+          <!-- Personal Bio -->
+          <div class="about-me__bio reveal">
+            <p class="text-meta" style="margin-bottom:8px">Behind the Work</p>
+            <h2 class="about-me__title font-display">Hi, I'm Omid.</h2>
+            <p class="about-me__text">
+              I'm an independent <strong>web designer and front-end developer</strong>. I help founders, businesses, and growing brands build custom websites that command authority and turn visitors into clients.
+            </p>
+            <p class="about-me__text">
+              I believe the web should be both functional and memorable. Too many websites today rely on bloated themes that all look identical and load sluggishly. My work focuses on <strong>intentional typography, distinct visual character, and clean code</strong> that performs effortlessly on every device.
+            </p>
+
+            <div class="about-me__principles">
+              <div class="principle-item">
+                <span class="principle-bullet">✦</span>
+                <span class="principle-text"><strong>Zero templates:</strong> Everything is designed and coded bespoke to fit your exact goals.</span>
+              </div>
+              <div class="principle-item">
+                <span class="principle-bullet">✦</span>
+                <span class="principle-text"><strong>Performance first:</strong> Blistering load times, minimal dependencies, and high Core Web Vitals.</span>
+              </div>
+              <div class="principle-item">
+                <span class="principle-bullet">✦</span>
+                <span class="principle-text"><strong>Clear communication:</strong> Reliable timelines, frequent progress updates, and zero surprises.</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn--primary">
+              <span>Discuss Your Project</span>
+              <span class="btn__arrow">→</span>
+            </a>
+          </div>
+
+          <!-- Technologies & Stack -->
+          <div class="tech-stack-card reveal reveal--delay-1">
+            <h3 class="tech-stack-card__title font-display">Tools & Technologies</h3>
+            <p class="about-me__text" style="font-size:0.92rem;margin-bottom:var(--space-md);">
+              I use a battle-tested modern toolkit focused on speed, durability, and frictionless user experience:
+            </p>
+
+            <div class="tech-group">
+              <span class="tech-group__label">Design & Prototyping</span>
+              <div class="tech-badges">
+                <span class="tech-badge">Figma</span>
+                <span class="tech-badge">UI/UX Systems</span>
+                <span class="tech-badge">Wireframing</span>
+                <span class="tech-badge">Design Tokens</span>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <span class="tech-group__label">Frontend Core</span>
+              <div class="tech-badges">
+                <span class="tech-badge">HTML5 Semantic</span>
+                <span class="tech-badge">CSS3 / Modern Layouts</span>
+                <span class="tech-badge">JavaScript (ES6+)</span>
+                <span class="tech-badge">TypeScript</span>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <span class="tech-group__label">Frameworks & Tooling</span>
+              <div class="tech-badges">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">Git & GitHub</span>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <span class="tech-group__label">Quality & Deployment</span>
+              <div class="tech-badges">
+                <span class="tech-badge">Responsive Design</span>
+                <span class="tech-badge">SEO Optimization</span>
+                <span class="tech-badge">Web Accessibility (a11y)</span>
+                <span class="tech-badge">Vercel / Cloudflare</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         TRANSPARENT PRICING & SCOPING QUALIFICATION
+         ================================================================== -->
+    <section class="pricing-banner" aria-label="Project scoping">
+      <div class="container">
+        <div class="pricing-banner__inner">
+          <div class="pricing-banner__text">
+            <h3 class="font-display">Transparent, Individual Scoping</h3>
+            <p>Every project is scoped individually based on timeline, feature complexity, and custom deliverables. No surprise invoices.</p>
+          </div>
+          <a href="#contact" class="btn btn--primary btn--sm">
+            <span>Get a Project Estimate</span>
+            <span class="btn__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         CONTACT / LEAD GENERATION — REAL WORKING FORM (MOSS BAND)
+         ================================================================== -->
+    <section class="contact section-padding" id="contact" aria-label="Contact form">
+      <div class="container">
+        <div class="contact__inner">
+
+          <!-- Header -->
+          <div class="contact__header reveal">
+            <p class="text-meta text-meta--light" style="margin-bottom:8px">Let's Build Something Great</p>
+            <h2 class="contact__title font-display">Start a Project</h2>
+            <p class="contact__subtitle">
+              Have a website or redesign in mind? Fill out the brief form below and I'll get back to you within 24–48 hours with ideas and next steps.
+            </p>
+          </div>
+
+          <!-- Real Functional Lead Form -->
+          <form class="lead-form reveal reveal--delay-1" id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-access-key="YOUR_ACCESS_KEY_HERE" novalidate>
+            
+            <!-- Hidden Access Key (Easily configured in CONFIG or here) -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="New Project Inquiry from Portfolio Website">
+            <input type="hidden" name="from_name" value="Portfolio Lead Notification">
+            
+            <!-- Anti-Spam Honeypot -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+            <!-- Status Banner -->
+            <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+
+            <!-- Row 1: Name & Email -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="client-name">Your Name <span class="required-star">*</span></label>
+                <input type="text" id="client-name" name="name" placeholder="Jane Doe" required autocomplete="name">
+                <span class="field-error-msg">Please provide your name.</span>
+              </div>
+              <div class="form-field">
+                <label for="client-email">Email Address <span class="required-star">*</span></label>
+                <input type="email" id="client-email" name="email" placeholder="jane@company.com" required autocomplete="email">
+                <span class="field-error-msg">Please provide a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Row 2: Company & Project Scope -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="company-name">Company or Brand Name</label>
+                <input type="text" id="company-name" name="company" placeholder="Acme Studio" autocomplete="organization">
+              </div>
+              <div class="form-field">
+                <label for="project-scope">Project Scope</label>
+                <select id="project-scope" name="scope">
+                  <option value="" disabled selected>Select project type...</option>
+                  <option value="complete-website">Complete Website (Design + Build)</option>
+                  <option value="website-redesign">Website Redesign</option>
+                  <option value="landing-page">High-Converting Landing Page</option>
+                  <option value="frontend-dev">Front-End Development Only</option>
+                  <option value="consultation">Design & UX Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 3: Budget Range -->
             <div class="form-field">
-              <label for="scope">Engagement Scope</label>
-              <select id="scope" name="scope">
-                <option value="" disabled selected>Select a scope</option>
-                <option value="brand">Brand Architecture & Identity</option>
-                <option value="digital">Digital Flagship Platform</option>
-                <option value="strategy">Strategic Advisory</option>
-                <option value="full">Full Creative Direction</option>
+              <label for="budget-range">Estimated Budget (USD)</label>
+              <select id="budget-range" name="budget">
+                <option value="" disabled selected>Select your budget range...</option>
+                <option value="1500-3000">$1,500 – $3,000</option>
+                <option value="3000-6000">$3,000 – $6,000</option>
+                <option value="6000-10000">$6,000 – $10,000</option>
+                <option value="10000+">$10,000+</option>
+                <option value="undecided">Flexible / To be scoped</option>
               </select>
             </div>
+
+            <!-- Row 4: Project Details -->
+            <div class="form-field">
+              <label for="project-desc">Project Details & Objectives <span class="required-star">*</span></label>
+              <textarea id="project-desc" name="message" placeholder="Tell me about your business, current website problems, timeline, or key ambitions for this project..." rows="4" required></textarea>
+              <span class="field-error-msg">Please share a brief summary of your project requirements.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-submit-wrapper">
+              <button type="submit" class="btn btn--primary">
+                <span>Start a Project</span>
+                <span class="btn__arrow">→</span>
+              </button>
+              <p class="form-privacy-note">🔒 Your information is confidential. No spam or high-pressure sales pitches.</p>
+            </div>
+
+          </form>
+
+          <!-- Direct Fallback Email Link -->
+          <div class="direct-email-fallback reveal">
+            Prefer direct email? Reach out at: 
+            <a href="mailto:omideafuri@gmail.com?subject=Freelance%20Project%20Inquiry">omideafuri@gmail.com</a>
           </div>
 
-          <div class="form-field">
-            <label for="vision">Strategic Vision</label>
-            <textarea id="vision" name="vision" placeholder="Describe the opportunity, challenge, or ambition driving this inquiry..." rows="4"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--primary">
-            <span>Submit Private Inquiry</span>
-            <span class="btn__arrow">→</span>
-          </button>
-        </form>
-
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+  </main>
 
   <!-- ====================================================================
-       FOOTER — ARCHIVAL COLOPHON
+       FOOTER (AUTHENTIC COLOPHON)
        ==================================================================== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
 
       <div class="footer__upper">
 
-        <!-- Brand Column -->
-        <div class="footer__brand">
-          <div class="footer__brand-logo">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="1" y="1" width="30" height="30" rx="2" stroke="#191919" stroke-width="1"/>
-              <path d="M10 22L16 8L22 22" stroke="#191919" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="12" y1="18" x2="20" y2="18" stroke="#191919" stroke-width="1"/>
-              <circle cx="16" cy="24" r="1" fill="#C8D92B"/>
-            </svg>
-            <span>Atelier & Co.</span>
-          </div>
-          <p class="footer__brand-desc">
-            Bespoke creative direction and strategic brand architecture for 
-            category leaders, visionary enterprises, and private capital.
+        <!-- Column 1: Brand & Bio -->
+        <div>
+          <h3 class="footer__brand-title font-display">Omid</h3>
+          <p class="footer__brand-bio">
+            Independent web designer and front-end developer crafting bespoke, high-performance websites for ambitious businesses.
           </p>
         </div>
 
-        <!-- Index Column -->
+        <!-- Column 2: Navigation -->
         <div>
-          <h4 class="footer__col-title">Index</h4>
-          <nav class="footer__col-links" aria-label="Footer navigation - Index">
-            <a href="#about" class="footer__col-link">About & Thesis</a>
-            <a href="#portfolio" class="footer__col-link">Selected Commissions</a>
-            <a href="#methodology" class="footer__col-link">Methodology</a>
-            <a href="#contact" class="footer__col-link">Private Inquiry</a>
-          </nav>
+          <h4 class="footer__col-title">Navigation</h4>
+          <div class="footer__col-links">
+            <a href="#hero" class="footer__col-link">Home</a>
+            <a href="#work" class="footer__col-link">Selected Work</a>
+            <a href="#services" class="footer__col-link">Services</a>
+            <a href="#why-me" class="footer__col-link">Why Me</a>
+            <a href="#process" class="footer__col-link">Process</a>
+            <a href="#about" class="footer__col-link">About</a>
+          </div>
         </div>
 
-        <!-- Services Column -->
+        <!-- Column 3: Services -->
         <div>
-          <h4 class="footer__col-title">Services</h4>
-          <nav class="footer__col-links" aria-label="Footer navigation - Services">
-            <a href="#" class="footer__col-link">Brand Architecture</a>
-            <a href="#" class="footer__col-link">Digital Flagships</a>
-            <a href="#" class="footer__col-link">Strategic Advisory</a>
-            <a href="#" class="footer__col-link">Creative Direction</a>
-          </nav>
+          <h4 class="footer__col-title">Specialties</h4>
+          <div class="footer__col-links">
+            <span class="footer__col-link">Custom Web Design</span>
+            <span class="footer__col-link">Front-End Development</span>
+            <span class="footer__col-link">Website Redesigns</span>
+            <span class="footer__col-link">Landing Pages</span>
+            <span class="footer__col-link">UI/UX Systems</span>
+          </div>
         </div>
 
-        <!-- Connect Column -->
+        <!-- Column 4: Profiles & Direct Contact -->
         <div>
           <h4 class="footer__col-title">Connect</h4>
-          <nav class="footer__col-links" aria-label="Footer navigation - Connect">
-            <a href="#" class="footer__col-link">LinkedIn</a>
-            <a href="#" class="footer__col-link">Instagram</a>
-            <a href="#" class="footer__col-link">Behance</a>
-            <a href="mailto:studio@atelier.co" class="footer__col-link">studio@atelier.co</a>
-          </nav>
+          <div class="footer__col-links">
+            <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="footer__col-link">GitHub (Omideafuri) ↗</a>
+            <a href="mailto:omideafuri@gmail.com" class="footer__col-link">omideafuri@gmail.com</a>
+            <a href="#contact" class="footer__col-link">Start a Project →</a>
+          </div>
         </div>
 
       </div>
 
-      <!-- Lower Bar -->
+      <!-- Lower Colophon Bar -->
       <div class="footer__lower">
         <p class="footer__copyright">
-          © <span class="footer__year">2026</span> Atelier & Co. All rights reserved.
+          © <span id="current-year">2026</span> Omid. All rights reserved. Handcrafted with semantic code.
         </p>
-
-        <!-- Central Wax Seal Monogram -->
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Atelier monogram seal">
-          <!-- Wax seal outer ring -->
-          <circle cx="20" cy="20" r="18" stroke="#191919" stroke-width="0.6"/>
-          <circle cx="20" cy="20" r="15" stroke="#191919" stroke-width="0.4" opacity="0.5"/>
-          <!-- Scalloped edge suggestion -->
-          <circle cx="20" cy="2" r="1.5" fill="#191919" opacity="0.15"/>
-          <circle cx="38" cy="20" r="1.5" fill="#191919" opacity="0.15"/>
-          <circle cx="20" cy="38" r="1.5" fill="#191919" opacity="0.15"/>
-          <circle cx="2" cy="20" r="1.5" fill="#191919" opacity="0.15"/>
-          <!-- Monogram A -->
-          <path d="M15 28L20 12L25 28" stroke="#191919" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="16.5" y1="24" x2="23.5" y2="24" stroke="#191919" stroke-width="0.8"/>
-          <circle cx="20" cy="30" r="0.8" fill="#C8D92B"/>
-        </svg>
-
         <p class="footer__colophon">
-          Typeset in Syne, Newsreader & EB Garamond. Handcrafted with bespoke code.
+          Typeset in Syne, Newsreader & EB Garamond. Built for speed & conversion.
         </p>
       </div>
 
     </div>
   </footer>
 
-
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script src="js/main.js"></script>
-
 </body>
 </html>
