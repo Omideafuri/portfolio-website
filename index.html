@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO & Authority Metadata -->
-  <title>Omid — Freelance Web Designer & Front-End Developer</title>
-  <meta name="description" content="I design and build high-performance websites for businesses, brands, and ambitious founders. Combining distinct visual identity, thoughtful UX, and modern frontend development.">
-  <meta name="author" content="Omid">
+  <title>Omid Mohammadi — Premium Web & E-Commerce Developer</title>
+  <meta name="description" content="I design and build high-performance websites, e-commerce platforms, and web applications combining visual design, business thinking, and modern full-stack technology.">
+  <meta name="author" content="Omid Mohammadi">
   <meta name="robots" content="index, follow">
   
-  <!-- Canonical & Social Meta -->
+  <!-- Canonical & Social Graph -->
   <link rel="canonical" href="https://omideafuri.github.io/portfolio-website/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Omid — Freelance Web Designer & Front-End Developer">
-  <meta property="og:description" content="Websites that make good businesses look undeniable. High-performance design & development.">
+  <meta property="og:title" content="Omid Mohammadi — Premium Web & E-Commerce Developer">
+  <meta property="og:description" content="I build websites that look expensive — and work like serious products. Next.js, React, TypeScript, PostgreSQL, Prisma, Cloudflare.">
   <meta property="og:url" content="https://omideafuri.github.io/portfolio-website/">
-  <meta property="og:site_name" content="Omid Portfolio">
+  <meta property="og:site_name" content="Omid Mohammadi Portfolio">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Omid — Freelance Web Designer & Front-End Developer">
-  <meta name="twitter:description" content="Websites that make good businesses look undeniable. High-performance design & development.">
+  <meta name="twitter:title" content="Omid Mohammadi — Premium Web & E-Commerce Developer">
+  <meta name="twitter:description" content="I build websites that look expensive — and work like serious products. Next.js, React, TypeScript, PostgreSQL, Prisma.">
 
-  <!-- Preconnect & Fonts -->
+  <!-- Fonts & Resource Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -30,20 +30,23 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Favicon (Inline Vector SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23191919'/><text x='50' y='68' font-family='sans-serif' font-size='56' font-weight='bold' fill='%23C8D92B' text-anchor='middle'>O</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23191919'/><text x='50' y='68' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23C8D92B' text-anchor='middle'>OM</text></svg>">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Omid",
-    "jobTitle": "Freelance Web Designer & Front-End Developer",
+    "name": "Omid Mohammadi",
+    "jobTitle": "Premium Web & E-commerce Developer",
     "url": "https://omideafuri.github.io/portfolio-website/",
     "sameAs": [
       "https://github.com/Omideafuri"
     ],
-    "knowsAbout": ["Web Design", "Front-End Development", "UI/UX Design", "React", "Next.js", "JavaScript", "CSS3", "HTML5"]
+    "knowsAbout": [
+      "Next.js", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS",
+      "E-Commerce Architecture", "UI/UX Design", "Full-Stack Web Development", "Cloudflare"
+    ]
   }
   </script>
 </head>
@@ -59,21 +62,23 @@
     <div class="nav__inner">
 
       <!-- Brand / Monogram -->
-      <a href="#hero" class="nav__brand" aria-label="Omid - Home">
-        <span class="nav__logo-badge" aria-hidden="true">O</span>
+      <a href="#hero" class="nav__brand" aria-label="Omid Mohammadi - Home">
+        <span class="nav__logo-badge" aria-hidden="true">OM</span>
         <div class="nav__brand-info">
-          <span class="nav__brand-name">Omid</span>
-          <span class="nav__brand-role">Designer & Developer</span>
+          <span class="nav__brand-name">Omid Mohammadi</span>
+          <span class="nav__brand-role">Web & E-Commerce Developer</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="nav__links" id="primary-navigation" aria-label="Primary">
+      <nav class="nav__links" id="primary-navigation" aria-label="Primary Navigation">
         <a href="#work" class="nav__link">Selected Work</a>
+        <a href="#differentiator" class="nav__link">Differentiator</a>
         <a href="#services" class="nav__link">Services</a>
-        <a href="#why-me" class="nav__link">Why Me</a>
         <a href="#process" class="nav__link">Process</a>
         <a href="#about" class="nav__link">About</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#skills" class="nav__link">Skills</a>
       </nav>
 
       <!-- Nav Actions & Availability Badge -->
@@ -104,7 +109,7 @@
   <main id="main-content">
 
     <!-- ==================================================================
-         HERO SECTION: CLEAR PERSONAL VALUE PROPOSITION
+         HERO SECTION: CLIENT-FOCUSED VALUE PROPOSITION
          ================================================================== -->
     <section class="hero" id="hero" aria-label="Introduction">
       <div class="hero__atmosphere" aria-hidden="true"></div>
@@ -115,20 +120,20 @@
         <!-- Kicker with status -->
         <div class="hero__kicker reveal">
           <span class="status-dot" aria-hidden="true"></span>
-          <span class="hero__kicker-tag">Independent Web Designer & Front-End Developer</span>
+          <span class="hero__kicker-tag">Omid Mohammadi — Premium Web & E-Commerce Developer</span>
         </div>
 
         <!-- High-Impact Outcome Headline -->
         <h1 class="hero__headline font-display reveal reveal--delay-1">
-          Websites that make good businesses look <span class="serif-accent">undeniable.</span>
+          I build websites that look expensive — and work like <span class="serif-accent">serious products.</span>
         </h1>
 
-        <!-- Clear, No-BS Supporting Value Narrative -->
+        <!-- Supporting Value Copy -->
         <p class="hero__subline reveal reveal--delay-2">
-          I design and build <strong>high-performance websites</strong> for businesses, brands, and ambitious founders — combining distinct visual identity, thoughtful UX, and clean modern development to turn visitors into paying clients.
+          Premium websites, e-commerce platforms, and web applications built with <strong>modern full-stack technology</strong> and <strong>commercial thinking</strong>. I bridge high-end visual design with production-ready code to turn visitors into paying customers.
         </p>
 
-        <!-- Primary & Secondary CTAs -->
+        <!-- Primary, Secondary CTAs & Resume -->
         <div class="btn-group reveal reveal--delay-3">
           <a href="#contact" class="btn btn--primary">
             <span>Start a Project</span>
@@ -138,21 +143,25 @@
             <span>View My Work</span>
             <span class="btn__arrow" style="background:var(--color-eggshell-warm);color:var(--color-onyx)">↓</span>
           </a>
+          <a href="#about" class="btn btn--ghost" style="border-style:dashed;">
+            <span>About & Background</span>
+            <span class="btn__arrow" style="background:var(--color-eggshell-warm);color:var(--color-onyx)">→</span>
+          </a>
         </div>
 
-        <!-- Trust & Meta Footer -->
+        <!-- Meta Footer -->
         <div class="hero__footer-meta reveal reveal--delay-3">
           <div class="hero__meta-item">
-            <span class="hero__meta-label">Discipline</span>
-            <span class="hero__meta-value">UI/UX Design + Full Front-End Build</span>
+            <span class="hero__meta-label">Core Discipline</span>
+            <span class="hero__meta-value">Full-Stack Web & E-Commerce Development</span>
           </div>
           <div class="hero__meta-item">
-            <span class="hero__meta-label">Focus</span>
-            <span class="hero__meta-value">Fast, High-Converting Digital Flagships</span>
+            <span class="hero__meta-label">Primary Stack</span>
+            <span class="hero__meta-value">Next.js · React · TypeScript · PostgreSQL · Prisma · Cloudflare</span>
           </div>
           <div class="hero__meta-item">
-            <span class="hero__meta-label">Current Status</span>
-            <span class="hero__meta-value" style="color:var(--color-olive-dark);">Open for Q3/Q4 Commissions</span>
+            <span class="hero__meta-label">Availability</span>
+            <span class="hero__meta-value" style="color:var(--color-olive-dark);">Open for Selected Commissions</span>
           </div>
         </div>
 
@@ -160,50 +169,64 @@
     </section>
 
     <!-- ==================================================================
-         VALUE PROPOSITION STRIP (GENUINE ADVANTAGES)
+         DIFFERENTIATOR SECTION: DESIGN × TECHNOLOGY × BUSINESS (OLIVE BAND)
          ================================================================== -->
-    <section class="value-strip" aria-label="Core advantages">
+    <section class="differentiator section-padding band-olive" id="differentiator" aria-label="Core Differentiator">
       <div class="container">
-        <div class="value-strip__grid">
-          
-          <div class="value-item">
-            <span class="value-item__icon">✦</span>
+
+        <div class="differentiator__header reveal">
+          <p class="text-meta text-meta--light" style="margin-bottom:8px">The Triple Advantage</p>
+          <h2 class="differentiator__title font-display">Design × Technology × Business</h2>
+          <p class="differentiator__subtitle">
+            Most developers only write code. Most designers only draw mockups. I connect visual taste, modern engineering, and commercial strategy into one digital product.
+          </p>
+        </div>
+
+        <div class="three-col-grid">
+
+          <!-- Dimension 01: Design -->
+          <div class="pillar-box reveal">
             <div>
-              <p class="value-item__title">Design + Development</p>
-              <p class="value-item__desc">One unified workflow, zero handoff friction</p>
+              <span class="pillar-box__num">01 / AESTHETICS & UX</span>
+              <h3 class="pillar-box__title font-display">Visual Design</h3>
+              <p class="pillar-box__desc">
+                I care deeply about visual hierarchy, editorial typography, spatial balance, micro-interactions, and brand identity. The details users actually notice are what make a business look established and undeniable.
+              </p>
             </div>
+            <p class="pillar-box__highlight">✓ Tailored design systems & bespoke UI</p>
           </div>
 
-          <div class="value-item">
-            <span class="value-item__icon">✦</span>
+          <!-- Dimension 02: Technology -->
+          <div class="pillar-box reveal reveal--delay-1">
             <div>
-              <p class="value-item__title">Conversion-Focused</p>
-              <p class="value-item__desc">Engineered to drive real inquiries and sales</p>
+              <span class="pillar-box__num">02 / FULL-STACK ENGINEERING</span>
+              <h3 class="pillar-box__title font-display">Modern Technology</h3>
+              <p class="pillar-box__desc">
+                I build with production-oriented architecture: Next.js, React, TypeScript, PostgreSQL, Prisma, authentication systems, and Cloudflare deployment. Clean, maintainable code that scales without fragility.
+              </p>
             </div>
+            <p class="pillar-box__highlight">✓ Production-ready, database-backed apps</p>
           </div>
 
-          <div class="value-item">
-            <span class="value-item__icon">✦</span>
+          <!-- Dimension 03: Business -->
+          <div class="pillar-box reveal reveal--delay-2">
             <div>
-              <p class="value-item__title">Clean Modern Code</p>
-              <p class="value-item__desc">Fast, accessible, and easily maintainable</p>
+              <span class="pillar-box__num">03 / COMMERCIAL VALUE</span>
+              <h3 class="pillar-box__title font-display">Business Thinking</h3>
+              <p class="pillar-box__desc">
+                My background in sales, market management, and business development gives me practical awareness of customer needs, product positioning, objection handling, and commercial conversion.
+              </p>
             </div>
-          </div>
-
-          <div class="value-item">
-            <span class="value-item__icon">✦</span>
-            <div>
-              <p class="value-item__title">Direct Communication</p>
-              <p class="value-item__desc">Work directly with the builder, not account managers</p>
-            </div>
+            <p class="pillar-box__highlight">✓ Structured to drive revenue & inquiries</p>
           </div>
 
         </div>
+
       </div>
     </section>
 
     <!-- ==================================================================
-         SELECTED WORK: REAL PROFESSIONAL CASE STUDIES (DEEP MOSS BAND)
+         FEATURED WORK: REAL CASE STUDIES (DEEP MOSS BAND)
          ================================================================== -->
     <section class="portfolio section-padding band-moss" id="work" aria-label="Selected Projects">
       <div class="container">
@@ -211,12 +234,12 @@
         <!-- Portfolio Header -->
         <div class="portfolio__header reveal">
           <div>
-            <p class="text-meta text-meta--light" style="margin-bottom:8px">Portfolio Showcase</p>
-            <h2 class="portfolio__title font-display">Featured Projects</h2>
-            <p class="portfolio__subtitle">Real solutions engineered for clarity, aesthetic distinction, and conversion.</p>
+            <p class="text-meta text-meta--light" style="margin-bottom:8px">Production Showcase</p>
+            <h2 class="portfolio__title font-display">Selected Work</h2>
+            <p class="portfolio__subtitle">Real-world applications combining luxury brand direction with database-backed architecture.</p>
           </div>
           <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-light btn--sm">
-            <span>Explore All on GitHub</span>
+            <span>View GitHub Repositories</span>
             <span class="btn__arrow">↗</span>
           </a>
         </div>
@@ -233,41 +256,41 @@
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
-                  <span class="browser-url">zaravigold.com — Luxury Atelier & E-Commerce</span>
+                  <span class="browser-url">zaravigold.com — Luxury E-Commerce & Full-Stack Platform</span>
                 </div>
                 <div class="browser-screen">
                   <!-- Custom SVG UI Showcase -->
-                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zaravi Gold preview">
+                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zaravi Gold E-commerce UI preview">
                     <rect width="520" height="325" fill="#181914"/>
                     <!-- Ambient gold glow -->
-                    <circle cx="260" cy="140" r="120" fill="#C8D92B" opacity="0.08" filter="blur(30px)"/>
+                    <circle cx="260" cy="130" r="130" fill="#C8D92B" opacity="0.09" filter="blur(32px)"/>
                     <!-- Header -->
-                    <rect x="24" y="20" width="80" height="12" rx="2" fill="#ECE7D6" opacity="0.8"/>
-                    <rect x="360" y="20" width="136" height="12" rx="2" fill="#ECE7D6" opacity="0.4"/>
+                    <rect x="24" y="18" width="84" height="12" rx="2" fill="#ECE7D6" opacity="0.85"/>
+                    <rect x="340" y="18" width="156" height="12" rx="2" fill="#ECE7D6" opacity="0.4"/>
                     <!-- Hero Section -->
-                    <text x="260" y="95" text-anchor="middle" font-family="'Newsreader', serif" font-size="24" fill="#ECE7D6" font-style="italic">Artisanal Gold & Precious Craft</text>
-                    <text x="260" y="118" text-anchor="middle" font-family="'Syne', sans-serif" font-size="11" fill="#C8D92B" letter-spacing="3">BESPOKE COLLECTION 2026</text>
+                    <text x="260" y="85" text-anchor="middle" font-family="'Newsreader', serif" font-size="22" fill="#ECE7D6" font-style="italic">Artisanal Gold & Precious Jewelry</text>
+                    <text x="260" y="106" text-anchor="middle" font-family="'Syne', sans-serif" font-size="10" fill="#C8D92B" letter-spacing="3">AUTHENTICATED DIGITAL ATELIER</text>
                     <!-- Product Showcase Cards -->
-                    <g transform="translate(40, 145)">
+                    <g transform="translate(36, 130)">
                       <!-- Product Card 1 -->
-                      <rect x="0" y="0" width="130" height="150" rx="4" fill="#24261D" stroke="rgba(236,231,214,0.15)" stroke-width="1"/>
-                      <circle cx="65" cy="55" r="32" stroke="#C8D92B" stroke-width="2" fill="none" opacity="0.7"/>
-                      <circle cx="65" cy="55" r="24" stroke="#ECE7D6" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.5"/>
-                      <rect x="15" y="105" width="100" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
-                      <rect x="35" y="122" width="60" height="14" rx="7" fill="#C8D92B" opacity="0.9"/>
+                      <rect x="0" y="0" width="136" height="165" rx="4" fill="#24261D" stroke="rgba(236,231,214,0.15)" stroke-width="1"/>
+                      <circle cx="68" cy="58" r="34" stroke="#C8D92B" stroke-width="2" fill="none" opacity="0.75"/>
+                      <circle cx="68" cy="58" r="24" stroke="#ECE7D6" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.5"/>
+                      <rect x="16" y="112" width="104" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
+                      <rect x="36" y="132" width="64" height="16" rx="8" fill="#C8D92B" opacity="0.9"/>
                       
                       <!-- Product Card 2 -->
-                      <rect x="150" y="0" width="140" height="150" rx="4" fill="#24261D" stroke="rgba(200,217,43,0.3)" stroke-width="1"/>
-                      <path d="M220 30 L240 75 L200 75 Z" stroke="#C8D92B" stroke-width="2" fill="none" opacity="0.8"/>
-                      <circle cx="220" cy="58" r="10" fill="#ECE7D6" opacity="0.6"/>
-                      <rect x="170" y="105" width="100" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
-                      <rect x="190" y="122" width="60" height="14" rx="7" fill="#C8D92B" opacity="0.9"/>
+                      <rect x="156" y="0" width="136" height="165" rx="4" fill="#24261D" stroke="rgba(200,217,43,0.35)" stroke-width="1"/>
+                      <path d="M224 32 L246 80 L202 80 Z" stroke="#C8D92B" stroke-width="2" fill="none" opacity="0.85"/>
+                      <circle cx="224" cy="62" r="10" fill="#ECE7D6" opacity="0.65"/>
+                      <rect x="172" y="112" width="104" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
+                      <rect x="192" y="132" width="64" height="16" rx="8" fill="#C8D92B" opacity="0.9"/>
 
                       <!-- Product Card 3 -->
-                      <rect x="310" y="0" width="130" height="150" rx="4" fill="#24261D" stroke="rgba(236,231,214,0.15)" stroke-width="1"/>
-                      <ellipse cx="375" cy="55" rx="30" ry="20" stroke="#C8D92B" stroke-width="1.8" fill="none" opacity="0.7"/>
-                      <rect x="325" y="105" width="100" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
-                      <rect x="345" y="122" width="60" height="14" rx="7" fill="#C8D92B" opacity="0.9"/>
+                      <rect x="312" y="0" width="136" height="165" rx="4" fill="#24261D" stroke="rgba(236,231,214,0.15)" stroke-width="1"/>
+                      <ellipse cx="380" cy="58" rx="32" ry="22" stroke="#C8D92B" stroke-width="1.8" fill="none" opacity="0.75"/>
+                      <rect x="328" y="112" width="104" height="8" rx="2" fill="#ECE7D6" opacity="0.7"/>
+                      <rect x="348" y="132" width="64" height="16" rx="8" fill="#C8D92B" opacity="0.9"/>
                     </g>
                   </svg>
                 </div>
@@ -278,58 +301,83 @@
             <div class="case-study__content">
               <div>
                 <div class="case-study__meta">
-                  <span class="case-study__category">E-Commerce & Digital Flagship</span>
-                  <span class="case-study__year">Featured Project</span>
+                  <span class="case-study__category">Featured Case Study</span>
+                  <span class="case-study__year">Full-Stack E-Commerce</span>
                 </div>
-                <h3 class="case-study__title font-display">Zaravi Gold</h3>
+                <h3 class="case-study__title font-display">Zaravi Gold — Premium Gold & Jewelry Platform</h3>
                 
                 <div class="case-study__role-strip">
-                  <span class="role-tag"><strong>Role:</strong> UI/UX Design & Front-End Build</span>
-                  <span class="role-tag"><strong>Focus:</strong> Brand Elegance + Fast Checkout UX</span>
+                  <span class="role-tag"><strong>Role:</strong> End-to-End Product Design & Full-Stack Development</span>
+                  <span class="role-tag"><strong>Focus:</strong> Luxury Experience + Real Application Architecture</span>
                 </div>
 
                 <p class="case-step__text" style="margin-bottom:var(--space-md);">
-                  An exclusive digital boutique for an artisanal jewelry atelier, replacing generic e-commerce templates with a warm, editorial luxury shopping experience.
+                  Zaravi Gold was designed and engineered as a premium digital commerce platform for a modern gold and jewelry brand, combining luxury visual direction with real full-stack application architecture.
                 </p>
 
-                <!-- Detailed 4-Step Breakdown -->
+                <!-- Dual Pillar: Design & Engineering -->
+                <div class="case-study__pillars">
+                  <div class="case-pillar">
+                    <span class="case-pillar__label">✦ Design Dimension</span>
+                    <div class="case-pillar__list">
+                      <span class="case-pillar__item">Luxury visual identity & typography</span>
+                      <span class="case-pillar__item">Premium macro product presentation</span>
+                      <span class="case-pillar__item">Persian/RTL-ready visual details</span>
+                      <span class="case-pillar__item">Responsive, tactile shopping UX</span>
+                    </div>
+                  </div>
+                  <div class="case-pillar">
+                    <span class="case-pillar__label">✦ Engineering Dimension</span>
+                    <div class="case-pillar__list">
+                      <span class="case-pillar__item">Next.js & TypeScript architecture</span>
+                      <span class="case-pillar__item">PostgreSQL & Prisma data layer</span>
+                      <span class="case-pillar__item">User authentication & admin panel</span>
+                      <span class="case-pillar__item">Dynamic gold price & catalog logic</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4-Step Breakdown -->
                 <div class="case-study__breakdown">
                   <div class="case-step">
                     <span class="case-step__num">01 Challenge</span>
                     <h4 class="case-step__label">The Problem</h4>
-                    <p class="case-step__text">Standard storefront themes felt transactional and cheapened the perception of handcrafted high-value jewelry.</p>
+                    <p class="case-step__text">Generic storefronts look transactional and fail to justify high price points for handcrafted gold and jewelry.</p>
                   </div>
                   <div class="case-step">
                     <span class="case-step__num">02 Direction</span>
                     <h4 class="case-step__label">The Strategy</h4>
-                    <p class="case-step__text">Designed an editorial art-directed layout with warm gold/olive tones, high-contrast typography, and rich macro product details.</p>
+                    <p class="case-step__text">Structured an editorial luxury aesthetic with deep contrast, gold accents, and seamless catalog navigation.</p>
                   </div>
                   <div class="case-step">
                     <span class="case-step__num">03 The Build</span>
-                    <h4 class="case-step__label">Technical Execution</h4>
-                    <p class="case-step__text">Built with modern responsive frontend architecture, optimized image delivery, and smooth micro-interactions.</p>
+                    <h4 class="case-step__label">Execution</h4>
+                    <p class="case-step__text">Implemented Next.js, Prisma ORM, PostgreSQL schema, order management, and secure admin workflows.</p>
                   </div>
                   <div class="case-step">
                     <span class="case-step__num">04 Outcome</span>
                     <h4 class="case-step__label">The Result</h4>
-                    <p class="case-step__text">Repositioned the digital experience into an unmistakable premium brand asset that builds immediate customer trust.</p>
+                    <p class="case-step__text">Built a production-oriented e-commerce asset that elevates the brand into a distinct market position.</p>
                   </div>
                 </div>
 
                 <!-- Technologies -->
                 <div class="tech-pill-list">
-                  <span class="tech-pill">Next.js / React</span>
+                  <span class="tech-pill">Next.js</span>
+                  <span class="tech-pill">React</span>
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Prisma ORM</span>
                   <span class="tech-pill">Tailwind CSS</span>
-                  <span class="tech-pill">Figma Design</span>
-                  <span class="tech-pill">E-Commerce UX</span>
-                  <span class="tech-pill">Performance Optimization</span>
+                  <span class="tech-pill">Cloudflare</span>
+                  <span class="tech-pill">Auth & Admin</span>
                 </div>
               </div>
 
               <!-- Action Links -->
               <div class="case-study__actions">
                 <a href="#contact" class="btn btn--primary btn--sm">
-                  <span>Inquire About Similar Project</span>
+                  <span>Discuss E-Commerce Project</span>
                   <span class="btn__arrow">→</span>
                 </a>
                 <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-light btn--sm">
@@ -349,11 +397,11 @@
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
-                  <span class="browser-url">colorado-explorer.app — Destination Platform</span>
+                  <span class="browser-url">colorado-explorer.app — Regional Travel & Discovery Platform</span>
                 </div>
                 <div class="browser-screen">
                   <!-- Custom SVG UI Showcase -->
-                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Colorado Explorer preview">
+                  <svg viewBox="0 0 520 325" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Colorado Explorer platform preview">
                     <rect width="520" height="325" fill="#1C2314"/>
                     <!-- Mountain Vectors -->
                     <path d="M0 220 L120 100 L200 170 L340 70 L440 180 L520 120 L520 325 L0 325 Z" fill="#28321C" stroke="rgba(236,231,214,0.2)" stroke-width="1"/>
@@ -363,11 +411,11 @@
                     <path d="M30 95 Q150 65 270 100 T510 75" stroke="#C8D92B" stroke-width="0.75" opacity="0.3" fill="none"/>
                     <!-- Hero Content -->
                     <text x="50" y="80" font-family="'Syne', sans-serif" font-size="22" font-weight="bold" fill="#ECE7D6">COLORADO</text>
-                    <text x="50" y="105" font-family="'Newsreader', serif" font-size="14" fill="#ECE7D6" font-style="italic" opacity="0.8">Alpine Guides & Expedition Planning</text>
+                    <text x="50" y="105" font-family="'Newsreader', serif" font-size="14" fill="#ECE7D6" font-style="italic" opacity="0.85">Alpine Expedition & Itinerary Platform</text>
                     <!-- UI Filter Bar -->
                     <g transform="translate(50, 130)">
                       <rect x="0" y="0" width="110" height="26" rx="13" fill="#C8D92B"/>
-                      <text x="55" y="17" text-anchor="middle" font-family="'Syne', sans-serif" font-size="9" font-weight="bold" fill="#191919">ALL REGIONS</text>
+                      <text x="55" y="17" text-anchor="middle" font-family="'Syne', sans-serif" font-size="9" font-weight="bold" fill="#191919">ALL TRAILS</text>
                       <rect x="120" y="0" width="100" height="26" rx="13" fill="rgba(255,255,255,0.08)" stroke="rgba(236,231,214,0.3)"/>
                       <text x="170" y="17" text-anchor="middle" font-family="'Syne', sans-serif" font-size="9" font-weight="bold" fill="#ECE7D6">SUMMITS</text>
                       <rect x="230" y="0" width="100" height="26" rx="13" fill="rgba(255,255,255,0.08)" stroke="rgba(236,231,214,0.3)"/>
@@ -382,58 +430,80 @@
             <div class="case-study__content">
               <div>
                 <div class="case-study__meta">
-                  <span class="case-study__category">Editorial & Travel Discovery</span>
-                  <span class="case-study__year">Web Application</span>
+                  <span class="case-study__category">Interactive Platform</span>
+                  <span class="case-study__year">Editorial Web Architecture</span>
                 </div>
-                <h3 class="case-study__title font-display">Colorado</h3>
+                <h3 class="case-study__title font-display">Colorado — Alpine Discovery Platform</h3>
                 
                 <div class="case-study__role-strip">
-                  <span class="role-tag"><strong>Role:</strong> Digital Art Direction & Responsive Web Build</span>
-                  <span class="role-tag"><strong>Focus:</strong> Interactive Content & Speed</span>
+                  <span class="role-tag"><strong>Role:</strong> Digital Art Direction & Responsive Web Architecture</span>
+                  <span class="role-tag"><strong>Focus:</strong> Fast Interactive Filtering + Editorial Storytelling</span>
                 </div>
 
                 <p class="case-step__text" style="margin-bottom:var(--space-md);">
-                  An immersive editorial exploration platform for alpine travel, trail discovery, and regional excursion booking with seamless mobile ergonomics.
+                  An editorial exploration platform for alpine travel, trail discovery, and excursion planning, engineered with lightweight modular architecture and zero layout shift.
                 </p>
 
-                <!-- Detailed 4-Step Breakdown -->
+                <!-- Dual Pillar: Design & Engineering -->
+                <div class="case-study__pillars">
+                  <div class="case-pillar">
+                    <span class="case-pillar__label">✦ Design Dimension</span>
+                    <div class="case-pillar__list">
+                      <span class="case-pillar__item">Editorial magazine layout structure</span>
+                      <span class="case-pillar__item">Micro-topographic line textures</span>
+                      <span class="case-pillar__item">High-contrast readability across devices</span>
+                      <span class="case-pillar__item">Frictionless itinerary exploration flow</span>
+                    </div>
+                  </div>
+                  <div class="case-pillar">
+                    <span class="case-pillar__label">✦ Engineering Dimension</span>
+                    <div class="case-pillar__list">
+                      <span class="case-pillar__item">Semantic HTML5 & Modular CSS3 Grid</span>
+                      <span class="case-pillar__item">Lightweight JavaScript filtering</span>
+                      <span class="case-pillar__item">Blistering load times & low asset footprint</span>
+                      <span class="case-pillar__item">Touch-optimized mobile navigation</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4-Step Breakdown -->
                 <div class="case-study__breakdown">
                   <div class="case-step">
                     <span class="case-step__num">01 Challenge</span>
                     <h4 class="case-step__label">The Problem</h4>
-                    <p class="case-step__text">Travel discovery websites frequently suffer from slow load times, bloated ads, and cluttered mobile navigation.</p>
+                    <p class="case-step__text">Heavy travel websites suffer from slow load times, bloated ads, and cluttered mobile layouts that hurt engagement.</p>
                   </div>
                   <div class="case-step">
                     <span class="case-step__num">02 Direction</span>
                     <h4 class="case-step__label">The Strategy</h4>
-                    <p class="case-step__text">Crafted an editorial magazine aesthetic with high-readability typography, topographic motifs, and clean filter pathways.</p>
+                    <p class="case-step__text">Crafted an editorial magazine aesthetic with atmospheric mountain gradients and clear journey-planning pathways.</p>
                   </div>
                   <div class="case-step">
                     <span class="case-step__num">03 The Build</span>
-                    <h4 class="case-step__label">Technical Execution</h4>
-                    <p class="case-step__text">Engineered with lightweight semantic markup, CSS Grid layouts, and responsive touch gestures across viewports.</p>
+                    <h4 class="case-step__label">Execution</h4>
+                    <p class="case-step__text">Engineered a lightweight modular frontend with fast initial paint and fluid responsive viewports.</p>
                   </div>
                   <div class="case-step">
                     <span class="case-step__num">04 Outcome</span>
                     <h4 class="case-step__label">The Result</h4>
-                    <p class="case-step__text">Delivered a blistering-fast experience that encourages spontaneous exploration and frictionless booking inquiries.</p>
+                    <p class="case-step__text">Created an engaging destination platform that invites exploration and drives direct inquiry submissions.</p>
                   </div>
                 </div>
 
                 <!-- Technologies -->
                 <div class="tech-pill-list">
                   <span class="tech-pill">Semantic HTML5</span>
-                  <span class="tech-pill">Modular CSS3 Grid</span>
+                  <span class="tech-pill">CSS3 Grid & Flexbox</span>
                   <span class="tech-pill">JavaScript ES6+</span>
                   <span class="tech-pill">Responsive Design</span>
-                  <span class="tech-pill">Interactive UI</span>
+                  <span class="tech-pill">Performance Optimization</span>
                 </div>
               </div>
 
               <!-- Action Links -->
               <div class="case-study__actions">
                 <a href="#contact" class="btn btn--primary btn--sm">
-                  <span>Start Your Website</span>
+                  <span>Start Your Website Project</span>
                   <span class="btn__arrow">→</span>
                 </a>
                 <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-light btn--sm">
@@ -450,20 +520,20 @@
     </section>
 
     <!-- ==================================================================
-         SERVICES SECTION: WHAT I BUILD (EGGSHELL CANVAS)
+         SERVICES SECTION: WHAT I CAN BUILD (EGGSHELL CANVAS)
          ================================================================== -->
-    <section class="services section-padding" id="services" aria-label="Services offered">
+    <section class="services section-padding" id="services" aria-label="Freelance Services">
       <div class="container">
 
         <div class="services__header reveal">
-          <p class="text-meta" style="margin-bottom:8px">Capabilities & Deliverables</p>
-          <h2 class="services__title font-display">Services Engineered for Growth</h2>
+          <p class="text-meta" style="margin-bottom:8px">What I Can Build</p>
+          <h2 class="services__title font-display">Freelance Services</h2>
           <p class="services__subtitle">
-            From initial strategy and visual design to clean, performant code — I take full ownership of your digital web flagship.
+            From initial strategy and visual design to database-backed engineering and deployment — I handle your digital product from start to finish.
           </p>
         </div>
 
-        <div class="three-col-grid">
+        <div class="services-grid-6">
 
           <!-- Service 01 -->
           <div class="service-card reveal">
@@ -476,16 +546,15 @@
                   <line x1="9" y1="21" x2="9" y2="9"/>
                 </svg>
               </div>
-              <h3 class="service-card__title font-display">Custom Web Design</h3>
+              <h3 class="service-card__title font-display">Premium Business Websites</h3>
               <p class="service-card__desc">
-                High-end, custom interface design that communicates your authority. No cookie-cutter templates or generic SaaS layouts.
+                High-end websites designed around brand identity, market authority, and conversion. Bespoke interfaces that elevate your business above competitors.
               </p>
             </div>
             <div class="service-card__deliverables">
-              <span class="service-item">Complete UI/UX Direction & Wireframing</span>
-              <span class="service-item">Bespoke Design Systems & Typography</span>
+              <span class="service-item">Bespoke UI/UX & Art Direction</span>
+              <span class="service-item">Editorial Typography Systems</span>
               <span class="service-item">Mobile-First Responsive Layouts</span>
-              <span class="service-item">Interactive Figma Prototypes</span>
             </div>
           </div>
 
@@ -495,20 +564,20 @@
               <div class="service-card__top">
                 <span class="service-card__num">02</span>
                 <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <polyline points="16 18 22 12 16 6"/>
-                  <polyline points="8 6 2 12 8 18"/>
+                  <circle cx="9" cy="21" r="1"/>
+                  <circle cx="20" cy="21" r="1"/>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                 </svg>
               </div>
-              <h3 class="service-card__title font-display">Front-End Development</h3>
+              <h3 class="service-card__title font-display">E-Commerce Platforms</h3>
               <p class="service-card__desc">
-                Fast, responsive, and accessible code built with contemporary standards. Clean code that scales smoothly as your business grows.
+                Custom commerce experiences including product catalogs, product detail pages, checkout workflows, luxury brand positioning, and admin inventory systems.
               </p>
             </div>
             <div class="service-card__deliverables">
-              <span class="service-item">React / Next.js / Modern JS</span>
-              <span class="service-item">Semantic HTML5 & Modular CSS / Tailwind</span>
-              <span class="service-item">Speed & Core Web Vitals Optimization</span>
-              <span class="service-item">Accessibility (WCAG AA Compliance)</span>
+              <span class="service-item">Product Catalogs & Filtering</span>
+              <span class="service-item">Cart, Checkout & Payment UX</span>
+              <span class="service-item">Admin & Order Management</span>
             </div>
           </div>
 
@@ -518,21 +587,84 @@
               <div class="service-card__top">
                 <span class="service-card__num">03</span>
                 <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-                  <path d="M2 12h20"/>
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
               </div>
-              <h3 class="service-card__title font-display">Redesigns & Landing Pages</h3>
+              <h3 class="service-card__title font-display">Web Applications</h3>
               <p class="service-card__desc">
-                Transforming outdated, low-converting sites into high-impact digital experiences that clearly explain what you do and why it matters.
+                Authenticated web applications, dashboards, database-backed tools, and custom internal systems built with Next.js, PostgreSQL, and Prisma.
               </p>
             </div>
             <div class="service-card__deliverables">
-              <span class="service-item">High-Converting Launch & Campaign Pages</span>
-              <span class="service-item">Complete Brand & Website Redesigns</span>
-              <span class="service-item">Conversion Flow & UX Friction Audits</span>
-              <span class="service-item">Lead Intake & Analytics Integration</span>
+              <span class="service-item">Authentication & User Roles</span>
+              <span class="service-item">Database Architecture & CRUD</span>
+              <span class="service-item">Analytics & Admin Dashboards</span>
+            </div>
+          </div>
+
+          <!-- Service 04 -->
+          <div class="service-card reveal">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">04</span>
+                <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title font-display">Website Redesigns</h3>
+              <p class="service-card__desc">
+                Transform outdated, sluggish, or low-converting websites into modern, fast, and commercially effective digital flagships that convert traffic.
+              </p>
+            </div>
+            <div class="service-card__deliverables">
+              <span class="service-item">Complete Visual & Structural Audit</span>
+              <span class="service-item">UX Friction Removal</span>
+              <span class="service-item">Modern Frontend Modernization</span>
+            </div>
+          </div>
+
+          <!-- Service 05 -->
+          <div class="service-card reveal reveal--delay-1">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">05</span>
+                <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title font-display">High-Converting Landing Pages</h3>
+              <p class="service-card__desc">
+                Laser-focused landing pages designed around a specific product, service, campaign, or lead generation goal with zero distraction.
+              </p>
+            </div>
+            <div class="service-card__deliverables">
+              <span class="service-item">Conversion-Optimized Copy Flow</span>
+              <span class="service-item">High-Impact Visual Hooks</span>
+              <span class="service-item">Form & Lead Capture Setup</span>
+            </div>
+          </div>
+
+          <!-- Service 06 -->
+          <div class="service-card reveal reveal--delay-2">
+            <div>
+              <div class="service-card__top">
+                <span class="service-card__num">06</span>
+                <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title font-display">Technical Implementation</h3>
+              <p class="service-card__desc">
+                API integrations, database schemas, authentication systems, Cloudflare production deployments, Core Web Vitals optimization, and bug fixing.
+              </p>
+            </div>
+            <div class="service-card__deliverables">
+              <span class="service-item">REST & GraphQL API Integrations</span>
+              <span class="service-item">Cloudflare & Vercel Deployment</span>
+              <span class="service-item">Speed & Performance Tuning</span>
             </div>
           </div>
 
@@ -542,78 +674,27 @@
     </section>
 
     <!-- ==================================================================
-         WHY WORK WITH ME: DIFFERENTIATORS (OLIVE BAND)
+         PROCESS: 6 CLEAR CLIENT-FACING STEPS
          ================================================================== -->
-    <section class="why-me section-padding band-olive" id="why-me" aria-label="Why hire me">
-      <div class="container">
-
-        <div class="why-me__header reveal">
-          <p class="text-meta text-meta--light" style="margin-bottom:8px">The Independent Advantage</p>
-          <h2 class="why-me__title font-display">Why Work With Me</h2>
-          <p class="why-me__subtitle">
-            A rare combination of visual taste, engineering rigor, and practical business awareness.
-          </p>
-        </div>
-
-        <div class="three-col-grid">
-
-          <!-- Pillar 01 -->
-          <div class="pillar-box reveal">
-            <span class="pillar-box__num">01 / HYBRID WORKFLOW</span>
-            <h3 class="pillar-box__title font-display">Design + Development</h3>
-            <p class="pillar-box__desc">
-              You don't have to manage a designer who doesn't know how to code and a developer who has no eye for aesthetics. I design what can be built, and build exactly what was designed.
-            </p>
-            <p class="pillar-box__highlight">✓ Zero lost-in-translation handoffs</p>
-          </div>
-
-          <!-- Pillar 02 -->
-          <div class="pillar-box reveal reveal--delay-1">
-            <span class="pillar-box__num">02 / CRAFTSMANSHIP</span>
-            <h3 class="pillar-box__title font-display">Detail-Driven Execution</h3>
-            <p class="pillar-box__desc">
-              Typography hierarchies, micro-spacing, responsive ergonomics, and smooth transitions are crafted with obsessive care. The subtle details are what make visitors trust your business.
-            </p>
-            <p class="pillar-box__highlight">✓ Flawless mobile & desktop polish</p>
-          </div>
-
-          <!-- Pillar 03 -->
-          <div class="pillar-box reveal reveal--delay-2">
-            <span class="pillar-box__num">03 / BUSINESS FIRST</span>
-            <h3 class="pillar-box__title font-display">Conversion-Aware</h3>
-            <p class="pillar-box__desc">
-              A website should not just win design compliments — it must serve as your most effective 24/7 salesperson. Every layout is structured around visitor psychology and clear action triggers.
-            </p>
-            <p class="pillar-box__highlight">✓ Engineered to generate inquiries</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================================================================
-         PROCESS: 4 SIMPLE STEPS (EGGSHELL CANVAS)
-         ================================================================== -->
-    <section class="process section-padding" id="process" aria-label="Working process">
+    <section class="process section-padding" id="process" aria-label="Working Process">
       <div class="container">
 
         <div class="process__header reveal">
-          <p class="text-meta" style="margin-bottom:8px">Structured & Transparent</p>
-          <h2 class="process__title font-display">How We Work Together</h2>
+          <p class="text-meta" style="margin-bottom:8px">Transparent Roadmap</p>
+          <h2 class="process__title font-display">The 6-Step Client Process</h2>
           <p class="services__subtitle">
-            A straightforward, 4-step framework with clear milestones and regular communication at every stage.
+            A structured, reliable framework with clear milestones and regular communication at every stage of the project.
           </p>
         </div>
 
-        <div class="process-grid">
+        <div class="process-grid-6">
 
           <!-- Step 01 -->
           <div class="process-step reveal">
             <span class="process-step__number">01</span>
             <h3 class="process-step__title font-display">Discover</h3>
             <p class="process-step__desc">
-              We discuss your business model, target audience, competitive landscape, and primary conversion objectives.
+              We understand your business model, target audience, commercial objectives, competitors, and functional requirements.
             </p>
             <span class="process-step__output">Milestone: Strategic Brief</span>
           </div>
@@ -623,27 +704,47 @@
             <span class="process-step__number">02</span>
             <h3 class="process-step__title font-display">Define</h3>
             <p class="process-step__desc">
-              We establish the information architecture, content structure, visual art direction, and key wireframes.
+              We establish the information architecture, content structure, visual tone, technical approach, and exact project scope.
             </p>
-            <span class="process-step__output">Milestone: Design Prototypes</span>
+            <span class="process-step__output">Milestone: Architecture & Scope</span>
           </div>
 
           <!-- Step 03 -->
           <div class="process-step reveal reveal--delay-2">
             <span class="process-step__number">03</span>
-            <h3 class="process-step__title font-display">Build</h3>
+            <h3 class="process-step__title font-display">Design</h3>
             <p class="process-step__desc">
-              I develop the approved design with clean, responsive code, integrating animations, forms, and performance optimizations.
+              I develop the custom visual system, responsive layouts, interaction patterns, and conversion-focused user experience.
             </p>
-            <span class="process-step__output">Milestone: Live Staging Link</span>
+            <span class="process-step__output">Milestone: Figma Prototypes</span>
           </div>
 
           <!-- Step 04 -->
-          <div class="process-step reveal reveal--delay-3">
+          <div class="process-step reveal">
             <span class="process-step__number">04</span>
-            <h3 class="process-step__title font-display">Refine & Launch</h3>
+            <h3 class="process-step__title font-display">Build</h3>
             <p class="process-step__desc">
-              Thorough cross-device testing, SEO review, speed optimization, and smooth domain deployment to your live server.
+              I implement the product with modern frontend and backend technologies (Next.js, TypeScript, PostgreSQL, Prisma).
+            </p>
+            <span class="process-step__output">Milestone: Staging Environment</span>
+          </div>
+
+          <!-- Step 05 -->
+          <div class="process-step reveal reveal--delay-1">
+            <span class="process-step__number">05</span>
+            <h3 class="process-step__title font-display">Refine</h3>
+            <p class="process-step__desc">
+              Rigorous testing for responsiveness, cross-browser compatibility, accessibility, load speed, and visual consistency.
+            </p>
+            <span class="process-step__output">Milestone: QA Sign-off</span>
+          </div>
+
+          <!-- Step 06 -->
+          <div class="process-step reveal reveal--delay-2">
+            <span class="process-step__number">06</span>
+            <h3 class="process-step__title font-display">Launch</h3>
+            <p class="process-step__desc">
+              Deploy the finished application to production, configure custom domains, verify SSL, and hand over the codebase cleanly.
             </p>
             <span class="process-step__output">Milestone: Production Handover</span>
           </div>
@@ -654,90 +755,67 @@
     </section>
 
     <!-- ==================================================================
-         ABOUT ME & TECHNOLOGY STACK (SPLIT SCREEN)
+         ABOUT ME: SOPHISTICATED PROFESSIONAL NARRATIVE
          ================================================================== -->
-    <section class="about-me section-padding" id="about" aria-label="About Omid">
+    <section class="about-me section-padding" id="about" aria-label="About Omid Mohammadi">
       <div class="container">
         <div class="split-grid">
 
-          <!-- Personal Bio -->
+          <!-- Narrative Text -->
           <div class="about-me__bio reveal">
-            <p class="text-meta" style="margin-bottom:8px">Behind the Work</p>
-            <h2 class="about-me__title font-display">Hi, I'm Omid.</h2>
-            <p class="about-me__text">
-              I'm an independent <strong>web designer and front-end developer</strong>. I help founders, businesses, and growing brands build custom websites that command authority and turn visitors into clients.
-            </p>
-            <p class="about-me__text">
-              I believe the web should be both functional and memorable. Too many websites today rely on bloated themes that all look identical and load sluggishly. My work focuses on <strong>intentional typography, distinct visual character, and clean code</strong> that performs effortlessly on every device.
-            </p>
-
-            <div class="about-me__principles">
-              <div class="principle-item">
-                <span class="principle-bullet">✦</span>
-                <span class="principle-text"><strong>Zero templates:</strong> Everything is designed and coded bespoke to fit your exact goals.</span>
-              </div>
-              <div class="principle-item">
-                <span class="principle-bullet">✦</span>
-                <span class="principle-text"><strong>Performance first:</strong> Blistering load times, minimal dependencies, and high Core Web Vitals.</span>
-              </div>
-              <div class="principle-item">
-                <span class="principle-bullet">✦</span>
-                <span class="principle-text"><strong>Clear communication:</strong> Reliable timelines, frequent progress updates, and zero surprises.</span>
-              </div>
+            <p class="text-meta" style="margin-bottom:8px">About Me</p>
+            <h2 class="about-me__title font-display">Omid Mohammadi</h2>
+            
+            <div class="about-me__lead-box">
+              I'm <strong>Omid Mohammadi</strong>, a web developer focused on building premium digital experiences for businesses that care about how they look, how they perform, and how effectively they convert visitors into customers.
             </div>
 
-            <a href="#contact" class="btn btn--primary">
-              <span>Discuss Your Project</span>
-              <span class="btn__arrow">→</span>
-            </a>
+            <p class="about-me__text">
+              My background combines <strong>web development, visual design, sales, market management, and business development</strong>. That combination allows me to approach websites not simply as pieces of software, but as commercial tools.
+            </p>
+
+            <p class="about-me__text">
+              I work primarily with modern technologies including <strong>Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, Prisma, Git/GitHub, and Cloudflare</strong>, while using <strong>AI-assisted development workflows</strong> to accelerate research, implementation, iteration, and refinement.
+            </p>
+
+            <p class="about-me__text">
+              My goal is simple: <strong>build digital products that look distinctive, work reliably, and make business sense.</strong>
+            </p>
+
+            <div class="btn-group" style="margin-top:var(--space-lg);">
+              <a href="#contact" class="btn btn--primary">
+                <span>Start a Project</span>
+                <span class="btn__arrow">→</span>
+              </a>
+              <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+                <span>GitHub Profile</span>
+                <span class="btn__arrow">↗</span>
+              </a>
+            </div>
           </div>
 
-          <!-- Technologies & Stack -->
-          <div class="tech-stack-card reveal reveal--delay-1">
-            <h3 class="tech-stack-card__title font-display">Tools & Technologies</h3>
-            <p class="about-me__text" style="font-size:0.92rem;margin-bottom:var(--space-md);">
-              I use a battle-tested modern toolkit focused on speed, durability, and frictionless user experience:
+          <!-- AI-Assisted Development & Principles Card -->
+          <div class="skill-category-card skill-category-card--ai reveal reveal--delay-1" style="padding:var(--space-lg);">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">The Modern Workflow Advantage</h3>
+              <span class="skill-category-card__badge">High Velocity</span>
+            </div>
+            
+            <p class="about-me__text" style="font-size:0.95rem;margin-bottom:var(--space-md);">
+              I leverage <strong>AI-assisted development</strong> as an engineering multiplier — accelerating research, architecture planning, rapid prototyping, and bug hunting without sacrificing code quality or security.
             </p>
 
-            <div class="tech-group">
-              <span class="tech-group__label">Design & Prototyping</span>
-              <div class="tech-badges">
-                <span class="tech-badge">Figma</span>
-                <span class="tech-badge">UI/UX Systems</span>
-                <span class="tech-badge">Wireframing</span>
-                <span class="tech-badge">Design Tokens</span>
-              </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">AI-Assisted Coding & Refactoring</span>
+              <span class="skill-badge">Rapid Prototyping & Iteration</span>
+              <span class="skill-badge">AI-Powered Research & Analysis</span>
+              <span class="skill-badge">Debugging Assistance</span>
+              <span class="skill-badge">UX & Content Iteration</span>
             </div>
 
-            <div class="tech-group">
-              <span class="tech-group__label">Frontend Core</span>
-              <div class="tech-badges">
-                <span class="tech-badge">HTML5 Semantic</span>
-                <span class="tech-badge">CSS3 / Modern Layouts</span>
-                <span class="tech-badge">JavaScript (ES6+)</span>
-                <span class="tech-badge">TypeScript</span>
-              </div>
-            </div>
-
-            <div class="tech-group">
-              <span class="tech-group__label">Frameworks & Tooling</span>
-              <div class="tech-badges">
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Next.js</span>
-                <span class="tech-badge">Tailwind CSS</span>
-                <span class="tech-badge">Git & GitHub</span>
-              </div>
-            </div>
-
-            <div class="tech-group">
-              <span class="tech-group__label">Quality & Deployment</span>
-              <div class="tech-badges">
-                <span class="tech-badge">Responsive Design</span>
-                <span class="tech-badge">SEO Optimization</span>
-                <span class="tech-badge">Web Accessibility (a11y)</span>
-                <span class="tech-badge">Vercel / Cloudflare</span>
-              </div>
-            </div>
+            <p class="skill-category-card__note">
+              AI accelerates implementation; rigorous human engineering ensures reliability, security, and exceptional visual taste.
+            </p>
           </div>
 
         </div>
@@ -745,19 +823,222 @@
     </section>
 
     <!-- ==================================================================
-         TRANSPARENT PRICING & SCOPING QUALIFICATION
+         PROFESSIONAL EXPERIENCE: COMMERCIAL SUPERPOWER (OLIVE BAND)
          ================================================================== -->
-    <section class="pricing-banner" aria-label="Project scoping">
+    <section class="experience section-padding band-olive" id="experience" aria-label="Professional Experience">
       <div class="container">
-        <div class="pricing-banner__inner">
-          <div class="pricing-banner__text">
-            <h3 class="font-display">Transparent, Individual Scoping</h3>
-            <p>Every project is scoped individually based on timeline, feature complexity, and custom deliverables. No surprise invoices.</p>
+
+        <div class="experience__header reveal">
+          <p class="text-meta text-meta--light" style="margin-bottom:8px">Commercial Foundation</p>
+          <h2 class="experience__title font-display">Professional Experience</h2>
+          <p class="experience__subtitle">
+            Experience in market management and business development gives me practical exposure to customer behavior and sales strategy — experience I bring directly into every digital build.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+
+          <!-- Role 01: Market Manager -->
+          <div class="exp-card reveal">
+            <div>
+              <h3 class="exp-card__role">Market Manager</h3>
+              <p class="exp-card__industry">Leather Products Industry</p>
+              <p class="exp-card__desc">
+                Experience in the leather-products industry gave me practical exposure to market dynamics, customer behavior, product positioning, sales, and commercial decision-making — experience I now bring into digital product development.
+              </p>
+            </div>
+            <div class="exp-card__transferable">
+              <span class="exp-card__transferable-title">Transferable Value for Digital Products:</span>
+              <div class="exp-card__tags">
+                <span class="exp-tag">Product Positioning</span>
+                <span class="exp-tag">Commercial Operations</span>
+                <span class="exp-tag">B2B & Corporate Sales</span>
+                <span class="exp-tag">Customer Acquisition</span>
+                <span class="exp-tag">Market Strategy</span>
+              </div>
+            </div>
           </div>
-          <a href="#contact" class="btn btn--primary btn--sm">
-            <span>Get a Project Estimate</span>
-            <span class="btn__arrow">→</span>
-          </a>
+
+          <!-- Role 02: Sales / Business Development -->
+          <div class="exp-card reveal reveal--delay-1">
+            <div>
+              <h3 class="exp-card__role">Sales / Business Development</h3>
+              <p class="exp-card__industry">Forex Brokerage Industry</p>
+              <p class="exp-card__desc">
+                Experience in the fast-paced financial brokerage sector gave me deep exposure to lead generation, client communication, customer objection handling, and conversion-oriented communication. I understand what happens on the business side of a website.
+              </p>
+            </div>
+            <div class="exp-card__transferable">
+              <span class="exp-card__transferable-title">Transferable Value for Digital Products:</span>
+              <div class="exp-card__tags">
+                <span class="exp-tag">Lead Generation UX</span>
+                <span class="exp-tag">Client Communication</span>
+                <span class="exp-tag">Objection Handling</span>
+                <span class="exp-tag">Conversion Psychology</span>
+                <span class="exp-tag">Commercial Strategy</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SKILLS & CATEGORIZED TECH STACK SECTION (EGGSHELL CANVAS)
+         ================================================================== -->
+    <section class="skills-section section-padding" id="skills" aria-label="Technical Skills">
+      <div class="container">
+
+        <div class="skills-section__header reveal">
+          <p class="text-meta" style="margin-bottom:8px">Capabilities & Stack</p>
+          <h2 class="skills-section__title font-display">Categorized Skills</h2>
+          <p class="services__subtitle">
+            A comprehensive, modern toolkit organized by layer — from interface design and frontend architecture to backend data modeling and Cloudflare deployment.
+          </p>
+        </div>
+
+        <div class="skills-grid-5">
+
+          <!-- Category 01: Frontend -->
+          <div class="skill-category-card reveal">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">Frontend</h3>
+              <span class="skill-category-card__badge">Client Layer</span>
+            </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">Next.js</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">JavaScript (ES6+)</span>
+              <span class="skill-badge">Tailwind CSS</span>
+              <span class="skill-badge">Responsive Design</span>
+              <span class="skill-badge">Modern UI Architecture</span>
+            </div>
+            <p class="skill-category-card__note">Fast, accessible, component-driven client architecture.</p>
+          </div>
+
+          <!-- Category 02: Backend / Data -->
+          <div class="skill-category-card reveal reveal--delay-1">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">Backend / Data</h3>
+              <span class="skill-category-card__badge">Data Layer</span>
+            </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">Prisma ORM</span>
+              <span class="skill-badge">API Integration</span>
+              <span class="skill-badge">Authentication Systems</span>
+              <span class="skill-badge">Database-Backed Apps</span>
+              <span class="skill-badge">Admin Systems & CRUD</span>
+            </div>
+            <p class="skill-category-card__note">Secure schema modeling, relational data, and authentication.</p>
+          </div>
+
+          <!-- Category 03: Deployment / Engineering -->
+          <div class="skill-category-card reveal reveal--delay-2">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">Deployment & DevOps</h3>
+              <span class="skill-category-card__badge">Infrastructure</span>
+            </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">Git & GitHub</span>
+              <span class="skill-badge">Cloudflare</span>
+              <span class="skill-badge">Production Deployment</span>
+              <span class="skill-badge">Performance Tuning</span>
+              <span class="skill-badge">Debugging & Build Systems</span>
+            </div>
+            <p class="skill-category-card__note">Zero-downtime deployments, global CDN, and speed optimization.</p>
+          </div>
+
+          <!-- Category 04: Design & UX -->
+          <div class="skill-category-card reveal">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">Design & UX</h3>
+              <span class="skill-category-card__badge">Visual Direction</span>
+            </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">UI/UX Systems</span>
+              <span class="skill-badge">Design Systems</span>
+              <span class="skill-badge">Visual Hierarchy</span>
+              <span class="skill-badge">Premium Editorial Design</span>
+              <span class="skill-badge">E-Commerce UX</span>
+              <span class="skill-badge">Conversion Interfaces</span>
+            </div>
+            <p class="skill-category-card__note">Distinct visual character and effortless user ergonomics.</p>
+          </div>
+
+          <!-- Category 05: AI-Assisted Workflows -->
+          <div class="skill-category-card skill-category-card--ai reveal reveal--delay-1">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">AI-Assisted Workflow</h3>
+              <span class="skill-category-card__badge">Accelerator</span>
+            </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">AI-Assisted Coding</span>
+              <span class="skill-badge">Rapid Prototyping</span>
+              <span class="skill-badge">Design Iteration</span>
+              <span class="skill-badge">Debugging Assistance</span>
+              <span class="skill-badge">Content & UX Iteration</span>
+            </div>
+            <p class="skill-category-card__note">Accelerated delivery cycles with rigorous human review.</p>
+          </div>
+
+          <!-- Category 06: Quality & SEO -->
+          <div class="skill-category-card reveal reveal--delay-2">
+            <div class="skill-category-card__header">
+              <h3 class="skill-category-card__title font-display">Standards & SEO</h3>
+              <span class="skill-category-card__badge">Quality</span>
+            </div>
+            <div class="skill-badges-list">
+              <span class="skill-badge">Semantic HTML5</span>
+              <span class="skill-badge">WCAG AA Accessibility</span>
+              <span class="skill-badge">Core Web Vitals</span>
+              <span class="skill-badge">Schema.org JSON-LD</span>
+              <span class="skill-badge">Cross-Device Testing</span>
+            </div>
+            <p class="skill-category-card__note">Accessible to everyone, indexable by search engines.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         EDUCATION & CREDENTIALS SECTION
+         ================================================================== -->
+    <section class="education-section section-padding" id="education" aria-label="Education and Credentials">
+      <div class="container">
+        <div class="education-grid">
+
+          <!-- Degree Card -->
+          <div class="edu-card reveal">
+            <p class="text-meta" style="margin-bottom:8px">Academic Foundation</p>
+            <h3 class="edu-card__degree font-display">Master's Degree</h3>
+            <p class="edu-card__field">English Language & Literature</p>
+            <p class="edu-card__desc">
+              My academic background in English Language & Literature underpins my high-touch client communication, rigorous editorial thinking, and obsessive attention to narrative clarity and written detail.
+            </p>
+          </div>
+
+          <!-- Transferable Reinforcement -->
+          <div class="edu-reinforcement-list reveal reveal--delay-1">
+            <div class="edu-item">
+              <span class="edu-bullet">✦</span>
+              <p class="edu-text"><strong>Editorial Thinking:</strong> Structuring information hierarchies so complex value propositions are clear and compelling.</p>
+            </div>
+            <div class="edu-item">
+              <span class="edu-bullet">✦</span>
+              <p class="edu-text"><strong>High-Touch Communication:</strong> Clear, professional client communication with zero jargon or ambiguity.</p>
+            </div>
+            <div class="edu-item">
+              <span class="edu-bullet">✦</span>
+              <p class="edu-text"><strong>Attention to Detail:</strong> Precision across typography, copywriting, microcopy, and technical documentation.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -765,26 +1046,26 @@
     <!-- ==================================================================
          CONTACT / LEAD GENERATION — REAL WORKING FORM (MOSS BAND)
          ================================================================== -->
-    <section class="contact section-padding" id="contact" aria-label="Contact form">
+    <section class="contact section-padding" id="contact" aria-label="Contact and Inquiry">
       <div class="container">
         <div class="contact__inner">
 
           <!-- Header -->
           <div class="contact__header reveal">
-            <p class="text-meta text-meta--light" style="margin-bottom:8px">Let's Build Something Great</p>
-            <h2 class="contact__title font-display">Start a Project</h2>
+            <p class="text-meta text-meta--light" style="margin-bottom:8px">Start the Conversation</p>
+            <h2 class="contact__title font-display">Have a project in mind?</h2>
             <p class="contact__subtitle">
-              Have a website or redesign in mind? Fill out the brief form below and I'll get back to you within 24–48 hours with ideas and next steps.
+              Tell me what you're building, what isn't working, or what you want to become. I'll help turn it into a clear digital product.
             </p>
           </div>
 
           <!-- Real Functional Lead Form -->
           <form class="lead-form reveal reveal--delay-1" id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-access-key="YOUR_ACCESS_KEY_HERE" novalidate>
             
-            <!-- Hidden Access Key (Easily configured in CONFIG or here) -->
+            <!-- Hidden Access Key -->
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="hidden" name="subject" value="New Project Inquiry from Portfolio Website">
-            <input type="hidden" name="from_name" value="Portfolio Lead Notification">
+            <input type="hidden" name="subject" value="New Project Inquiry for Omid Mohammadi">
+            <input type="hidden" name="from_name" value="Portfolio Project Inquiry">
             
             <!-- Anti-Spam Honeypot -->
             <input type="checkbox" name="botcheck" class="hidden" style="display:none">
@@ -816,11 +1097,12 @@
                 <label for="project-scope">Project Scope</label>
                 <select id="project-scope" name="scope">
                   <option value="" disabled selected>Select project type...</option>
-                  <option value="complete-website">Complete Website (Design + Build)</option>
-                  <option value="website-redesign">Website Redesign</option>
+                  <option value="premium-website">Premium Business Website</option>
+                  <option value="ecommerce">E-Commerce Platform (Zaravi Style)</option>
+                  <option value="web-application">Web Application / Dashboard</option>
+                  <option value="website-redesign">Website Redesign & Conversion Audit</option>
                   <option value="landing-page">High-Converting Landing Page</option>
-                  <option value="frontend-dev">Front-End Development Only</option>
-                  <option value="consultation">Design & UX Consultation</option>
+                  <option value="technical-dev">Full-Stack Technical Implementation</option>
                 </select>
               </div>
             </div>
@@ -840,8 +1122,8 @@
 
             <!-- Row 4: Project Details -->
             <div class="form-field">
-              <label for="project-desc">Project Details & Objectives <span class="required-star">*</span></label>
-              <textarea id="project-desc" name="message" placeholder="Tell me about your business, current website problems, timeline, or key ambitions for this project..." rows="4" required></textarea>
+              <label for="project-desc">Project Details & Goals <span class="required-star">*</span></label>
+              <textarea id="project-desc" name="message" placeholder="Describe your business, current website challenges, timeline, or key ambitions..." rows="4" required></textarea>
               <span class="field-error-msg">Please share a brief summary of your project requirements.</span>
             </div>
 
@@ -851,7 +1133,7 @@
                 <span>Start a Project</span>
                 <span class="btn__arrow">→</span>
               </button>
-              <p class="form-privacy-note">🔒 Your information is confidential. No spam or high-pressure sales pitches.</p>
+              <p class="form-privacy-note">🔒 Your project details are strictly confidential. Direct, prompt response guaranteed.</p>
             </div>
 
           </form>
@@ -859,7 +1141,7 @@
           <!-- Direct Fallback Email Link -->
           <div class="direct-email-fallback reveal">
             Prefer direct email? Reach out at: 
-            <a href="mailto:omideafuri@gmail.com?subject=Freelance%20Project%20Inquiry">omideafuri@gmail.com</a>
+            <a href="mailto:omideafuri@gmail.com?subject=Project%20Inquiry%20for%20Omid%20Mohammadi">omideafuri@gmail.com</a>
           </div>
 
         </div>
@@ -869,7 +1151,7 @@
   </main>
 
   <!-- ====================================================================
-       FOOTER (AUTHENTIC COLOPHON)
+       FOOTER (AUTHENTIC ARCHIVAL COLOPHON)
        ==================================================================== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
@@ -878,9 +1160,9 @@
 
         <!-- Column 1: Brand & Bio -->
         <div>
-          <h3 class="footer__brand-title font-display">Omid</h3>
+          <h3 class="footer__brand-title font-display">Omid Mohammadi</h3>
           <p class="footer__brand-bio">
-            Independent web designer and front-end developer crafting bespoke, high-performance websites for ambitious businesses.
+            Premium Web & E-Commerce Developer crafting high-performance digital experiences that combine visual design, business thinking, and modern full-stack technology.
           </p>
         </div>
 
@@ -890,22 +1172,24 @@
           <div class="footer__col-links">
             <a href="#hero" class="footer__col-link">Home</a>
             <a href="#work" class="footer__col-link">Selected Work</a>
+            <a href="#differentiator" class="footer__col-link">Differentiator</a>
             <a href="#services" class="footer__col-link">Services</a>
-            <a href="#why-me" class="footer__col-link">Why Me</a>
             <a href="#process" class="footer__col-link">Process</a>
-            <a href="#about" class="footer__col-link">About</a>
+            <a href="#about" class="footer__col-link">About Me</a>
+            <a href="#experience" class="footer__col-link">Experience</a>
+            <a href="#skills" class="footer__col-link">Skills</a>
           </div>
         </div>
 
-        <!-- Column 3: Services -->
+        <!-- Column 3: Specialties -->
         <div>
           <h4 class="footer__col-title">Specialties</h4>
           <div class="footer__col-links">
-            <span class="footer__col-link">Custom Web Design</span>
-            <span class="footer__col-link">Front-End Development</span>
+            <span class="footer__col-link">E-Commerce Platforms</span>
+            <span class="footer__col-link">Premium Business Websites</span>
+            <span class="footer__col-link">Web Applications & Dashboards</span>
             <span class="footer__col-link">Website Redesigns</span>
-            <span class="footer__col-link">Landing Pages</span>
-            <span class="footer__col-link">UI/UX Systems</span>
+            <span class="footer__col-link">Next.js & PostgreSQL Apps</span>
           </div>
         </div>
 
@@ -924,10 +1208,10 @@
       <!-- Lower Colophon Bar -->
       <div class="footer__lower">
         <p class="footer__copyright">
-          © <span id="current-year">2026</span> Omid. All rights reserved. Handcrafted with semantic code.
+          © <span id="current-year">2026</span> Omid Mohammadi. All rights reserved. Handcrafted with semantic code.
         </p>
         <p class="footer__colophon">
-          Typeset in Syne, Newsreader & EB Garamond. Built for speed & conversion.
+          Typeset in Syne, Newsreader & EB Garamond. Design × Technology × Business.
         </p>
       </div>
 

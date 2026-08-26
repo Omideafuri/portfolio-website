@@ -1,40 +1,89 @@
-# Omid — Freelance Web Designer & Front-End Developer Portfolio
+# Omid Mohammadi — Premium Web & E-Commerce Developer
 
-> **"Websites that make good businesses look undeniable."**  
-> A high-converting personal freelance client acquisition website combining modern digital design, editorial typography, and high-performance front-end development.
-
----
-
-## 🎯 Conversion Strategy & Architecture
-
-This website is engineered around the conversion sequence:
-`VISITOR → TRUST → INTEREST → CONTACT → CLIENT`
-
-- **Within 5 Seconds:** Understands who I am (Omid, independent designer/developer) and my core value proposition.
-- **Within 10 Seconds:** Understands what I do (design + build high-performance websites for businesses & founders).
-- **Within 20 Seconds:** Sees real, authentic case studies (Zaravi Gold, Colorado) with 01-04 challenge/direction/build/result breakdowns.
-- **Within 30 Seconds:** Understands my specific services, 4-step process, and hybrid design+code advantage.
-- **Within 60 Seconds:** Has an ultra-low-friction pathway to submit a project inquiry through a functional lead form or direct email.
+> **"I build websites that look expensive — and work like serious products."**  
+> Premium websites, e-commerce platforms, and web applications built with modern full-stack technology and commercial thinking.
 
 ---
 
-## 🎨 Design System & Palette
+## ✦ Core Positioning & Differentiator
 
-- **Canvas & High Readability (Eggshell):** `#ECE7D6` / `#F5F2E9`
-- **Mid-Tone Banding (Olive):** `#6B6D3B` (Why Work With Me, Value Strips)
-- **Deep Contrast Showcase (Moss):** `#2E3821` (Selected Work, Lead Generation)
-- **Structure & Typography (Onyx):** `#191919`
-- **Conversion Accent & CTAs (Chartreuse):** `#C8D92B`
+**Design × Technology × Business**
+- **Design:** Visual hierarchy, editorial typography, spatial balance, micro-interactions, and bespoke UI systems that users actually notice.
+- **Technology:** Production-oriented full-stack architecture using Next.js, React, TypeScript, PostgreSQL, Prisma, authentication, and Cloudflare deployment.
+- **Business:** Practical background in sales, market management, and business development providing deep awareness of customer behavior, product positioning, and conversion.
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Categorized Skills & Stack
 
-- **Markup & Semantics:** HTML5, Accessible Landmarks (`<main>`, `<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`), Schema.org JSON-LD structured data.
-- **Styles & Layout:** Modular CSS3, CSS Grid, Flexbox, Fluid Clamping, CSS Variables, Grain Texture Overlay, `prefers-reduced-motion` compliance.
-- **Typography:** `Syne` (Structural Bold Grotesque), `Newsreader` (Editorial Serif), `EB Garamond` (Body Copy), `JetBrains Mono` (Technical Metadata).
-- **Interactions & Scripts:** Vanilla JavaScript (ES6+), IntersectionObserver for scroll reveals, ScrollSpy navigation, custom event analytics dispatcher.
-- **Lead Generation:** Async form handler supporting Web3Forms / Formspree with live validation, loading feedback, success states, and mailto fallback.
+### Frontend & UI
+- Next.js
+- React
+- TypeScript
+- JavaScript (ES6+)
+- Tailwind CSS
+- Responsive Layouts
+- Modern UI Architecture
+
+### Backend & Data
+- PostgreSQL
+- Prisma ORM
+- API Integration (REST / GraphQL)
+- Authentication & User Roles
+- Database-Backed Applications
+- Admin Systems & CRUD Workflows
+
+### Deployment & DevOps
+- Git & GitHub
+- Cloudflare
+- Vercel
+- Production Deployment
+- Performance & Core Web Vitals Optimization
+- Debugging & Build Systems
+
+### Design & Strategy
+- UI/UX Systems
+- Design Systems & Tokens
+- Visual Hierarchy
+- Premium Editorial Design
+- E-Commerce UX & Conversion Interfaces
+
+### AI-Assisted Development (Engineering Multiplier)
+- AI-Assisted Coding & Refactoring
+- Rapid Prototyping & Iteration
+- AI-Powered Research & Analysis
+- Debugging & Architecture Review
+
+---
+
+## 📁 Featured Case Studies
+
+1. **Zaravi Gold — Premium Gold & Jewelry E-Commerce Platform**
+   - *Design:* Luxury visual identity, macro product presentation, Persian/RTL-ready visual details, responsive shopping experience.
+   - *Engineering:* Next.js, React, TypeScript, PostgreSQL, Prisma, authentication, admin inventory & order workflows, Cloudflare deployment.
+2. **Colorado Explorer — Alpine Discovery & Itinerary Platform**
+   - *Design & Build:* Editorial travel discovery platform with fast interactive filtering, lightweight modular CSS, and responsive touch navigation.
+
+---
+
+## 💼 What I Can Build (Freelance Services)
+
+1. **Premium Business Websites:** Bespoke UI/UX, editorial typography, and high-authority brand flagships.
+2. **E-Commerce Platforms:** Product catalogs, cart/checkout UX, admin workflows, and luxury product positioning.
+3. **Web Applications & Dashboards:** Authenticated database-backed apps, user management, and custom business tools.
+4. **Website Redesigns:** Modernizing outdated websites to eliminate UX friction and drive commercial conversions.
+5. **High-Converting Landing Pages:** Focused campaign pages designed to turn ad traffic into inquiries and sales.
+6. **Technical Implementation:** APIs, PostgreSQL databases, authentication, Cloudflare deployments, and speed optimization.
+
+---
+
+## 🎓 Background & Education
+
+- **Professional Experience:**
+  - *Market Manager — Leather Products Industry:* Practical exposure to market dynamics, commercial operations, B2B sales, and product positioning.
+  - *Sales / Business Development — Forex Brokerage Industry:* High-velocity client communication, lead generation, customer objection handling, and commercial conversion strategy.
+- **Education:**
+  - *Master's Degree — English Language & Literature:* High-touch client communication, rigorous editorial thinking, narrative clarity, and precision in written communication.
 
 ---
 
@@ -44,7 +93,7 @@ This website is engineered around the conversion sequence:
 # Using Python
 python -m http.server 8080
 
-# Or using Node/npx
+# Or using Node
 npx serve .
 ```
 
@@ -54,20 +103,7 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ## 📬 Contact Form Configuration
 
-To connect the lead intake form to your email inbox:
-
-1. **Option A (Web3Forms - Recommended, Zero Server):**
-   - Get a free Access Key from [web3forms.com](https://web3forms.com).
-   - In `index.html`, update the hidden input value:
-     ```html
-     <input type="hidden" name="access_key" value="YOUR_ACTUAL_ACCESS_KEY_HERE">
-     ```
-   - In `js/main.js`, update `CONFIG.defaultAccessKey`.
-
-2. **Option B (Formspree):**
-   - Change the form `action` attribute in `index.html` to:
-     ```html
-     <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-     ```
-
-3. **Fallback:** If offline or in testing mode without an API key, the form gracefully validates, displays feedback, and offers a direct pre-filled `mailto:` link to `omideafuri@gmail.com`.
+The intake form in `index.html` connects to Web3Forms / Formspree asynchronously with instant validation and a direct mailto fallback:
+- **Default Action:** `https://api.web3forms.com/submit`
+- **Fallback Email:** `omideafuri@gmail.com`
+- **GitHub:** `https://github.com/Omideafuri`
