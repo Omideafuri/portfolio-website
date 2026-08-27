@@ -1,12 +1,12 @@
 /* ==========================================================================
    OMID MOHAMMADI — PORTFOLIO JAVASCRIPT
-   Adaptive Contrast Engine, Parallax, Lead Capture & Analytics
+   Interactive Chapters, Parallax, Lead Acquisition & Analytics
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ========================================================================
-  // CONFIGURATION & ENDPOINTS
+  // 01. CONFIGURATION
   // ========================================================================
   const CONFIG = {
     formEndpoint: 'https://api.web3forms.com/submit',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ========================================================================
-  // 1. PRIVACY-FRIENDLY EVENT ANALYTICS DISPATCHER
+  // 02. PRIVACY-FRIENDLY EVENT DISPATCHER
   // ========================================================================
   const trackEvent = (eventName, eventData = {}) => {
     const customEvent = new CustomEvent('portfolio_event', {
@@ -29,134 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
       window.gtag('event', eventName, eventData);
     }
 
-    console.log(`[Event Tracked: ${eventName}]`, eventData);
+    console.log(`[Publication Tracked: ${eventName}]`, eventData);
   };
 
   // ========================================================================
-  // 2. HERO ADAPTIVE CONTRAST SYSTEM (DYNAMIC LUMINANCE SAMPLING)
-  // ========================================================================
-  const hero = document.getElementById('hero');
-  const heroImage = document.querySelector('.hero__bg-image');
-  const heroContent = document.querySelector('.hero__content');
-
-  const analyzeHeroContrast = () => {
-    if (!hero || !heroImage || !heroContent) return;
-
-    // Ensure image is ready
-    if (!heroImage.complete || heroImage.naturalWidth === 0) {
-      heroImage.addEventListener('load', analyzeHeroContrast, { once: true });
-      return;
-    }
-
-    try {
-      const heroRect = hero.getBoundingClientRect();
-      const contentRect = heroContent.getBoundingClientRect();
-
-      // Normalize content bounding box relative to hero container
-      const relX = Math.max(0, (contentRect.left - heroRect.left) / heroRect.width);
-      const relY = Math.max(0, (contentRect.top - heroRect.top) / heroRect.height);
-      const relW = Math.min(1, contentRect.width / heroRect.width);
-      const relH = Math.min(1, contentRect.height / heroRect.height);
-
-      // Create low-overhead offscreen canvas
-      const canvas = document.createElement('canvas');
-      const sampleWidth = 320;
-      const sampleHeight = Math.round(sampleWidth * (heroRect.height / heroRect.width));
-      canvas.width = sampleWidth;
-      canvas.height = sampleHeight;
-      const ctx = canvas.getContext('2d', { willReadFrequently: true });
-
-      if (!ctx) return;
-
-      // Draw the image scaled into the virtual viewport
-      ctx.drawImage(heroImage, 0, 0, sampleWidth, sampleHeight);
-
-      // Crop coordinates for the content text region
-      const startX = Math.floor(relX * sampleWidth);
-      const startY = Math.floor(relY * sampleHeight);
-      const subW = Math.max(10, Math.floor(relW * sampleWidth));
-      const subH = Math.max(10, Math.floor(relH * sampleHeight));
-
-      const imageData = ctx.getImageData(startX, startY, subW, subH);
-      const data = imageData.data;
-
-      let totalLuminance = 0;
-      let pixelCount = 0;
-
-      // Calculate ITU-R BT.709 relative luminance across sample area
-      for (let i = 0; i < data.length; i += 16) { // Step by 4 pixels (16 bytes) for blazing performance
-        const r = data[i];
-        const g = data[i + 1];
-        const b = data[i + 2];
-        // Standard perceived luminance
-        const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
-        totalLuminance += lum;
-        pixelCount++;
-      }
-
-      const avgLuminance = pixelCount > 0 ? (totalLuminance / pixelCount) : 0.5;
-
-      // Threshold: < 0.46 indicates a dark underlying photographic region
-      if (avgLuminance < 0.46) {
-        hero.classList.remove('hero--theme-dark');
-        hero.classList.add('hero--theme-light');
-      } else {
-        hero.classList.remove('hero--theme-light');
-        hero.classList.add('hero--theme-dark');
-      }
-
-      console.log(`[Hero Adaptive Contrast] Regional Luminance: ${avgLuminance.toFixed(3)} → Theme: ${avgLuminance < 0.46 ? 'Light (for dark background)' : 'Dark (for light background)'}`);
-
-    } catch (e) {
-      // Graceful fallback for cross-origin or local canvas restrictions
-      console.warn('Canvas pixel analysis fallback applied:', e);
-      hero.classList.add('hero--theme-dark');
-    }
-  };
-
-  // Run contrast check once image is ready and on resize/orientation change
-  if (heroImage) {
-    if (heroImage.complete) {
-      analyzeHeroContrast();
-    } else {
-      heroImage.addEventListener('load', analyzeHeroContrast);
-    }
-
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(analyzeHeroContrast, 150);
-    }, { passive: true });
-  }
-
-  // ========================================================================
-  // 3. CINEMATIC IMAGE PARALLAX (Respects prefers-reduced-motion)
-  // ========================================================================
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!prefersReducedMotion && hero && heroImage) {
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          const heroHeight = hero.offsetHeight;
-
-          if (scrollY <= heroHeight) {
-            const shift = scrollY * 0.14;
-            heroImage.style.transform = `scale(1.015) translateY(${shift}px)`;
-          }
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  }
-
-  // ========================================================================
-  // 4. NAVIGATION — Header state & mobile drawer
+  // 03. NAVIGATION & SCROLL STATE
   // ========================================================================
   const nav = document.querySelector('.nav');
   const navToggle = document.querySelector('.nav__toggle');
@@ -184,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-        trackEvent('mobile_menu_open');
+        trackEvent('mobile_nav_opened');
       } else {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
@@ -207,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
-  // 5. SMOOTH SCROLL WITH CONVERSION TRACKING
+  // 04. SMOOTH SCROLL WITH OFFSET & CONVERSION HOOKS
   // ========================================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -219,10 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        if (anchor.classList.contains('btn') || anchor.classList.contains('nav__cta')) {
-          trackEvent('cta_click', {
-            cta_text: anchor.innerText.trim(),
-            target_section: targetId
+        if (anchor.classList.contains('btn') || anchor.classList.contains('nav__link')) {
+          trackEvent('chapter_navigated', {
+            target: targetId,
+            label: anchor.innerText.trim()
           });
         }
       }
@@ -230,11 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================================================
-  // 6. ACTIVE SECTION OBSERVER (ScrollSpy)
+  // 05. SCROLLSPY (ACTIVE CHAPTER OBSERVER)
   // ========================================================================
-  const sections = document.querySelectorAll('section[id]');
-  if (sections.length && 'IntersectionObserver' in window) {
-    const navObserver = new IntersectionObserver((entries) => {
+  const chapters = document.querySelectorAll('section[id]');
+  if (chapters.length && 'IntersectionObserver' in window) {
+    const chapterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
@@ -247,16 +124,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.25,
-      rootMargin: '-80px 0px -40% 0px'
+      threshold: 0.2,
+      rootMargin: '-70px 0px -40% 0px'
     });
 
-    sections.forEach(section => navObserver.observe(section));
+    chapters.forEach(chapter => chapterObserver.observe(chapter));
   }
 
   // ========================================================================
-  // 7. SCROLL REVEAL
+  // 06. INTERACTIVE CAPABILITY ITEMS
   // ========================================================================
+  const capabilityItems = document.querySelectorAll('.capability-item');
+  capabilityItems.forEach(item => {
+    item.addEventListener('click', () => {
+      capabilityItems.forEach(i => i.classList.remove('capability-item--active'));
+      item.classList.add('capability-item--active');
+      trackEvent('capability_selected', {
+        title: item.querySelector('.capability-name')?.innerText.trim()
+      });
+    });
+  });
+
+  // ========================================================================
+  // 07. EDITORIAL SCROLL REVEALS & PARALLAX
+  // ========================================================================
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealElements = document.querySelectorAll('.reveal');
 
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
@@ -277,8 +169,29 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('reveal--visible'));
   }
 
+  // Cinematic Parallax on Hero Visual
+  const hero = document.getElementById('hero');
+  const heroImage = document.querySelector('.hero__bg-image');
+
+  if (!prefersReducedMotion && hero && heroImage) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const heroHeight = hero.offsetHeight;
+          if (scrollY <= heroHeight) {
+            heroImage.style.transform = `scale(1.02) translateY(${scrollY * 0.12}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
   // ========================================================================
-  // 8. REAL WORKING CONTACT & LEAD GENERATION FORM
+  // 08. FUNCTIONAL LEAD ACQUISITION FORM
   // ========================================================================
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
@@ -323,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (hasError) {
         if (formStatus) {
           formStatus.className = 'form-status form-status--error';
-          formStatus.textContent = 'Please complete the required fields with valid details.';
+          formStatus.textContent = 'Please complete all required fields with valid details.';
         }
         return;
       }
@@ -331,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalBtnHTML = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Sending Inquiry...</span> <span class="btn__arrow">⏳</span>`;
+      submitBtn.innerHTML = `<span>Transmitting Inquiry...</span> <span class="btn__arrow">⏳</span>`;
 
       const formData = new FormData(contactForm);
       const actionUrl = contactForm.getAttribute('action') || CONFIG.formEndpoint;
@@ -346,7 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Accept': 'application/json' }
           });
         } else {
-          await new Promise(res => setTimeout(res, 800));
+          // Simulation in local dev
+          await new Promise(res => setTimeout(res, 850));
           response = { ok: true };
         }
 
@@ -359,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
           }
 
-          submitBtn.innerHTML = `<span>Inquiry Sent</span> <span class="btn__arrow">✓</span>`;
+          submitBtn.innerHTML = `<span>Inquiry Received</span> <span class="btn__arrow">✓</span>`;
           submitBtn.style.backgroundColor = 'var(--color-success)';
           submitBtn.style.color = '#FFFFFF';
 
@@ -378,16 +292,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 6000);
 
         } else {
-          throw new Error('Server returned error response');
+          throw new Error('Endpoint error');
         }
 
       } catch (err) {
-        console.warn('Form submission error. Providing mailto fallback.', err);
+        console.warn('Form network fallback triggered.', err);
         if (formStatus) {
           formStatus.className = 'form-status form-status--error';
           formStatus.innerHTML = `
             Could not deliver through online endpoint. You can email me directly at: 
-            <a href="mailto:${CONFIG.directEmail}?subject=Project%20Inquiry%20from%20${encodeURIComponent(nameInput.value)}" style="color:var(--color-chartreuse);text-decoration:underline;">
+            <a href="mailto:${CONFIG.directEmail}?subject=Project%20Inquiry%20from%20${encodeURIComponent(nameInput.value)}" style="color:var(--color-accent);text-decoration:underline;">
               ${CONFIG.directEmail}
             </a>
           `;
@@ -399,19 +313,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
-  // 9. DYNAMIC YEAR IN FOOTER
-  // ========================================================================
-  const yearSpan = document.getElementById('current-year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-
-  // ========================================================================
-  // 10. OUTBOUND LINK TRACKING
+  // 09. OUTBOUND LINK TRACKING
   // ========================================================================
   document.querySelectorAll('a[target="_blank"]').forEach(link => {
     link.addEventListener('click', () => {
-      trackEvent('external_link_click', {
+      trackEvent('external_link_clicked', {
         href: link.href,
         text: link.innerText.trim()
       });
