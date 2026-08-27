@@ -1,39 +1,73 @@
 /* ==========================================================================
    OMID MOHAMMADI — PORTFOLIO SYSTEM
    Creative Direction: Editorial Design × Retro-Futurism × Cyberpunk
-   Typography: Helvetica / Helvetica Neue (85%) × Reno Mono (15%)
+   Primary Typography: Fliege Mono (High-Fashion Monospace Editorial)
    ========================================================================== */
 
 /* ==========================================================================
-   01. DESIGN TOKENS & SYSTEM VARIABLES
+   01. FONT DEFINITIONS & DESIGN TOKENS
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: "Fliege Mono";
+  src: local("Fliege Mono"), local("FliegeMono"), local("Fliege-Mono"),
+       url("../assets/fonts/FliegeMono-Regular.woff2") format("woff2"),
+       url("../assets/fonts/FliegeMono-Regular.woff") format("woff"),
+       url("../assets/fonts/FliegeMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fliege Mono";
+  src: local("Fliege Mono Medium"), local("FliegeMono-Medium"), local("Fliege-Mono-Medium"),
+       url("../assets/fonts/FliegeMono-Medium.woff2") format("woff2"),
+       url("../assets/fonts/FliegeMono-Medium.woff") format("woff"),
+       url("../assets/fonts/FliegeMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fliege Mono";
+  src: local("Fliege Mono Bold"), local("FliegeMono-Bold"), local("Fliege-Mono-Bold"),
+       url("../assets/fonts/FliegeMono-Bold.woff2") format("woff2"),
+       url("../assets/fonts/FliegeMono-Bold.woff") format("woff"),
+       url("../assets/fonts/FliegeMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* Typography Stacks */
-  --font-primary: "Helvetica Neue", Helvetica, "Segoe UI", Arial, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "Reno Mono", "JetBrains Mono", "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+  /* Primary Font Stack — Fliege Mono across entire portfolio */
+  --font-primary: "Fliege Mono", "Reno Mono", "JetBrains Mono", "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+  --font-mono: "Fliege Mono", "Reno Mono", "JetBrains Mono", "SF Mono", "Fira Code", monospace;
 
-  /* Typography Scale & Tracking */
+  /* Typography Scale & Tracking (Calibrated for Monospace Editorial) */
   --tracking-tight: -0.04em;
-  --tracking-heading: -0.025em;
-  --tracking-body: -0.01em;
-  --tracking-mono: 0.06em;
-  --tracking-label: 0.15em;
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.02em;
+  --tracking-body: -0.005em;
+  --tracking-mono: 0.04em;
+  --tracking-label: 0.12em;
 
-  --leading-display: 0.94;
-  --leading-heading: 1.08;
-  --leading-body: 1.62;
+  --leading-display: 1.02;
+  --leading-heading: 1.15;
+  --leading-body: 1.68;
 
-  --text-hero: clamp(2.8rem, 6.8vw, 5.8rem);
-  --text-h1: clamp(2.2rem, 4.4vw, 3.8rem);
-  --text-h2: clamp(1.6rem, 2.8vw, 2.4rem);
-  --text-h3: clamp(1.2rem, 1.8vw, 1.6rem);
-  --text-body-lg: clamp(1.05rem, 1.35vw, 1.25rem);
-  --text-body: 1.02rem;
-  --text-body-sm: 0.9rem;
+  --text-hero: clamp(2.4rem, 5.8vw, 4.75rem);
+  --text-h1: clamp(1.85rem, 3.8vw, 3.2rem);
+  --text-h2: clamp(1.4rem, 2.4vw, 2.1rem);
+  --text-h3: clamp(1.1rem, 1.6vw, 1.45rem);
+  --text-body-lg: clamp(0.98rem, 1.2vw, 1.15rem);
+  --text-body: 0.95rem;
+  --text-body-sm: 0.86rem;
   --text-meta: 0.72rem;
-  --text-micro: 0.65rem;
+  --text-micro: 0.64rem;
 
   /* Color System — Dark Cinematic Foundation & Restrained Accents */
   --color-bg-base: #0B0D0E;
@@ -78,7 +112,7 @@
   /* Layout Limits */
   --max-width: 1320px;
   --max-width-narrow: 920px;
-  --max-width-text: 720px;
+  --max-width-text: 640px;
 
   /* Border Radii (Sharp & Architectural) */
   --radius-xs: 2px;

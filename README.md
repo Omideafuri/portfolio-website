@@ -5,11 +5,29 @@
 
 ---
 
+## ✦ Typography Architecture — Fliege Mono
+
+The portfolio employs **Fliege Mono** as its primary typeface across the entire visual identity:
+
+- **Primary Typeface: Fliege Mono**
+  - High-fashion, experimental monospaced editorial type system combining high-contrast display scales, tight tracking, and controlled reading measures.
+  - Used for hero typography, section headings, project titles, navigation, buttons, labels, body copy, numbers, metadata, footer, and UI elements.
+  - Font stack: `"Fliege Mono", "Reno Mono", "JetBrains Mono", "SF Mono", "Fira Code", monospace`.
+- **Typographic Direction:** `FLIEGE MONO × EDITORIAL DESIGN × CYBERPUNK × RETRO-FUTURISM × DIGITAL ART DIRECTION`.
+- **Hierarchy:**
+  - *Hero Statement:* Monumental display scale (`clamp(2.4rem, 5.8vw, 4.75rem)`), tight tracking (`-0.035em`), leading `1.02`.
+  - *Section Headings:* Large, compact, and high contrast.
+  - *Project Chapters:* Bold monospaced titles with chapter index numbers.
+  - *Body Copy:* Controlled measure (`max-width: 640px`) with relaxed line-height (`1.68`) for reading comfort.
+  - *Metadata & Numbers:* Reno Mono / Fliege Mono technical coordinates.
+
+---
+
 ## ✦ Creative Direction & Publication Architecture
 
 **Editorial Design × Retro-Futurism × Cyberpunk × Digital Product Design**
 - **Aesthetic:** Dark cinematic foundation (`#0B0D0E`, `#121518`), subtle film grain, analog print scanlines, tactile concrete/metal imagery, and precision chartreuse (`#C8D92B`) / warm phosphor accents.
-- **Typography:** Swiss-inspired **Helvetica / Helvetica Neue** (85% — oversized display & editorial copy) × **Reno Mono** (15% — technical coordinates, chapter indices, and metadata).
+- **Top Toolbar:** Floating liquid-glass island with specular highlights, backdrop blur (`24px`), and dynamic scroll density.
 - **Chapter-Based Structure:**
   - **Cover (Hero):** Full-bleed retro-futuristic creative laboratory imagery with technical metadata.
   - **01 Manifesto:** *"I build digital experiences where visual design, production engineering, and commercial strategy operate as a single system."*
