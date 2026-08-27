@@ -334,57 +334,100 @@ p:last-child {
 }
 
 /* ==========================================================================
-   05. NAVIGATION — MINIMAL TECHNICAL PUBLICATION BAR
+   05. NAVIGATION — LIQUID GLASS FLOATING TOOLBAR
    ========================================================================== */
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - calc(var(--space-gutter) * 1.5)), var(--max-width));
+  height: 56px;
   z-index: 1000;
-  background: rgba(11, 13, 14, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--color-border-hairline);
-  transition: background var(--duration-med) ease, border-color var(--duration-med) ease;
+  
+  /* Liquid Glass Composite Surface */
+  background: linear-gradient(135deg, rgba(22, 26, 32, 0.42) 0%, rgba(10, 13, 16, 0.58) 100%);
+  backdrop-filter: blur(24px) saturate(180%) contrast(108%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%) contrast(108%);
+  
+  /* Refined Rounded Shape & Specular Highlights */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.03),
+    0 12px 32px -4px rgba(0, 0, 0, 0.42),
+    0 2px 6px rgba(0, 0, 0, 0.2);
+  
+  transition: top 0.35s var(--ease-editorial),
+              background 0.35s var(--ease-editorial),
+              border-color 0.35s var(--ease-editorial),
+              box-shadow 0.35s var(--ease-editorial);
 }
 
+/* Subtle Specular Sheen Across Top Edge */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.01) 45%, transparent 100%);
+  opacity: 0.9;
+}
+
+/* Scrolled State: Deeper Density & Refraction */
 .nav--scrolled {
-  background: rgba(11, 13, 14, 0.94);
-  border-bottom-color: var(--color-border-subtle);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  top: 12px;
+  background: linear-gradient(135deg, rgba(16, 20, 25, 0.76) 0%, rgba(8, 10, 13, 0.88) 100%);
+  backdrop-filter: blur(28px) saturate(190%) contrast(110%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(110%);
+  border-color: rgba(255, 255, 255, 0.17);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.04),
+    0 16px 44px -4px rgba(0, 0, 0, 0.65),
+    0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-gutter);
+  height: 100%;
+  padding: 0 14px 0 12px;
+  position: relative;
+  z-index: 2;
 }
 
 .nav__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
+  padding: 4px 8px 4px 4px;
+  border-radius: 8px;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.nav__brand:hover {
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .nav__brand-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   background: var(--color-accent);
   color: var(--color-text-dark);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  border-radius: var(--radius-xs);
+  border-radius: 5px;
   letter-spacing: -0.02em;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.35), 0 2px 8px var(--color-accent-glow);
 }
 
 .nav__brand-info {
@@ -394,7 +437,7 @@ p:last-child {
 
 .nav__brand-name {
   font-family: var(--font-primary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-text-primary);
   line-height: 1.1;
@@ -403,7 +446,7 @@ p:last-child {
 
 .nav__brand-meta {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: var(--color-text-muted);
   letter-spacing: var(--tracking-mono);
 }
@@ -411,33 +454,49 @@ p:last-child {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 4px;
 }
 
 .nav__link {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-primary);
+  font-size: 0.74rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
+  letter-spacing: 0.06em;
   color: var(--color-text-muted);
   position: relative;
-  padding: 6px 0;
-  transition: color var(--duration-fast) ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all var(--duration-fast) var(--ease-editorial);
+  white-space: nowrap;
 }
 
 .nav__link span.nav__link-num {
+  font-family: var(--font-mono);
   color: var(--color-text-faint);
   margin-right: 4px;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
+  transition: color var(--duration-fast) ease;
 }
 
-.nav__link:hover,
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.09);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.nav__link:hover span.nav__link-num {
+  color: var(--color-accent);
+}
+
 .nav__link--active {
+  background: rgba(200, 217, 43, 0.08);
+  border-color: rgba(200, 217, 43, 0.25);
   color: var(--color-text-primary);
 }
 
-.nav__link:hover span.nav__link-num,
 .nav__link--active span.nav__link-num {
   color: var(--color-accent);
 }
@@ -445,62 +504,86 @@ p:last-child {
 .nav__actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-/* Status Indicator */
+/* Status Capsule */
 .status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
-  padding: 5px 12px;
+  padding: 5px 11px;
   background: rgba(200, 217, 43, 0.06);
   border: 1px solid rgba(200, 217, 43, 0.22);
   border-radius: var(--radius-pill);
   color: var(--color-accent);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
 .status-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: var(--color-accent);
   box-shadow: 0 0 8px var(--color-accent-glow);
   animation: pulseDot 2.4s infinite ease-in-out;
 }
 
-@keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.5; }
+/* CTA in Nav */
+.nav .btn--primary {
+  padding: 7px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.35), 0 2px 10px var(--color-accent-glow);
 }
 
-/* Mobile Toggle */
+.nav .btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.45), 0 4px 16px var(--color-accent-glow);
+}
+
+/* Mobile Toggle Button */
 .nav__toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  width: 38px;
-  height: 38px;
-  background: transparent;
-  border: 1px solid var(--color-border-hairline);
-  border-radius: var(--radius-xs);
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
   cursor: pointer;
-  padding: 8px;
+  padding: 6px;
+  transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.nav__toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .nav__toggle span {
   display: block;
-  width: 20px;
+  width: 18px;
   height: 2px;
   background: var(--color-text-primary);
+  border-radius: 1px;
   transition: transform var(--duration-med) ease, opacity var(--duration-fast) ease;
+}
+
+/* Graceful fallback if backdrop-filter is unsupported */
+@supports not (backdrop-filter: blur(10px)) {
+  .nav {
+    background: rgba(14, 17, 21, 0.94);
+  }
 }
 
 /* ==========================================================================
@@ -1641,6 +1724,19 @@ p:last-child {
    19. RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1024px) {
+  .nav__links {
+    gap: 2px;
+  }
+
+  .nav__link {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+
+  .status-pill {
+    display: none;
+  }
+
   .chapter-spread,
   .about__grid,
   .education-box {
@@ -1668,22 +1764,58 @@ p:last-child {
     --space-section: 68px;
   }
 
+  .nav {
+    top: 10px;
+    width: calc(100% - 20px);
+    height: 52px;
+    border-radius: 10px;
+  }
+
+  .nav--scrolled {
+    top: 8px;
+  }
+
+  .nav__inner {
+    padding: 0 10px 0 8px;
+  }
+
   .nav__links {
     display: none;
-    position: fixed;
-    top: 72px;
+    position: absolute;
+    top: calc(100% + 8px);
     left: 0;
     width: 100%;
-    background: rgba(11, 13, 14, 0.98);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--color-border-subtle);
+    background: linear-gradient(135deg, rgba(18, 22, 27, 0.96) 0%, rgba(10, 12, 15, 0.98) 100%);
+    backdrop-filter: blur(24px) saturate(180%) contrast(108%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%) contrast(108%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    box-shadow:
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+      0 20px 48px rgba(0, 0, 0, 0.75);
     flex-direction: column;
-    padding: var(--space-lg) var(--space-gutter);
-    gap: 18px;
+    padding: 12px;
+    gap: 4px;
   }
 
   .nav__links--open {
     display: flex;
+    animation: menuFadeIn 0.25s var(--ease-editorial);
+  }
+
+  @keyframes menuFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .nav__link {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
   }
 
   .nav__toggle {
@@ -1691,6 +1823,10 @@ p:last-child {
   }
 
   .status-pill {
+    display: none;
+  }
+
+  .nav .btn--primary {
     display: none;
   }
 
