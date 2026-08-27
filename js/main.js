@@ -1,6 +1,6 @@
 /* ==========================================================================
-   OMID MOHAMMADI — PORTFOLIO JAVASCRIPT
-   Interactive Chapters, Parallax, Lead Acquisition & Analytics
+   OMID MOHAMMADI PORTFOLIO — JAVASCRIPT V2 (MODEL-22)
+   Navigation, Telemetry, ScrollSpy, Reveals & Lead Acquisition
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,54 +14,41 @@ document.addEventListener('DOMContentLoaded', () => {
     directEmail: 'omideafuri@gmail.com'
   };
 
-  // ========================================================================
-  // 02. PRIVACY-FRIENDLY EVENT DISPATCHER
-  // ========================================================================
-  const trackEvent = (eventName, eventData = {}) => {
-    const customEvent = new CustomEvent('portfolio_event', {
-      detail: { event: eventName, ...eventData, timestamp: new Date().toISOString() }
-    });
-    window.dispatchEvent(customEvent);
-
-    if (typeof window.plausible === 'function') {
-      window.plausible(eventName, { props: eventData });
-    } else if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, eventData);
-    }
-
-    console.log(`[Publication Tracked: ${eventName}]`, eventData);
-  };
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
   // ========================================================================
-  // 03. NAVIGATION & SCROLL STATE
+  // 02. SYSTEM BAR SCROLL STATE & MOBILE DRAWER
   // ========================================================================
-  const nav = document.querySelector('.nav');
-  const navToggle = document.querySelector('.nav__toggle');
-  const navLinks = document.querySelector('.nav__links');
-  const navLinkItems = document.querySelectorAll('.nav__link');
+  const systemBar = document.querySelector('.system-bar');
+  const navToggle = document.querySelector('.system-bar__toggle');
+  const navLinks = document.querySelector('.system-bar__links');
+  const navLinkItems = document.querySelectorAll('.system-bar__link');
 
-  const handleNavScroll = () => {
-    if (window.scrollY > 30) {
-      nav.classList.add('nav--scrolled');
+  // Handle system bar elevation on scroll
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      systemBar.classList.add('system-bar--scrolled');
     } else {
-      nav.classList.remove('nav--scrolled');
+      systemBar.classList.remove('system-bar--scrolled');
     }
   };
 
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-  handleNavScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
+  // Mobile instrument drawer toggle
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('nav__links--open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      
+      const isOpen = navLinks.classList.toggle('system-bar__links--open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+
       const spans = navToggle.querySelectorAll('span');
       if (isOpen) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
         spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-        trackEvent('mobile_nav_opened');
+        spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
       } else {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
@@ -69,10 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Close menu when clicking link
     navLinkItems.forEach(link => {
       link.addEventListener('click', () => {
-        if (navLinks.classList.contains('nav__links--open')) {
-          navLinks.classList.remove('nav__links--open');
+        if (navLinks.classList.contains('system-bar__links--open')) {
+          navLinks.classList.remove('system-bar__links--open');
           navToggle.setAttribute('aria-expanded', 'false');
           const spans = navToggle.querySelectorAll('span');
           spans[0].style.transform = 'none';
@@ -84,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
-  // 04. SMOOTH SCROLL WITH OFFSET & CONVERSION HOOKS
+  // 03. SMOOTH NAVIGATION WITH OFFSET
   // ========================================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -95,103 +83,67 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetEl) {
         e.preventDefault();
         targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        if (anchor.classList.contains('btn') || anchor.classList.contains('nav__link')) {
-          trackEvent('chapter_navigated', {
-            target: targetId,
-            label: anchor.innerText.trim()
-          });
-        }
       }
     });
   });
 
   // ========================================================================
-  // 05. SCROLLSPY (ACTIVE CHAPTER OBSERVER)
+  // 04. SCROLLSPY — Active Navigation Indicator
   // ========================================================================
-  const chapters = document.querySelectorAll('section[id]');
-  if (chapters.length && 'IntersectionObserver' in window) {
-    const chapterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinkItems.forEach(link => {
-            link.classList.remove('nav__link--active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('nav__link--active');
-            }
-          });
-        }
-      });
-    }, {
-      threshold: 0.2,
-      rootMargin: '-70px 0px -40% 0px'
-    });
+  const sections = document.querySelectorAll('section[id]');
 
-    chapters.forEach(chapter => chapterObserver.observe(chapter));
+  if (sections.length && 'IntersectionObserver' in window) {
+    const scrollSpyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinkItems.forEach(link => {
+              link.classList.remove('system-bar__link--active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('system-bar__link--active');
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '-56px 0px -40% 0px'
+      }
+    );
+
+    sections.forEach(section => scrollSpyObserver.observe(section));
   }
 
   // ========================================================================
-  // 06. INTERACTIVE CAPABILITY ITEMS
+  // 05. SCROLL REVEALS (Mechanical Easing)
   // ========================================================================
-  const capabilityItems = document.querySelectorAll('.capability-item');
-  capabilityItems.forEach(item => {
-    item.addEventListener('click', () => {
-      capabilityItems.forEach(i => i.classList.remove('capability-item--active'));
-      item.classList.add('capability-item--active');
-      trackEvent('capability_selected', {
-        title: item.querySelector('.capability-name')?.innerText.trim()
-      });
-    });
-  });
-
-  // ========================================================================
-  // 07. EDITORIAL SCROLL REVEALS & PARALLAX
-  // ========================================================================
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealElements = document.querySelectorAll('.reveal');
 
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal--visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -30px 0px'
-    });
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal--visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -24px 0px'
+      }
+    );
 
     revealElements.forEach(el => revealObserver.observe(el));
   } else {
     revealElements.forEach(el => el.classList.add('reveal--visible'));
   }
 
-  // Cinematic Parallax on Hero Visual
-  const hero = document.getElementById('hero');
-  const heroImage = document.querySelector('.hero__bg-image');
-
-  if (!prefersReducedMotion && hero && heroImage) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          const heroHeight = hero.offsetHeight;
-          if (scrollY <= heroHeight) {
-            heroImage.style.transform = `scale(1.02) translateY(${scrollY * 0.12}px)`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  }
-
   // ========================================================================
-  // 08. FUNCTIONAL LEAD ACQUISITION FORM
+  // 06. LEAD ACQUISITION FORM (With Starting $700+ Validation)
   // ========================================================================
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
@@ -200,6 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = contactForm.querySelectorAll('input, select, textarea');
     inputs.forEach(input => {
       input.addEventListener('input', () => {
+        const parentField = input.closest('.form-field');
+        if (parentField) {
+          parentField.classList.remove('form-field--error');
+        }
+      });
+      input.addEventListener('change', () => {
         const parentField = input.closest('.form-field');
         if (parentField) {
           parentField.classList.remove('form-field--error');
@@ -214,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const nameInput = document.getElementById('client-name');
       const emailInput = document.getElementById('client-email');
       const descInput = document.getElementById('project-desc');
-      const scopeInput = document.getElementById('project-scope');
       const budgetInput = document.getElementById('budget-range');
 
       const validateField = (input, condition) => {
@@ -231,24 +188,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
       validateField(nameInput, nameInput.value.trim().length >= 2);
       validateField(emailInput, emailRegex.test(emailInput.value.trim()));
+      validateField(budgetInput, budgetInput.value !== '');
       validateField(descInput, descInput.value.trim().length >= 10);
 
       if (hasError) {
         if (formStatus) {
           formStatus.className = 'form-status form-status--error';
-          formStatus.textContent = 'Please complete all required fields with valid details.';
+          formStatus.textContent =
+            'Please complete all required fields with valid project details.';
         }
         return;
       }
 
+      // Submit State
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalBtnHTML = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Transmitting Inquiry...</span> <span class="btn__arrow">⏳</span>`;
+      submitBtn.innerHTML =
+        '<span>TRANSMITTING INQUIRY...</span> <span class="btn__arrow">⏳</span>';
 
       const formData = new FormData(contactForm);
       const actionUrl = contactForm.getAttribute('action') || CONFIG.formEndpoint;
-      const isCustomKey = contactForm.dataset.accessKey && contactForm.dataset.accessKey !== 'YOUR_ACCESS_KEY_HERE';
+      const isCustomKey =
+        contactForm.dataset.accessKey &&
+        contactForm.dataset.accessKey !== 'YOUR_ACCESS_KEY_HERE';
 
       try {
         let response;
@@ -256,10 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
           response = await fetch(actionUrl, {
             method: 'POST',
             body: formData,
-            headers: { 'Accept': 'application/json' }
+            headers: { Accept: 'application/json' }
           });
         } else {
-          // Simulation in local dev
+          // Simulation for local dev preview
           await new Promise(res => setTimeout(res, 850));
           response = { ok: true };
         }
@@ -268,40 +231,29 @@ document.addEventListener('DOMContentLoaded', () => {
           if (formStatus) {
             formStatus.className = 'form-status form-status--success';
             formStatus.innerHTML = `
-              <strong>Inquiry Transmitted Successfully.</strong><br>
-              Thank you, ${nameInput.value.trim()}. I have received your project details and will review and respond within 24-48 business hours.
+              <strong>INQUIRY TRANSMITTED SUCCESSFULLY.</strong><br>
+              Thank you, ${nameInput.value.trim()}. Your project specifications have been received. I will review and respond within 24–48 business hours.
             `;
           }
 
-          submitBtn.innerHTML = `<span>Inquiry Received</span> <span class="btn__arrow">✓</span>`;
-          submitBtn.style.backgroundColor = 'var(--color-success)';
-          submitBtn.style.color = '#FFFFFF';
-
-          trackEvent('lead_form_submitted', {
-            scope: scopeInput ? scopeInput.value : 'unspecified',
-            budget: budgetInput ? budgetInput.value : 'unspecified'
-          });
-
+          submitBtn.innerHTML = '<span>INQUIRY RECEIVED</span> <span class="btn__arrow">✓</span>';
           contactForm.reset();
 
           setTimeout(() => {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHTML;
-            submitBtn.style.backgroundColor = '';
-            submitBtn.style.color = '';
           }, 6000);
-
         } else {
           throw new Error('Endpoint error');
         }
-
       } catch (err) {
-        console.warn('Form network fallback triggered.', err);
+        console.warn('Form network fallback:', err);
         if (formStatus) {
           formStatus.className = 'form-status form-status--error';
           formStatus.innerHTML = `
-            Could not deliver through online endpoint. You can email me directly at: 
-            <a href="mailto:${CONFIG.directEmail}?subject=Project%20Inquiry%20from%20${encodeURIComponent(nameInput.value)}" style="color:var(--color-accent);text-decoration:underline;">
+            Could not deliver automatically. You can reach out directly via email at:
+            <a href="mailto:${CONFIG.directEmail}?subject=Project%20Inquiry%20(Model%2022)"
+               style="color:var(--signal-action);text-decoration:underline;">
               ${CONFIG.directEmail}
             </a>
           `;
@@ -313,14 +265,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
-  // 09. OUTBOUND LINK TRACKING
+  // 07. PRIVACY-FRIENDLY OUTBOUND EVENT DISPATCHER
   // ========================================================================
   document.querySelectorAll('a[target="_blank"]').forEach(link => {
     link.addEventListener('click', () => {
-      trackEvent('external_link_clicked', {
-        href: link.href,
-        text: link.innerText.trim()
+      const customEvent = new CustomEvent('portfolio_event', {
+        detail: {
+          event: 'external_link_clicked',
+          href: link.href,
+          text: link.innerText.trim(),
+          timestamp: new Date().toISOString()
+        }
       });
+      window.dispatchEvent(customEvent);
     });
   });
 

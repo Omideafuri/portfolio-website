@@ -1,0 +1,118 @@
+/* ==========================================================================
+   OMID MOHAMMADI PORTFOLIO — DESIGN TOKENS V2
+   Precision Instrument Design System: "Model 22"
+   ========================================================================== */
+
+:root {
+
+  /* ── 01. TYPOGRAPHY SYSTEM ──────────────────────────────────────────────── */
+  /* Display: Fliege / Fliege Mono with Architectural Grotesque fallbacks */
+  --font-display: "Fliege", "Fliege Mono", "Space Grotesk", "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:    "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", "Space Mono", "IBM Plex Mono", Menlo, Consolas, monospace;
+
+  /* ── 02. TYPE SCALE ─────────────────────────────────────────────────────── */
+  --type-hero:      clamp(2.5rem, 5.2vw, 4.4rem);
+  --type-display:   clamp(2.1rem, 4.2vw, 3.4rem);
+  --type-h1:        clamp(1.75rem, 3.2vw, 2.4rem);
+  --type-h2:        clamp(1.25rem, 2.2vw, 1.75rem);
+  --type-h3:        clamp(1.05rem, 1.5vw, 1.3rem);
+  --type-body-lg:   1.125rem;
+  --type-body:      1rem;
+  --type-body-sm:   0.875rem;
+  --type-label:     0.75rem;       /* Precision mono labels (SYS-01, MODEL-22) */
+  --type-meta:      0.6875rem;     /* Telemetry & timestamps                   */
+  --type-micro:     0.625rem;      /* Micro calibration & badges               */
+
+  /* Letter Spacing */
+  --tracking-tightest: -0.04em;
+  --tracking-tight:    -0.025em;
+  --tracking-normal:   -0.01em;
+  --tracking-mono:      0.04em;
+  --tracking-label:     0.08em;
+  --tracking-wide:      0.14em;
+
+  /* ── 03. COLOR SYSTEM — PHYSICAL MATERIALS & SIGNALS ────────────────────── */
+  --surface-base:       #F2EDE6;   /* Aged ABS plastic / warm industrial casing */
+  --surface-raised:     #FAFAF7;   /* Elevated aluminum panel / fine label      */
+  --surface-recessed:   #E8E2D9;   /* Recessed instrument cavity / gauge well   */
+  --surface-deep:       #D9D2C8;   /* Deep chassis groove / milled channel      */
+  --surface-dark:       #141618;   /* Inverted chassis / dark CRT bezel         */
+
+  /* Structural Inks */
+  --structure-primary:    #151719; /* High-contrast printed industrial black    */
+  --structure-secondary:  #444648; /* Secondary body / stamped specification   */
+  --structure-tertiary:   #7E8286; /* Calibrated metadata / inactive state      */
+  --structure-faint:      #BFC3C8; /* Hairline milled seams / tick dividers     */
+  --structure-ghost:      #DCDFE3; /* Sub-hairline structural alignment grid    */
+
+  /* Signal Indicators */
+  --signal-action:        #D45D27; /* Safety Orange — primary trigger           */
+  --signal-action-hover:  #BE4E1A; /* Pressed warm orange                       */
+  --signal-active:        #268A36; /* Phosphor Green LED — operational status   */
+  --signal-active-glow:   rgba(38, 138, 54, 0.28);
+  --signal-caution:       #C49A1A; /* Caution Amber LED — calibration state     */
+  --signal-error:         #C9382B; /* Fault Red LED — error condition           */
+  --signal-action-subtle: rgba(212, 93, 39, 0.08);
+  --signal-action-glow:   rgba(212, 93, 39, 0.25);
+
+  /* ── 04. STRICT SPACING SCALE (8px Base System) ─────────────────────────── */
+  --space-2xs:  4px;    /* XS: Sub-badge gap, micro ticks, borders            */
+  --space-xs:   8px;    /* XS: Label to value, tag gap, icon margin           */
+  --space-sm:   16px;   /* SM: Component interior padding, list gap           */
+  --space-md:   24px;   /* MD: Card internal grid, form row gap               */
+  --space-lg:   40px;   /* LG: Panel spacing, sub-section dividers            */
+  --space-xl:   64px;   /* XL: Section internal rhythm, header to content     */
+  --space-2xl:  96px;   /* 2XL: Section-to-section boundary                   */
+  --space-3xl:  clamp(96px, 11vw, 140px); /* 3XL: Hero & landmark space      */
+
+  /* Legacy mapping aliases */
+  --space-1: var(--space-2xs);
+  --space-2: var(--space-xs);
+  --space-3: var(--space-sm);
+  --space-4: var(--space-md);
+  --space-5: 32px;
+  --space-6: var(--space-lg);
+  --space-7: var(--space-xl);
+  --space-8: var(--space-2xl);
+  --space-9: var(--space-3xl);
+
+  /* ── 05. BORDER & RADIUS RULES ──────────────────────────────────────────── */
+  --radius-none:  0;    /* Hardware precision: sharp cut edges               */
+  --radius-sm:    2px;  /* Micro chamfer for tactile buttons & inputs        */
+  --radius-md:    4px;  /* Internal sub-chip container                       */
+
+  --border-hairline:      1px solid var(--structure-faint);
+  --border-subtle:        1px solid var(--structure-ghost);
+  --border-structural:    2px solid var(--structure-primary);
+  --border-accent:        2px solid var(--signal-action);
+  --border-active:        2px solid var(--signal-active);
+  --border-inset:         1px solid var(--surface-deep);
+  --border-inset-shadow:  1px solid var(--surface-recessed);
+
+  /* ── 06. PHYSICAL SHADOW & DEPTH SYSTEM ─────────────────────────────────── */
+  --shadow-pressed:   inset 0 2px 0 var(--surface-deep), inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-recessed:  inset 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-raised:    0 1px 0 var(--surface-deep), 0 2px 0 var(--structure-faint);
+  --shadow-plate:     0 2px 0 var(--structure-faint), 0 6px 16px rgba(21, 23, 25, 0.04);
+  --shadow-focus:     0 0 0 3px var(--signal-action-glow);
+
+  /* ── 07. MECHANICAL MOTION & SPRING EASING ──────────────────────────────── */
+  --ease-mechanical:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:      cubic-bezier(0.22, 0.68, 0, 1.0);
+  --ease-snap:        cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-linear:      linear;
+
+  --duration-instant:   80ms;   /* Button down-click tactile response          */
+  --duration-fast:      160ms;  /* Hover highlights, indicator state toggle    */
+  --duration-standard:  280ms;  /* Panel expansion, tab activation, navigation */
+  --duration-slow:      480ms;  /* Entrance sequence reveals, layout shifts    */
+
+  /* ── 08. LAYOUT METRICS ─────────────────────────────────────────────────── */
+  --max-width:        1240px;
+  --max-width-narrow: 760px;
+  --max-width-text:   640px;
+  --gutter:           24px;
+  --margin:           clamp(24px, 4.5vw, 64px);
+  --nav-height:       56px;
+}

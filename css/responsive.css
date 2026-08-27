@@ -1,0 +1,254 @@
+/* ==========================================================================
+   OMID MOHAMMADI PORTFOLIO — RESPONSIVE BREAKPOINTS V2
+   Desktop ≥ 1024px  |  Tablet 768px–1023px  |  Mobile < 768px
+   ========================================================================== */
+
+/* ==========================================================================
+   TABLET (768px — 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+
+  /* ── Navigation ──────────────────────────────────────────────────────── */
+  .system-bar__link {
+    padding: 8px 8px;
+    font-size: 0.6875rem;
+  }
+
+  .status-chip {
+    padding: 4px 6px;
+    font-size: 0.5625rem;
+  }
+
+  .rate-chip {
+    display: none;
+  }
+
+  /* ── Hero ────────────────────────────────────────────────────────────── */
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__visual-panel {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ── Projects ────────────────────────────────────────────────────────── */
+  .project-spread {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* ── Capabilities ────────────────────────────────────────────────────── */
+  .capabilities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── About ───────────────────────────────────────────────────────────── */
+  .about__content {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (< 768px)
+   ========================================================================== */
+@media (max-width: 767px) {
+
+  :root {
+    --margin: 18px;
+    --nav-height: 52px;
+  }
+
+  /* ── Reduce section spacing ──────────────────────────────────────────── */
+  .section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: calc(var(--nav-height) + var(--space-md)) 0 var(--space-xl);
+  }
+
+  /* ── Navigation — Mobile Instrument Drawer ───────────────────────────── */
+  .system-bar__links {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    background-color: var(--surface-base);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--space-2xs);
+    padding: var(--space-md);
+    z-index: 999;
+    overflow-y: auto;
+    border-bottom: 2px solid var(--structure-primary);
+  }
+
+  .system-bar__links--open {
+    display: flex;
+    animation: menuDrawerReveal var(--duration-standard) var(--ease-spring);
+  }
+
+  @keyframes menuDrawerReveal {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .system-bar__link {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface-raised);
+    border: 1px solid var(--structure-faint);
+    border-radius: var(--radius-sm);
+    text-align: left;
+  }
+
+  .system-bar__link::after {
+    display: none;
+  }
+
+  .system-bar__link:hover,
+  .system-bar__link--active {
+    background-color: var(--signal-action-subtle);
+    border-color: var(--signal-action);
+    color: var(--signal-action);
+  }
+
+  .system-bar__toggle {
+    display: flex;
+  }
+
+  .status-chip {
+    display: none;
+  }
+
+  .rate-chip {
+    display: none;
+  }
+
+  /* ── Hero Mobile ─────────────────────────────────────────────────────── */
+  .hero__grid {
+    display: none;
+  }
+
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .hero__headline {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .hero__specs {
+    gap: 6px;
+  }
+
+  .spec-chip {
+    font-size: 0.625rem;
+    padding: 4px 8px;
+  }
+
+  .hero__visual-panel {
+    max-width: 100%;
+  }
+
+  /* ── Projects Mobile ─────────────────────────────────────────────────── */
+  .project-spread {
+    padding: var(--space-md);
+  }
+
+  .project-breakdown {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .project-spread__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-spread__actions .btn {
+    width: 100%;
+  }
+
+  /* ── Capabilities Mobile ─────────────────────────────────────────────── */
+  .capabilities__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Record Mobile ───────────────────────────────────────────────────── */
+  .data-plate {
+    padding: var(--space-md);
+  }
+
+  .data-plate__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ── Contact Form Mobile ─────────────────────────────────────────────── */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-form {
+    padding: var(--space-md);
+  }
+
+  .form-submit .btn {
+    width: 100%;
+  }
+
+  /* ── Footer Mobile ───────────────────────────────────────────────────── */
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* ── Buttons Mobile ──────────────────────────────────────────────────── */
+  .btn-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* ── Screws & Micro Annotations ──────────────────────────────────────── */
+  .has-screws::before,
+  .has-screws::after {
+    display: none;
+  }
+}

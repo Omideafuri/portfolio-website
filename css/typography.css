@@ -1,0 +1,108 @@
+/* ==========================================================================
+   OMID MOHAMMADI PORTFOLIO — TYPOGRAPHY V2
+   Display: FLIEGE / Space Grotesk / Syne (Architectural Grotesque)
+   Technical: JetBrains Mono / SF Mono (Precision Instrument Mono)
+   Body: Inter (Neutral Optical Sans)
+   ========================================================================== */
+
+/* ── Web Font Imports ────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
+
+/* ── Local Font Declaration (Fliege & Fliege Mono) ────────────────────────── */
+@font-face {
+  font-family: "Fliege";
+  src: local("Fliege"), local("Fliege-Regular"), local("FliegeRegular"),
+       url("../assets/fonts/Fliege-Regular.woff2") format("woff2"),
+       url("../assets/fonts/Fliege-Regular.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fliege Mono";
+  src: local("Fliege Mono"), local("FliegeMono"), local("Fliege-Mono"),
+       url("../assets/fonts/FliegeMono-Regular.woff2") format("woff2"),
+       url("../assets/fonts/FliegeMono-Regular.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Heading Hierarchy ───────────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--structure-primary);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-size: var(--type-h1);
+  letter-spacing: var(--tracking-tightest);
+}
+
+h2 {
+  font-size: var(--type-h2);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+  font-size: var(--type-h3);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* ── Display Typographic Moments ─────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: var(--tracking-tightest);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* ── Body Copy ───────────────────────────────────────────────────────────── */
+p {
+  margin-bottom: 1.2em;
+  color: var(--structure-secondary);
+  line-height: 1.65;
+  font-family: var(--font-sans);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  color: var(--structure-primary);
+  font-weight: 600;
+}
+
+/* ── Technical Calibration Accents ───────────────────────────────────────── */
+.text-accent {
+  color: var(--signal-action);
+}
+
+.text-active {
+  color: var(--signal-active);
+}
+
+.text-muted {
+  color: var(--structure-tertiary);
+}
+
+.text-mono-sm {
+  font-family: var(--font-mono);
+  font-size: var(--type-meta);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
