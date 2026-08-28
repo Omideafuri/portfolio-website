@@ -1,5 +1,5 @@
 /* ==========================================================================
-   OMID MOHAMMADI PORTFOLIO — DESIGN TOKENS V3 (CINEMATIC)
+   OMID MOHAMMADI PORTFOLIO — DESIGN TOKENS V4 (LIVING MOTION & VISIBILITY)
    Precision Instrument Design System
    ========================================================================== */
 
@@ -7,71 +7,88 @@
 
   /* ── 01. TYPOGRAPHY SYSTEM ──────────────────────────────────────────────── */
   --font-display: "Fliege", "Space Grotesk", "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-sans:    "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* Fliege Mono prioritized for technical/editorial elements */
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono:    "Fliege Mono", "JetBrains Mono", "SF Mono", "Space Mono", monospace;
 
-  /* ── 02. TYPE SCALE (Optical Alignment) ─────────────────────────────────── */
-  --type-hero:      clamp(3rem, 6.5vw, 5.5rem);
-  --type-display:   clamp(2.4rem, 5vw, 4rem);
-  --type-h1:        clamp(1.85rem, 3.5vw, 2.75rem);
-  --type-h2:        clamp(1.35rem, 2.5vw, 1.85rem);
-  --type-h3:        clamp(1.1rem, 1.6vw, 1.35rem);
-  --type-body-lg:   1.125rem;
-  --type-body:      1rem;
-  --type-body-sm:   0.875rem;
-  --type-label:     0.75rem;
-  --type-meta:      0.6875rem;
-  --type-micro:     0.625rem;
+  /* ── 02. FLUID TYPOGRAPHY SCALES (375px → 1920px) ───────────────────────── */
+  --type-display:     clamp(2.5rem, 5.5vw + 1rem, 5.5rem);
+  --type-h1:          clamp(2.25rem, 4.5vw + 1rem, 4.25rem);
+  --type-h2:          clamp(1.75rem, 3vw + 0.75rem, 2.75rem);
+  --type-h3:          clamp(1.25rem, 1.8vw + 0.5rem, 1.75rem);
+  --type-body-lg:     clamp(1.0625rem, 0.8vw + 0.85rem, 1.25rem);
+  --type-body:        clamp(0.9375rem, 0.4vw + 0.85rem, 1.0625rem);
+  --type-body-sm:     clamp(0.8125rem, 0.2vw + 0.75rem, 0.9375rem);
+  --type-label:       0.8125rem;
+  --type-meta:        0.75rem;
+  --type-micro:       0.6875rem;
 
   /* Letter Spacing */
   --tracking-tightest: -0.04em;
-  --tracking-tight:    -0.025em;
-  --tracking-normal:   -0.01em;
-  --tracking-mono:      0.02em;
-  --tracking-label:     0.06em;
-  --tracking-wide:      0.12em;
+  --tracking-tight:    -0.02em;
+  --tracking-normal:   0em;
+  --tracking-mono:     0.02em;
+  --tracking-label:    0.06em;
+  --tracking-widest:   0.1em;
 
-  /* ── 03. COLOR SYSTEM ───────────────────────────────────────────────────── */
-  /* Retro-Future Hardware base with Persian Colored Glass accents */
-  --surface-base:       #F2EDE6;
-  --surface-raised:     #FAFAF7;
-  --surface-recessed:   #E8E2D9;
-  --surface-deep:       #D9D2C8;
-  --surface-dark:       #0A0A0A; /* Cinematic black / Retro CRT bezel */
-  --surface-glass:      rgba(10, 10, 10, 0.4);
-  --surface-glass-light:rgba(242, 237, 230, 0.75);
+  /* Line Heights */
+  --leading-tight:     1.05;
+  --leading-snug:      1.2;
+  --leading-normal:    1.6;
+  --leading-relaxed:   1.75;
 
-  --structure-primary:    #151719;
-  --structure-secondary:  #444648;
-  --structure-tertiary:   #7E8286;
-  --structure-faint:      #BFC3C8;
-  --structure-ghost:      #DCDFE3;
-  --structure-dark-border: rgba(255, 255, 255, 0.1);
+  /* ── 03. SEMANTIC CONTRAST SYSTEM ───────────────────────────────────────── */
+  /* Default Light Context */
+  --text-primary:        #0E1012;
+  --text-secondary:      #45494F;
+  --text-muted:          #6F747C;
+  --text-faint:          #9CA1A9;
+  --text-accent:         #B84D1E;
+  
+  --surface-base:        #F2EDE6;
+  --surface-raised:      #FAFAF7;
+  --surface-recessed:    #E8E2D9;
+  --surface-deep:        #DDD6CC;
+  --surface-glass-light: rgba(242, 237, 230, 0.85);
 
-  /* Persian Colored Glass Theme */
-  --glass-amber:          #D48C27;
-  --glass-sapphire:       #2764D4;
-  --glass-emerald:        #27D481;
-  --glass-ruby:           #D42749;
+  --border-faint:        rgba(14, 16, 18, 0.08);
+  --border-muted:        rgba(14, 16, 18, 0.15);
+  --border-strong:       rgba(14, 16, 18, 0.35);
 
-  --signal-action:        #D45D27;
-  --signal-action-hover:  #BE4E1A;
-  --signal-active:        #27D481;
-  --signal-active-glow:   rgba(39, 212, 129, 0.35);
-  --signal-caution:       #D48C27;
-  --signal-error:         #D42749;
-  --signal-action-subtle: rgba(212, 93, 39, 0.08);
-  --signal-action-glow:   rgba(212, 93, 39, 0.3);
+  /* Dark Context Overrides */
+  --surface-dark:        #0A0A0A; /* Cinematic Deep Black */
+  --surface-dark-card:   #111214;
+  --surface-dark-elevated:#181A1D;
+  --surface-glass:       rgba(10, 10, 10, 0.65);
 
-  /* Translucent Colored Glows (Persian Heritage) */
-  --glow-amber:           0 0 40px rgba(212, 140, 39, 0.15), inset 0 0 20px rgba(212, 140, 39, 0.05);
-  --glow-sapphire:        0 0 40px rgba(39, 100, 212, 0.15), inset 0 0 20px rgba(39, 100, 212, 0.05);
-  --glow-emerald:         0 0 40px rgba(39, 212, 129, 0.15), inset 0 0 20px rgba(39, 212, 129, 0.05);
+  --text-dark-primary:   #FFFFFF;
+  --text-dark-secondary: rgba(255, 255, 255, 0.78);
+  --text-dark-muted:     rgba(255, 255, 255, 0.52);
+  --text-dark-faint:     rgba(255, 255, 255, 0.3);
 
+  --border-dark-faint:   rgba(255, 255, 255, 0.08);
+  --border-dark-muted:   rgba(255, 255, 255, 0.14);
+  --border-dark-strong:  rgba(255, 255, 255, 0.3);
 
-  /* ── 04. STRICT SPACING SCALE ───────────────────────────────────────────── */
-  /* Re-engineered for "More Air, Less Clutter" */
+  /* ── 04. PERSIAN STAINED GLASS ACCENTS ──────────────────────────────────── */
+  --glass-amber:         #D48C27;
+  --glass-amber-glow:    rgba(212, 140, 39, 0.35);
+  --glass-sapphire:      #2764D4;
+  --glass-sapphire-glow: rgba(39, 100, 212, 0.35);
+  --glass-emerald:       #27D481;
+  --glass-emerald-glow:  rgba(39, 212, 129, 0.35);
+  --glass-ruby:          #D42749;
+
+  --signal-action:       #D45D27;
+  --signal-action-hover: #E26830;
+  --signal-active:       #27D481;
+  --signal-active-glow:  rgba(39, 212, 129, 0.4);
+
+  /* Translucent Ambient Glows */
+  --glow-amber:          0 0 35px rgba(212, 140, 39, 0.18), inset 0 0 15px rgba(212, 140, 39, 0.06);
+  --glow-sapphire:       0 0 35px rgba(39, 100, 212, 0.18), inset 0 0 15px rgba(39, 100, 212, 0.06);
+  --glow-emerald:        0 0 35px rgba(39, 212, 129, 0.18), inset 0 0 15px rgba(39, 212, 129, 0.06);
+
+  /* ── 05. STRICT SPACING SCALE ───────────────────────────────────────────── */
   --space-3xs:  2px;
   --space-2xs:  4px;
   --space-xs:   8px;
@@ -82,25 +99,25 @@
   --space-2xl:  120px;
   --space-3xl:  180px;
 
-  /* ── 05. BORDER & RADIUS ────────────────────────────────────────────────── */
+  /* ── 06. BORDER & RADIUS ────────────────────────────────────────────────── */
   --radius-none:  0;
-  --radius-sm:    3px;
-  --radius-md:    6px;
-  --radius-lg:    12px;
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    16px;
   --radius-full:  9999px;
 
-  --border-hairline:      1px solid var(--structure-faint);
-  --border-glass:         1px solid rgba(255, 255, 255, 0.08);
+  --border-hairline:      1px solid var(--border-muted);
+  --border-glass:         1px solid rgba(255, 255, 255, 0.1);
 
-  /* ── 06. PHYSICAL SHADOW & DEPTH (beUI / Rare UI inspired) ─────────────── */
-  --shadow-sm:        0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md:        0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.08);
-  --shadow-lg:        0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-glass:     0 8px 32px rgba(0, 0, 0, 0.12);
-  --shadow-glow:      0 0 20px var(--signal-action-glow);
+  /* ── 07. PHYSICAL SHADOW & DEPTH ────────────────────────────────────────── */
+  --shadow-sm:        0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md:        0 6px 18px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-lg:        0 16px 40px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-glass:     0 8px 32px rgba(0, 0, 0, 0.25);
+  --shadow-recessed:  inset 0 2px 4px rgba(0, 0, 0, 0.06);
 
-  /* ── 07. MOTION & SPRING EASING ─────────────────────────────────────────── */
-  --ease-spring:      linear(0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1); /* Custom CSS spring */
+  /* ── 08. MOTION & SPRING EASING TOKENS ──────────────────────────────────── */
+  --ease-spring:      linear(0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1);
   --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out:      cubic-bezier(0.65, 0, 0.35, 1);
   --ease-magnetic:    cubic-bezier(0.175, 0.885, 0.32, 1.1);
@@ -109,20 +126,21 @@
   --duration-fast:    250ms;
   --duration-standard:400ms;
   --duration-slow:    800ms;
-  --duration-cinematic: 1200ms;
+  --duration-cinematic:1200ms;
 
-  /* ── 08. LAYOUT METRICS ─────────────────────────────────────────────────── */
+  /* ── 09. LAYOUT METRICS ─────────────────────────────────────────────────── */
   --max-width:        1280px;
   --max-width-narrow: 840px;
   --max-width-text:   680px;
-  --gutter:           clamp(24px, 5vw, 64px);
+  --gutter:           clamp(16px, 4vw, 48px);
   --nav-height:       64px;
 
-  /* ── 09. Z-INDEX SYSTEM ─────────────────────────────────────────────────── */
+  /* ── 10. Z-INDEX SYSTEM ─────────────────────────────────────────────────── */
   --z-background:     -10;
   --z-base:           1;
   --z-content:        10;
   --z-floating:       50;
   --z-nav:            100;
+  --z-modal:          500;
   --z-cursor:         9999;
 }

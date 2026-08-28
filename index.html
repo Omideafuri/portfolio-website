@@ -41,7 +41,7 @@
       </div>
 
       <div class="system-bar__actions">
-        <div class="status-chip" aria-label="Status: Available">
+        <div class="status-chip ambient-pulse-1" aria-label="Status: Available">
           <span class="status-chip__dot"></span>
           <span class="status-chip__text">Available</span>
         </div>
@@ -56,51 +56,55 @@
   <main id="main">
     
     <!-- =======================================================================
-         HERO SECTION (CINEMATIC)
+         01. HERO SECTION (CINEMATIC LIVING ENVIRONMENT)
          ======================================================================= -->
     <section id="hero" class="hero section dark-context">
-      <div class="hero__bg" style="background: var(--surface-dark);"></div>
-      <div class="hero__overlay" style="background: radial-gradient(circle at top right, rgba(212, 140, 39, 0.15) 0%, transparent 60%), radial-gradient(circle at bottom left, rgba(39, 100, 212, 0.1) 0%, transparent 60%); mix-blend-mode: color-dodge;"></div>
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
       
-      <div class="container hero__content" style="padding-top: var(--space-3xl); padding-bottom: var(--space-2xl);">
-        <div class="hero__telemetry-tag reveal reveal--delay-1" style="display: flex; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-md);">
-          <div class="status-chip" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <span class="status-chip__dot" style="background: var(--glass-amber); box-shadow: 0 0 10px var(--glass-amber);"></span>
-            IDENTITY VERIFIED
+      <div class="container hero__content">
+        <div class="hero__telemetry-tag reveal">
+          <div class="status-chip ambient-float-1" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);">
+            <span class="status-chip__dot" style="background: var(--glass-amber); box-shadow: 0 0 10px var(--glass-amber-glow);"></span>
+            <span style="color: #FFFFFF;">IDENTITY VERIFIED</span>
           </div>
-          <span class="font-mono text-meta text-muted">OMID MOHAMMADI // DIGITAL DESIGNER</span>
+          <span class="font-mono text-meta" style="color: var(--text-dark-muted);">OMID MOHAMMADI // DIGITAL DESIGNER</span>
         </div>
 
-        <h1 class="hero__headline font-display reveal reveal--delay-2" style="max-width: 900px; font-size: clamp(3rem, 7vw, 6.5rem); letter-spacing: var(--tracking-tightest); line-height: 1;">
+        <h1 class="hero__headline font-display reveal">
           Web Designer &<br/>Frontend Developer.
         </h1>
-        <p class="hero__subline font-sans reveal reveal--delay-3" style="max-width: 600px; font-size: var(--type-body-lg); color: rgba(255,255,255,0.8); margin-top: var(--space-lg);">
-          I design and build distinctive digital experiences where <strong>design</strong>, <strong>technology</strong>, and <strong>business</strong> meet.
+        <p class="hero__subline font-sans reveal">
+          I design and build distinctive digital experiences where <strong style="color: #FFFFFF;">design</strong>, <strong style="color: #FFFFFF;">technology</strong>, and <strong style="color: #FFFFFF;">business</strong> meet.
         </p>
 
-        <div class="hero__specs reveal reveal--delay-4" style="margin-top: var(--space-xl); display: flex; gap: var(--space-sm); flex-wrap: wrap;">
-          <span class="spec-chip spec-chip--accent" style="background: rgba(212, 140, 39, 0.1); color: var(--glass-amber); border-color: rgba(212, 140, 39, 0.2);">UI/UX</span>
-          <span class="spec-chip" style="background: rgba(255,255,255,0.03);">FRONTEND ENGINEERING</span>
-          <span class="spec-chip" style="background: rgba(255,255,255,0.03);">CREATIVE DIRECTION</span>
-          <span class="spec-chip" style="background: rgba(255,255,255,0.03);">NEXT.JS</span>
-          <span class="spec-chip" style="background: rgba(255,255,255,0.03);">AI-ASSISTED DEV</span>
+        <div class="hero__specs reveal">
+          <span class="spec-chip spec-chip--accent ambient-float-2">UI/UX</span>
+          <span class="spec-chip ambient-float-3">FRONTEND ENGINEERING</span>
+          <span class="spec-chip ambient-float-1">CREATIVE DIRECTION</span>
+          <span class="spec-chip ambient-float-2">NEXT.JS</span>
+          <span class="spec-chip spec-chip--accent ambient-float-3">AI-ASSISTED DEV</span>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         POINT OF VIEW (EDITORIAL ABOUT)
+         02. POINT OF VIEW (EDITORIAL PHILOSOPHY)
          ======================================================================= -->
     <section id="pov" class="section" style="background: var(--surface-base);">
       <div class="container">
+        <div class="sys-divider"></div>
+        <div class="section-num ambient-float-2">
+          <span>01</span> <span>POINT OF VIEW</span>
+        </div>
+        
         <div class="grid grid--2col">
           <div class="reveal">
-            <span class="sys-label">01 // Point of View</span>
             <h2 class="font-display">Design Philosophy</h2>
             
-            <div class="panel panel--structural has-screws margin-top-lg" style="background: var(--surface-raised);">
+            <div class="panel panel--structural has-screws margin-top-lg">
               <p class="font-mono text-meta text-accent" style="margin-bottom: var(--space-sm);">THE APPROACH</p>
-              <h3 class="font-display" style="font-size: var(--type-h2); line-height: 1.2; margin-bottom: var(--space-md);">
+              <h3 class="font-display" style="font-size: var(--type-h2); line-height: 1.2; margin-bottom: var(--space-md); color: var(--text-primary);">
                 Minimal. Distinctive.<br/>Tactile. Experimental.<br/>Purposeful.
               </h3>
               <p>I have a background in English Literature, which evolved into a deep interest in technology, design, and digital products. My work sits at the intersection of storytelling, visual design, and interactive frontend implementation.</p>
@@ -109,15 +113,16 @@
             </div>
           </div>
           
-          <div class="reveal reveal--delay-2" style="display: flex; flex-direction: column; justify-content: center; padding-left: var(--space-xl);">
+          <div class="reveal" style="display: flex; flex-direction: column; justify-content: center; padding-left: var(--space-xl);">
             <p class="lead-text">"I dislike generic SaaS layouts, meaningless glassmorphism, and excessive templates. I prefer strong typography, intentional whitespace, cinematic imagery, and subtle, tactile interactions."</p>
+            
             <div class="margin-top-lg">
               <span class="font-mono text-meta text-muted" style="display: block; margin-bottom: var(--space-xs);">VISUAL INFLUENCES</span>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-xs);">
                 <li class="font-sans" style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--signal-action);">■</span> Retro Technology</li>
                 <li class="font-sans" style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--glass-emerald);">■</span> Future Hardware</li>
                 <li class="font-sans" style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--glass-sapphire);">■</span> Persian Visual Heritage</li>
-                <li class="font-sans" style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--structure-secondary);">■</span> Editorial Minimalism</li>
+                <li class="font-sans" style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--text-secondary);">■</span> Editorial Minimalism</li>
               </ul>
             </div>
           </div>
@@ -126,133 +131,143 @@
     </section>
 
     <!-- =======================================================================
-         SELECTED WORK
+         03. SELECTED WORK (CINEMATIC ARCHIVES)
          ======================================================================= -->
-    <section id="work" class="work-section section dark-context" style="background: var(--surface-dark);">
+    <section id="work" class="work-section section dark-context">
       <div class="container">
+        <div class="sys-divider"></div>
+        <div class="section-num ambient-float-1">
+          <span>02</span> <span>SELECTED WORK</span>
+        </div>
+        
         <div class="work-section__header reveal">
           <div>
-            <span class="sys-label" style="color: rgba(255,255,255,0.5);">02 // Portfolio</span>
-            <h2 class="font-display" style="color: #fff;">Selected Work</h2>
-            <p class="section__desc" style="color: rgba(255,255,255,0.7);">Recent projects demonstrating creative direction, UI/UX, and technical depth.</p>
+            <h2 class="font-display">Selected Work</h2>
+            <p class="section__desc">Recent projects demonstrating creative direction, UI/UX, and technical depth.</p>
           </div>
-          <div class="text-mono-sm text-muted">INDEX: FEATURED</div>
+          <div class="text-mono-sm text-muted ambient-pulse-2">INDEX: 04 ARCHIVES</div>
         </div>
 
         <div class="work-list">
           
           <!-- PROJECT 01: ZARAVI GOLD -->
-          <article class="project-spread tilt-card reveal reveal--delay-1" style="background: #111; border-color: rgba(255,255,255,0.05); box-shadow: var(--glow-amber);">
-            <div class="project-spread__visual" style="background: #000;">
-              <span class="project-spread__badge" style="background: rgba(212, 140, 39, 0.2); color: var(--glass-amber); border-color: var(--glass-amber);">Client Work</span>
-              <div style="width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(212, 140, 39, 0.3) 0%, transparent 70%); display: flex; align-items: center; justify-content: center;">
-                <span class="font-display" style="color: var(--glass-amber); font-size: 2rem; opacity: 0.5;">ZARAVI VISUAL</span>
+          <article class="project-spread" style="box-shadow: var(--glow-amber);">
+            <div class="project-spread__visual">
+              <span class="project-spread__badge" style="color: var(--glass-amber); border-color: rgba(212, 140, 39, 0.4);">Client Work</span>
+              <div style="width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(212, 140, 39, 0.25) 0%, #050505 75%); display: flex; align-items: center; justify-content: center;">
+                <span class="font-display" style="color: var(--glass-amber); font-size: 2.25rem; letter-spacing: var(--tracking-widest); opacity: 0.65;">ZARAVI GOLD</span>
               </div>
             </div>
             
             <div class="project-spread__content">
               <div class="project-spread__header">
-                <h3 class="font-display" style="color: #fff;">Zaravi Gold</h3>
+                <h3 class="project-spread__title">Zaravi Gold</h3>
                 <span class="project-spread__num">01</span>
               </div>
-              <p style="color: rgba(255,255,255,0.7);">A premium gold and jewelry brand concept merging Luxury Branding, Persian Visual Influence, and Digital Futurism. Focused on premium product storytelling and pricing.</p>
+              <p class="project-spread__desc">A premium gold and jewelry brand concept merging Luxury Branding, Persian Visual Influence, and Digital Futurism. Focused on premium product storytelling and pricing transparency.</p>
               
               <div class="project-breakdown">
                 <div class="breakdown-item">
-                  <span class="breakdown-item__label" style="color: rgba(255,255,255,0.4);">CATEGORY</span>
-                  <span class="font-mono text-meta" style="color: #fff;">Luxury Brand · E-commerce</span>
+                  <span class="breakdown-item__label">CATEGORY</span>
+                  <span class="font-mono text-meta" style="color: #FFFFFF;">Luxury Brand · E-commerce</span>
                 </div>
               </div>
               
               <div class="tech-row">
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Web Design</span>
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Creative Direction</span>
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Frontend</span>
+                <span class="tech-badge">Web Design</span>
+                <span class="tech-badge">Creative Direction</span>
+                <span class="tech-badge">Frontend Dev</span>
               </div>
             </div>
           </article>
 
           <!-- PROJECT 02: PERSONAL PORTFOLIO -->
-          <article class="project-spread tilt-card reveal reveal--delay-2" style="background: #111; border-color: rgba(255,255,255,0.05); box-shadow: var(--shadow-glass);">
-            <div class="project-spread__visual" style="background: #000;">
-              <span class="project-spread__badge">Personal Project</span>
-              <div style="width: 100%; height: 100%; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px); display: flex; align-items: center; justify-content: center;">
-                <span class="font-mono text-meta" style="color: #fff; opacity: 0.3;">SYSTEMS ONLINE</span>
+          <article class="project-spread" style="box-shadow: var(--glow-sapphire);">
+            <div class="project-spread__visual">
+              <span class="project-spread__badge" style="color: var(--glass-sapphire); border-color: rgba(39, 100, 212, 0.4);">Personal Project</span>
+              <div style="width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(39, 100, 212, 0.2) 0%, #050505 75%); display: flex; align-items: center; justify-content: center;">
+                <span class="font-mono text-meta" style="color: #FFFFFF; opacity: 0.5; letter-spacing: var(--tracking-widest);">LIVING MACHINE V4</span>
               </div>
             </div>
             
             <div class="project-spread__content">
               <div class="project-spread__header">
-                <h3 class="font-display" style="color: #fff;">Personal Portfolio</h3>
+                <h3 class="project-spread__title">Personal Portfolio</h3>
                 <span class="project-spread__num">02</span>
               </div>
-              <p style="color: rgba(255,255,255,0.7);">The strongest demonstration of what I can create for clients. A flagship project demonstrating creative direction, UI/UX, and component architecture.</p>
+              <p class="project-spread__desc">The flagship demonstration of creative direction, UI/UX architecture, physics-based micro-interactions, and motion systems built for distinctive digital positioning.</p>
               
               <div class="project-breakdown">
                 <div class="breakdown-item">
-                  <span class="breakdown-item__label" style="color: rgba(255,255,255,0.4);">CATEGORY</span>
-                  <span class="font-mono text-meta" style="color: #fff;">Personal Brand · Web Design</span>
+                  <span class="breakdown-item__label">CATEGORY</span>
+                  <span class="font-mono text-meta" style="color: #FFFFFF;">Personal Brand · Living Interface</span>
                 </div>
               </div>
               
               <div class="tech-row">
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Frontend Dev</span>
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Visual Exp.</span>
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Typography</span>
+                <span class="tech-badge">Motion Design</span>
+                <span class="tech-badge">GSAP + Lenis</span>
+                <span class="tech-badge">Typography</span>
               </div>
             </div>
           </article>
 
           <!-- PROJECT 03: PARINO LEATHER -->
-          <article class="project-spread tilt-card reveal reveal--delay-3" style="background: #111; border-color: rgba(255,255,255,0.05);">
-            <div class="project-spread__visual" style="background: #000;">
+          <article class="project-spread">
+            <div class="project-spread__visual">
               <span class="project-spread__badge">Concept</span>
+              <div style="width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(212, 93, 39, 0.15) 0%, #050505 75%); display: flex; align-items: center; justify-content: center;">
+                <span class="font-display" style="color: var(--text-dark-muted); font-size: 1.75rem; letter-spacing: var(--tracking-wide);">PARINO</span>
+              </div>
             </div>
             
             <div class="project-spread__content">
               <div class="project-spread__header">
-                <h3 class="font-display" style="color: #fff;">Parino Leather</h3>
+                <h3 class="project-spread__title">Parino Leather</h3>
                 <span class="project-spread__num">03</span>
               </div>
-              <p style="color: rgba(255,255,255,0.7);">A leather brand concept informed by my professional experience in the leather products market. Focused on e-commerce UX, corporate gifting, and B2B presentation.</p>
+              <p class="project-spread__desc">A leather brand concept informed by professional experience in the leather products market. Focused on e-commerce UX, corporate gifting presentation, and commercial conversion.</p>
               
               <div class="project-breakdown">
                 <div class="breakdown-item">
-                  <span class="breakdown-item__label" style="color: rgba(255,255,255,0.4);">CATEGORY</span>
-                  <span class="font-mono text-meta" style="color: #fff;">Leather · Brand Design</span>
+                  <span class="breakdown-item__label">CATEGORY</span>
+                  <span class="font-mono text-meta" style="color: #FFFFFF;">Leather · Brand Design</span>
                 </div>
               </div>
               
               <div class="tech-row">
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Product Storytelling</span>
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">E-commerce UX</span>
+                <span class="tech-badge">Product Storytelling</span>
+                <span class="tech-badge">E-commerce UX</span>
               </div>
             </div>
           </article>
 
           <!-- PROJECT 04: 22AM -->
-          <article class="project-spread tilt-card reveal reveal--delay-4" style="background: #111; border-color: rgba(255,255,255,0.05);">
-            <div class="project-spread__visual" style="background: #000;">
+          <article class="project-spread">
+            <div class="project-spread__visual">
               <span class="project-spread__badge">Concept</span>
+              <div style="width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, #050505 75%); display: flex; align-items: center; justify-content: center;">
+                <span class="font-display" style="color: #FFFFFF; font-size: 2rem; letter-spacing: var(--tracking-widest); opacity: 0.4;">22AM</span>
+              </div>
             </div>
             
             <div class="project-spread__content">
               <div class="project-spread__header">
-                <h3 class="font-display" style="color: #fff;">22AM</h3>
+                <h3 class="project-spread__title">22AM</h3>
                 <span class="project-spread__num">04</span>
               </div>
-              <p style="color: rgba(255,255,255,0.7);">A fashion brand concept exploring minimal, experimental, and editorial layouts with a strong emphasis on campaign imagery and typography.</p>
+              <p class="project-spread__desc">A fashion brand concept exploring minimal, experimental, and editorial layouts with a strong emphasis on campaign imagery, rhythm, and editorial type hierarchy.</p>
               
               <div class="project-breakdown">
                 <div class="breakdown-item">
-                  <span class="breakdown-item__label" style="color: rgba(255,255,255,0.4);">CATEGORY</span>
-                  <span class="font-mono text-meta" style="color: #fff;">Fashion · Brand Identity</span>
+                  <span class="breakdown-item__label">CATEGORY</span>
+                  <span class="font-mono text-meta" style="color: #FFFFFF;">Fashion · Brand Identity</span>
                 </div>
               </div>
               
               <div class="tech-row">
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Editorial Design</span>
-                <span class="tech-badge" style="background: rgba(255,255,255,0.1); color: #fff; border:none;">Experimental Layouts</span>
+                <span class="tech-badge">Editorial Design</span>
+                <span class="tech-badge">Experimental Layouts</span>
               </div>
             </div>
           </article>
@@ -260,8 +275,8 @@
         </div>
         
         <div class="margin-top-xl" style="text-align: center;">
-          <p class="font-mono text-meta text-muted" style="margin-bottom: var(--space-md);">SECONDARY & EXPERIMENTAL ARCHIVES: KALAAME COLORED, FINANCIAL INTERFACES, CAFÉ PARVA, HOUSE OF SILENT SUNS</p>
-          <a href="#contact" class="btn btn--ghost" style="color: #fff; border-color: rgba(255,255,255,0.2);">
+          <p class="font-mono text-meta text-muted" style="margin-bottom: var(--space-md);">SECONDARY ARCHIVES: KALAAME COLORED, FINANCIAL INTERFACES, CAFÉ PARVA, HOUSE OF SILENT SUNS</p>
+          <a href="#contact" class="btn btn--ghost">
             <span>Request Full Archive Access</span>
             <span class="btn__arrow">→</span>
           </a>
@@ -270,53 +285,57 @@
     </section>
 
     <!-- =======================================================================
-         CAPABILITIES & SERVICES
+         04. CAPABILITIES & SERVICES
          ======================================================================= -->
     <section id="capabilities" class="section" style="background: var(--surface-base);">
       <div class="container">
+        <div class="sys-divider"></div>
+        <div class="section-num ambient-float-3">
+          <span>03</span> <span>CAPABILITIES</span>
+        </div>
+        
         <div class="section__header reveal">
-          <span class="sys-label">03 // Services</span>
           <h2 class="font-display">Capabilities</h2>
           <p class="section__desc">What clients can hire me to do.</p>
         </div>
 
         <div class="capabilities__grid">
           
-          <div class="panel has-screws reveal reveal--delay-1">
+          <div class="panel has-screws capability-panel reveal">
             <span class="capability-panel__header">Web Design</span>
             <div class="capability-panel__list">
-              <p style="font-size: var(--type-body-sm); margin: 0;">Design distinctive, responsive websites with strong visual identity.</p>
+              <p>Design distinctive, responsive websites with strong visual identity, intentional typography, and premium atmosphere.</p>
             </div>
           </div>
 
-          <div class="panel has-screws reveal reveal--delay-2">
-            <span class="capability-panel__header">Frontend Development</span>
+          <div class="panel has-screws capability-panel reveal">
+            <span class="capability-panel__header">Frontend Dev</span>
             <div class="capability-panel__list">
-              <p style="font-size: var(--type-body-sm); margin: 0;">Turn designs and concepts into polished, functional interfaces using React & Next.js.</p>
+              <p>Turn designs and concepts into polished, highly responsive interfaces using React, Next.js, and modern CSS architecture.</p>
             </div>
           </div>
 
-          <div class="panel has-screws reveal reveal--delay-3">
+          <div class="panel has-screws capability-panel reveal">
             <span class="capability-panel__header">UI/UX Design</span>
             <div class="capability-panel__list">
-              <p style="font-size: var(--type-body-sm); margin: 0;">Create intuitive interfaces with strong hierarchy, typography, and interaction.</p>
+              <p>Create intuitive interfaces with deliberate hierarchy, conversion-focused user journeys, and tactile micro-interactions.</p>
             </div>
           </div>
 
-          <div class="panel has-screws reveal reveal--delay-4">
+          <div class="panel has-screws capability-panel reveal">
             <span class="capability-panel__header">AI-Assisted Dev</span>
             <div class="capability-panel__list">
-              <p style="font-size: var(--type-body-sm); margin: 0;">Rapid prototyping, visual exploration, and code generation integrating human creative direction with AI tools.</p>
+              <p>Rapid prototyping and frontend engineering combining human creative direction with modern AI engineering tools.</p>
             </div>
           </div>
 
-          <div class="panel panel--recessed reveal reveal--delay-1" style="grid-column: span 4;">
-            <div style="display: flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center;">
-              <span class="tech-badge">Landing Pages</span>
-              <span class="tech-badge">Brand Websites</span>
-              <span class="tech-badge">Interactive Websites</span>
-              <span class="tech-badge">Website Redesign</span>
-              <span class="tech-badge">Creative Development</span>
+          <div class="panel panel--recessed reveal" style="grid-column: span 4;">
+            <div style="display: flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center; align-items: center;">
+              <span class="tech-badge ambient-float-1">Landing Pages</span>
+              <span class="tech-badge ambient-float-2">Brand Websites</span>
+              <span class="tech-badge ambient-float-3">Interactive Experiences</span>
+              <span class="tech-badge ambient-float-1">Website Redesign</span>
+              <span class="tech-badge ambient-float-2">Creative Development</span>
             </div>
           </div>
 
@@ -325,48 +344,52 @@
     </section>
 
     <!-- =======================================================================
-         CREDIBILITY
+         05. CREDIBILITY (COMMERCIAL EVIDENCE)
          ======================================================================= -->
     <section id="credibility" class="section">
       <div class="container">
+        <div class="sys-divider"></div>
+        <div class="section-num ambient-float-2">
+          <span>04</span> <span>CREDIBILITY</span>
+        </div>
+        
         <div class="grid grid--2col">
           
           <div class="reveal">
-            <span class="sys-label">04 // Credibility</span>
             <h2 class="font-display">Commercial Awareness</h2>
             <p class="section__desc">I don't only think: "Does this look good?"<br/>I also think: "Does this make the product easier to understand, trust, desire, and buy?"</p>
             
             <div class="margin-top-xl">
-              <div class="data-plate" style="border-left: 2px solid var(--signal-action);">
+              <div class="data-plate" style="border-left: 3px solid var(--signal-action);">
                 <div class="data-plate__header">
                   <h3 class="font-display" style="font-size: 1.25rem;">Market Manager — Leather Products</h3>
                 </div>
-                <p class="font-mono text-meta">COMMERCIAL STRATEGY & PRODUCT POSITIONING</p>
-                <p>Professional experience in the leather products market providing an understanding of customer behavior, B2B/B2C sales, and how presentation directly drives business development.</p>
+                <p class="font-mono text-meta text-accent" style="margin-bottom: var(--space-xs);">COMMERCIAL STRATEGY & PRODUCT POSITIONING</p>
+                <p style="color: var(--text-secondary);">Professional experience in the leather products market providing an understanding of customer behavior, B2B/B2C sales, and how presentation directly drives business development.</p>
               </div>
 
-              <div class="data-plate" style="border-left: 2px solid var(--glass-sapphire);">
+              <div class="data-plate" style="border-left: 3px solid var(--glass-sapphire);">
                 <div class="data-plate__header">
                   <h3 class="font-display" style="font-size: 1.25rem;">Sales / Financial Industry</h3>
                 </div>
-                <p class="font-mono text-meta">CLIENT COMMUNICATION & CONVERSION</p>
-                <p>Experience in the forex/financial industry handling high-stakes client communication, negotiation, and customer psychology. Focus on conversion-oriented communication.</p>
+                <p class="font-mono text-meta" style="color: var(--glass-sapphire); margin-bottom: var(--space-xs);">CLIENT COMMUNICATION & CONVERSION</p>
+                <p style="color: var(--text-secondary);">Experience in the financial industry handling high-stakes client communication, negotiation, and customer psychology. Focus on conversion-oriented communication.</p>
               </div>
             </div>
           </div>
 
-          <div class="reveal reveal--delay-2" style="background: var(--surface-recessed); padding: var(--space-lg); border-radius: var(--radius-lg);">
+          <div class="reveal" style="background: var(--surface-recessed); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--border-muted);">
             <span class="sys-label">Target Engagement</span>
             <h2 class="font-display" style="font-size: var(--type-h2);">Ideal Clients</h2>
             
             <div class="margin-top-lg">
               <p class="lead-text">I partner with clients who value quality over quantity, and distinctive design over generic templates.</p>
-              <ul style="list-style: none; padding: 0; margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-xs);">
-                <li class="font-mono text-meta">STARTUPS & FOUNDERS</li>
-                <li class="font-mono text-meta">TECHNOLOGY COMPANIES</li>
-                <li class="font-mono text-meta">PREMIUM & LUXURY BRANDS</li>
-                <li class="font-mono text-meta">FASHION & E-COMMERCE</li>
-                <li class="font-mono text-meta">FINANCIAL / FINTECH PRODUCTS</li>
+              <ul style="list-style: none; padding: 0; margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-sm);">
+                <li class="font-mono text-meta" style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--signal-action);">→</span> STARTUPS & FOUNDERS</li>
+                <li class="font-mono text-meta" style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--signal-action);">→</span> TECHNOLOGY COMPANIES</li>
+                <li class="font-mono text-meta" style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--signal-action);">→</span> PREMIUM & LUXURY BRANDS</li>
+                <li class="font-mono text-meta" style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--signal-action);">→</span> FASHION & E-COMMERCE</li>
+                <li class="font-mono text-meta" style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--signal-action);">→</span> FINANCIAL / FINTECH PRODUCTS</li>
               </ul>
             </div>
           </div>
@@ -376,21 +399,25 @@
     </section>
 
     <!-- =======================================================================
-         CONTACT MODULE
+         06. CONTACT MODULE (THE INEVITABLE CONCLUSION)
          ======================================================================= -->
     <section id="contact" class="section dark-context" style="background: var(--surface-dark);">
       <div class="container">
+        <div class="sys-divider"></div>
+        <div class="section-num">
+          <span>05</span> <span>INITIALIZATION</span>
+        </div>
+        
         <div class="contact__inner">
-          <div class="contact__header reveal" style="text-align: center; max-width: 600px; margin: 0 auto var(--space-xl);">
-            <span class="sys-label" style="color: rgba(255,255,255,0.5);">05 // Initialization</span>
-            <h2 class="font-display" style="color: #fff; font-size: var(--type-display);">Start a Project</h2>
-            <p style="color: rgba(255,255,255,0.7); font-size: var(--type-body-lg);">Tell me what you need to build, who you work with, and what makes your approach different. Let's create a digital experience that stands out.</p>
+          <div class="contact__header reveal" style="text-align: center; margin-bottom: var(--space-2xl);">
+            <h2 class="font-display" style="color: #FFFFFF;">Start a Project</h2>
+            <p style="color: var(--text-dark-secondary); max-width: 580px; margin: var(--space-sm) auto 0;">Tell me what you need to build, who you work with, and what makes your approach different. Let's create a digital experience that stands out.</p>
           </div>
 
-          <div class="panel lead-form reveal reveal--delay-2" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); max-width: 600px; margin: 0 auto; position: relative;">
+          <div class="panel lead-form reveal" style="background: var(--surface-dark-card); border-color: var(--border-dark-muted); position: relative;">
             
             <!-- Stained glass lighting effect behind form -->
-            <div style="position: absolute; top: -50px; left: -50px; right: -50px; bottom: -50px; background: radial-gradient(circle at center, var(--glass-amber) 0%, transparent 50%); opacity: 0.03; pointer-events: none;"></div>
+            <div style="position: absolute; inset: -40px; background: radial-gradient(circle at center, var(--glass-amber) 0%, transparent 60%); opacity: 0.05; pointer-events: none; border-radius: var(--radius-lg);"></div>
 
             <div id="form-status" class="form-status" aria-live="polite"></div>
             
@@ -399,27 +426,27 @@
               
               <div class="form-row">
                 <div class="form-field">
-                  <label for="client-name">Name <span class="required" aria-hidden="true">*</span></label>
-                  <input type="text" id="client-name" name="name" required placeholder="John Doe" style="background: rgba(0,0,0,0.5); color: #fff; border-color: rgba(255,255,255,0.2);" />
+                  <label for="client-name">Name <span style="color: var(--signal-action);">*</span></label>
+                  <input type="text" id="client-name" name="name" required placeholder="Jane Doe" autocomplete="name" />
                 </div>
                 
                 <div class="form-field">
-                  <label for="client-email">Email <span class="required" aria-hidden="true">*</span></label>
-                  <input type="email" id="client-email" name="email" required placeholder="john@company.com" style="background: rgba(0,0,0,0.5); color: #fff; border-color: rgba(255,255,255,0.2);" />
+                  <label for="client-email">Email <span style="color: var(--signal-action);">*</span></label>
+                  <input type="email" id="client-email" name="email" required placeholder="jane@company.com" autocomplete="email" />
                 </div>
               </div>
               
               <div class="form-field margin-top-md">
-                <label for="project-desc">Project Details <span class="required" aria-hidden="true">*</span></label>
-                <textarea id="project-desc" name="message" required placeholder="Describe your brand, objectives, and timelines..." style="background: rgba(0,0,0,0.5); color: #fff; border-color: rgba(255,255,255,0.2); min-height: 120px;"></textarea>
+                <label for="project-desc">Project Details <span style="color: var(--signal-action);">*</span></label>
+                <textarea id="project-desc" name="message" required placeholder="Describe your brand, objectives, timelines, and visual goals..." style="min-height: 130px;"></textarea>
               </div>
               
-              <div class="margin-top-lg" style="display: flex; gap: var(--space-md); justify-content: flex-end; align-items: center;">
-                <a href="#work" class="btn btn--ghost" style="color: #fff; border-color: rgba(255,255,255,0.2);">
+              <div class="margin-top-lg" style="display: flex; gap: var(--space-md); justify-content: flex-end; align-items: center; flex-wrap: wrap;">
+                <a href="#work" class="btn btn--ghost">
                   <span>View My Work</span>
                 </a>
-                <button type="submit" class="btn btn--primary" style="background: var(--surface-base); color: var(--surface-dark);">
-                  <span>Start a Project</span>
+                <button type="submit" class="btn btn--primary">
+                  <span>Transmit Inquiry</span>
                   <span class="btn__arrow">→</span>
                 </button>
               </div>
@@ -432,22 +459,29 @@
   </main>
 
   <!-- =======================================================================
-       FOOTER
+       07. FOOTER (SYSTEM PERSISTENCE)
        ======================================================================= -->
-  <footer class="footer" style="background: #050505; color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.05);">
-    <div class="container footer__inner" style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-lg) 0;">
-      <div class="brand-mark">
-        <span class="brand-mark__badge" style="background: rgba(255,255,255,0.1); color: #fff;">OM</span>
-        <div class="brand-mark__meta">
-          <span class="brand-mark__title" style="color: #fff;">OMID MOHAMMADI</span>
-          <span class="brand-mark__model font-mono text-meta">© 2026 // ALL RIGHTS RESERVED</span>
-        </div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div style="display: flex; align-items: center; gap: var(--space-md);">
+        <a href="#" class="brand-mark" aria-label="Back to top">
+          <span class="brand-mark__badge">OM</span>
+          <div class="brand-mark__meta">
+            <span class="brand-mark__title">OMID MOHAMMADI</span>
+            <span class="brand-mark__model">DESIGN LAB // V4</span>
+          </div>
+        </a>
+        <span class="signal-indicator" title="System Online"></span>
       </div>
 
-      <div style="display: flex; gap: var(--space-md);">
-        <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="footer__link" style="color: inherit; text-decoration: none;">GitHub</a>
-        <a href="https://twitter.com/omideafuri" target="_blank" rel="noopener noreferrer" class="footer__link" style="color: inherit; text-decoration: none;">Twitter</a>
-        <a href="https://linkedin.com/in/omideafuri" target="_blank" rel="noopener noreferrer" class="footer__link" style="color: inherit; text-decoration: none;">LinkedIn</a>
+      <div style="display: flex; gap: var(--space-lg); align-items: center;">
+        <a href="https://github.com/Omideafuri" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub ↗</a>
+        <a href="https://twitter.com/omideafuri" target="_blank" rel="noopener noreferrer" class="footer__link">Twitter ↗</a>
+        <a href="https://linkedin.com/in/omideafuri" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn ↗</a>
+      </div>
+
+      <div class="font-mono text-micro" style="color: var(--text-dark-muted);">
+        © 2026 OMID MOHAMMADI. ALL RIGHTS RESERVED.
       </div>
     </div>
   </footer>

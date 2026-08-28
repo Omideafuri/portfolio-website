@@ -1,25 +1,43 @@
 /* ==========================================================================
-   OMID MOHAMMADI PORTFOLIO — RESPONSIVE BREAKPOINTS V3
+   OMID MOHAMMADI PORTFOLIO — RESPONSIVE BREAKPOINTS V4
+   Fluid Scaling, Touch Target Auditing & Mobile Micro-interactions
    ========================================================================== */
 
 /* ==========================================================================
-   TABLET (768px — 1023px)
+   LARGE DESKTOP (1440px+)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1360px;
+  }
+}
+
+/* ==========================================================================
+   TABLET & SMALL DESKTOP (768px — 1023px)
    ========================================================================== */
 @media (max-width: 1023px) {
-
   .system-bar__link {
-    padding: 8px 8px;
-    font-size: 0.6875rem;
+    padding: 8px 10px;
+    font-size: var(--type-micro);
   }
 
   .status-chip {
-    padding: 4px 6px;
-    font-size: 0.5625rem;
+    padding: 5px 10px;
   }
 
-  .hero__content { max-width: 100%; }
-  .project-spread { grid-template-columns: 1fr; gap: var(--space-lg); }
-  .capabilities__grid { grid-template-columns: repeat(2, 1fr); }
+  .project-spread {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+  }
+
+  .capabilities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .capabilities__grid .panel--recessed {
+    grid-column: span 2 !important;
+  }
 }
 
 /* ==========================================================================
@@ -28,7 +46,8 @@
 @media (max-width: 767px) {
 
   :root {
-    --nav-height: 52px;
+    --nav-height: 56px;
+    --gutter: 18px;
   }
 
   .section {
@@ -39,13 +58,28 @@
   /* ── Hero ────────────────────────────────────────────────────────────── */
   .hero {
     min-height: auto;
-    padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-2xl);
+    padding-top: calc(var(--nav-height) + var(--space-lg));
+    padding-bottom: var(--space-2xl);
   }
 
-  .hero__headline { font-size: clamp(2.2rem, 9vw, 3rem); }
-  .hero__subline { font-size: 1rem; }
-  .hero__specs { gap: 6px; padding: var(--space-sm); }
-  .spec-chip { font-size: 0.625rem; padding: 4px 8px; }
+  .hero__headline {
+    font-size: clamp(2rem, 8.5vw, 2.75rem);
+    line-height: 1.1;
+  }
+
+  .hero__subline {
+    font-size: 1rem;
+  }
+
+  .hero__specs {
+    gap: 6px;
+    padding: var(--space-xs);
+  }
+
+  .spec-chip {
+    font-size: 0.625rem;
+    padding: 6px 10px;
+  }
 
   /* ── Navigation Drawer ───────────────────────────────────────────────── */
   .system-bar__links {
@@ -55,67 +89,109 @@
     left: 0;
     width: 100%;
     height: calc(100vh - var(--nav-height));
-    background-color: var(--surface-dark); /* Match cinematic dark */
+    background-color: var(--surface-dark);
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--space-xs);
-    padding: var(--space-md);
-    z-index: 999;
+    padding: var(--space-lg) var(--gutter);
+    z-index: var(--z-modal);
     overflow-y: auto;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid var(--border-dark-muted);
   }
 
   .system-bar__links--open {
     display: flex;
-    animation: menuDrawerReveal var(--duration-fast) var(--ease-spring);
+    animation: menuDrawerReveal 0.3s var(--ease-spring);
   }
 
   @keyframes menuDrawerReveal {
-    from { opacity: 0; transform: translateY(-10px); }
+    from { opacity: 0; transform: translateY(-12px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .system-bar__link {
     width: 100%;
-    padding: 16px 18px;
+    padding: 16px 20px;
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: #FFFFFF !important;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-dark-muted);
     border-radius: var(--radius-sm);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
   }
 
   .system-bar__link:hover,
   .system-bar__link--active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--signal-action);
   }
 
-  .system-bar__toggle { display: flex; }
-  .status-chip { display: none; }
-  .system-bar__actions .btn { display: none; } /* Hide initialize btn on small mobile nav */
+  .system-bar__toggle {
+    display: flex;
+  }
 
-  /* ── Projects ────────────────────────────────────────────────────────── */
+  .system-bar__actions .status-chip {
+    display: none;
+  }
+
+  .system-bar__actions .btn {
+    display: none;
+  }
+
+  /* ── Grids & Spreads ─────────────────────────────────────────────────── */
+  .grid--2col {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  #pov .grid--2col > div:last-child {
+    padding-left: 0 !important;
+  }
+
   .project-spread {
     padding: var(--space-md);
     border-radius: var(--radius-md);
   }
-  .project-spread__num { font-size: 1.5rem; }
-  .tech-row { gap: 6px; }
 
-  /* ── Capabilities ────────────────────────────────────────────────────── */
-  .capabilities__grid { grid-template-columns: 1fr; }
+  .project-spread__title {
+    font-size: 1.35rem;
+  }
 
-  /* ── Form ────────────────────────────────────────────────────────────── */
-  .form-row { grid-template-columns: 1fr; }
-  .lead-form { padding: var(--space-md); }
+  .project-spread__num {
+    font-size: 1.5rem;
+  }
 
-  /* ── Buttons ─────────────────────────────────────────────────────────── */
-  .btn-group { flex-direction: column; width: 100%; }
-  .btn-group .btn { width: 100%; }
+  .capabilities__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .capabilities__grid .panel--recessed {
+    grid-column: 1 !important;
+  }
+
+  /* ── Form Controls ───────────────────────────────────────────────────── */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-form {
+    padding: var(--space-lg);
+  }
+
+  .lead-form input,
+  .lead-form textarea,
+  .lead-form button {
+    min-height: 48px;
+  }
 
   /* ── Footer ──────────────────────────────────────────────────────────── */
-  .footer__inner { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
 }

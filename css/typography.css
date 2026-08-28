@@ -1,5 +1,6 @@
 /* ==========================================================================
-   OMID MOHAMMADI PORTFOLIO — TYPOGRAPHY V3
+   OMID MOHAMMADI PORTFOLIO — TYPOGRAPHY V4
+   Crisp Contrast, Fluid Hierarchy & Precision Lettering
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
@@ -24,47 +25,52 @@
   font-display: swap;
 }
 
-/* Base resets for optical alignment */
-h1, h2, h3, h4, p, span {
+/* Base text rendering optimizations */
+body, h1, h2, h3, h4, p, span, a, input, textarea, button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ── Heading Hierarchy ───────────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
-  color: inherit; /* Allow inheritance for dark mode sections */
-  line-height: 1.05;
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
+  margin: 0;
 }
 
 h1 {
   font-size: var(--type-h1);
   letter-spacing: var(--tracking-tightest);
+  line-height: 1.05;
 }
 
 h2 {
   font-size: var(--type-h2);
   letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
   margin-bottom: var(--space-md);
 }
 
 h3 {
   font-size: var(--type-h3);
-  letter-spacing: var(--tracking-normal);
+  line-height: var(--leading-snug);
 }
 
-/* ── Display Typographic Moments ─────────────────────────────────────────── */
+/* ── Specialized Typographic Classes ─────────────────────────────────────── */
 .font-display {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: var(--tracking-tightest);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 .font-mono {
   font-family: var(--font-mono);
+  font-weight: 500;
   letter-spacing: var(--tracking-mono);
 }
 
@@ -72,11 +78,11 @@ h3 {
   font-family: var(--font-sans);
 }
 
-/* ── Body Copy ───────────────────────────────────────────────────────────── */
+/* ── Body Copy & Paragraphs ──────────────────────────────────────────────── */
 p {
-  margin-bottom: var(--space-md);
-  color: var(--structure-secondary);
-  line-height: 1.7;
+  margin: 0 0 var(--space-md) 0;
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
   font-family: var(--font-sans);
   font-size: var(--type-body);
 }
@@ -87,32 +93,62 @@ p:last-child {
 
 .lead-text {
   font-size: var(--type-body-lg);
-  line-height: 1.6;
+  line-height: var(--leading-snug);
   font-weight: 500;
-  color: var(--structure-primary);
+  color: var(--text-primary);
 }
 
 strong {
-  color: var(--structure-primary);
+  color: var(--text-primary);
   font-weight: 600;
 }
 
-/* Dynamic context adjustments */
+/* ── Dark Context Contrast Overrides ─────────────────────────────────────── */
+.dark-context {
+  color: var(--text-dark-primary);
+}
+
+.dark-context h1,
+.dark-context h2,
+.dark-context h3,
+.dark-context h4,
+.dark-context strong,
+.dark-context .lead-text {
+  color: var(--text-dark-primary);
+}
+
 .dark-context p {
-  color: rgba(255, 255, 255, 0.7);
-}
-.dark-context h1, .dark-context h2, .dark-context h3, .dark-context strong, .dark-context .lead-text {
-  color: #FFFFFF;
+  color: var(--text-dark-secondary);
 }
 
-/* ── Technical Accents ───────────────────────────────────────────────────── */
-.text-accent { color: var(--signal-action); }
-.text-active { color: var(--signal-active); }
-.text-muted { color: var(--structure-tertiary); }
+.dark-context .text-muted,
+.dark-context .text-meta {
+  color: var(--text-dark-muted);
+}
 
-.text-mono-sm {
+/* ── Technical Labels & Meta ─────────────────────────────────────────────── */
+.text-accent { 
+  color: var(--signal-action) !important; 
+}
+
+.text-active { 
+  color: var(--signal-active) !important; 
+}
+
+.text-muted { 
+  color: var(--text-muted); 
+}
+
+.text-meta {
   font-family: var(--font-mono);
   font-size: var(--type-meta);
+  letter-spacing: var(--tracking-label);
+  line-height: 1.4;
+}
+
+.text-micro {
+  font-family: var(--font-mono);
+  font-size: var(--type-micro);
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
 }

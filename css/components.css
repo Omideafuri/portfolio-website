@@ -1,6 +1,6 @@
 /* ==========================================================================
-   OMID MOHAMMADI PORTFOLIO — COMPONENTS V3
-   Advanced Micro-interactions & Hardware Aesthetics
+   OMID MOHAMMADI PORTFOLIO — COMPONENTS V4 (LIVING MACHINE SYSTEM)
+   Micro, Meso, and Macro Interactions & Hardware Aesthetics
    ========================================================================== */
 
 /* ==========================================================================
@@ -13,7 +13,7 @@
   width: 100%;
   height: var(--nav-height);
   background-color: transparent;
-  z-index: 1000;
+  z-index: var(--z-nav);
   transition: background-color var(--duration-standard) ease, 
               backdrop-filter var(--duration-standard) ease, 
               border-color var(--duration-standard) ease;
@@ -21,9 +21,9 @@
 
 .system-bar--scrolled {
   background-color: var(--surface-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: var(--border-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-dark-muted);
 }
 
 .system-bar__inner {
@@ -36,14 +36,14 @@
   height: 100%;
 }
 
-/* Brand Mark "22" */
+/* Brand Mark "OM" */
 .brand-mark {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
   text-decoration: none;
   padding: 4px 0;
-  color: #fff;
+  color: var(--text-dark-primary);
 }
 
 .brand-mark__badge {
@@ -51,33 +51,34 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--type-micro);
   font-weight: 700;
-  background: #fff;
-  color: #000;
-  padding: 3px 7px;
+  background: #FFFFFF;
+  color: #000000;
+  padding: 4px 8px;
   border-radius: var(--radius-sm);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   line-height: 1;
-  transition: transform var(--duration-fast) var(--ease-spring), background var(--duration-fast) ease;
+  transition: transform var(--duration-fast) var(--ease-spring), background var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
 }
 
 .brand-mark:hover .brand-mark__badge {
   background: var(--signal-action);
-  color: #fff;
+  color: #FFFFFF;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--signal-action-glow);
 }
 
 .brand-mark__meta {
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .brand-mark__title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: var(--type-label);
   letter-spacing: var(--tracking-normal);
   color: inherit;
   transition: color var(--duration-fast) ease;
@@ -85,21 +86,15 @@
 
 .brand-mark__model {
   font-family: var(--font-mono);
-  font-size: 0.5625rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--type-micro);
+  color: var(--text-dark-muted);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   margin-top: 2px;
   transition: color var(--duration-fast) ease;
 }
 
-.system-bar:not(.system-bar--scrolled) .brand-mark { color: var(--structure-primary); }
-.system-bar:not(.system-bar--scrolled) .brand-mark__model { color: var(--structure-tertiary); }
-.system-bar:not(.system-bar--scrolled) .brand-mark__badge { background: var(--structure-primary); color: var(--surface-base); }
-.system-bar:not(.system-bar--scrolled) .brand-mark:hover .brand-mark__badge { background: var(--signal-action); color: #fff; }
-
-
-/* Nav Links */
+/* Navigation Links */
 .system-bar__links {
   display: flex;
   gap: var(--space-xs);
@@ -112,49 +107,42 @@
   font-size: var(--type-meta);
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
-  color: rgba(255, 255, 255, 0.6);
-  padding: 8px 12px;
+  color: var(--text-dark-secondary);
+  padding: 8px 14px;
   position: relative;
   text-decoration: none;
-  transition: color var(--duration-fast) ease;
-}
-
-.system-bar:not(.system-bar--scrolled) .system-bar__link {
-  color: var(--structure-secondary);
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) ease, background-color var(--duration-fast) ease;
 }
 
 .system-bar__link::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 12px;
-  right: 12px;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
   height: 2px;
-  background-color: transparent;
+  background-color: var(--signal-action);
   transform: scaleX(0);
   transform-origin: left;
-  transition: background-color var(--duration-fast) ease, transform var(--duration-standard) var(--ease-spring);
+  transition: transform var(--duration-standard) var(--ease-out-expo);
 }
 
-.system-bar__link:hover, .system-bar:not(.system-bar--scrolled) .system-bar__link:hover {
-  color: var(--signal-action);
+.system-bar__link:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-.system-bar__link:hover::after {
-  transform: scaleX(1);
-  background-color: var(--signal-action);
-}
-
-.system-bar__link--active, .system-bar:not(.system-bar--scrolled) .system-bar__link--active {
-  color: var(--signal-action) !important;
-}
-
+.system-bar__link:hover::after,
 .system-bar__link--active::after {
-  background-color: var(--signal-action) !important;
   transform: scaleX(1);
 }
 
-/* Actions */
+.system-bar__link--active {
+  color: #FFFFFF !important;
+}
+
+/* System Actions */
 .system-bar__actions {
   display: flex;
   align-items: center;
@@ -164,32 +152,50 @@
 .status-chip {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   font-family: var(--font-mono);
   font-size: var(--type-micro);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
   color: var(--signal-active);
-  background: rgba(10, 11, 12, 0.4);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 5px 12px;
+  background: rgba(10, 11, 12, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
   border-radius: var(--radius-full);
 }
 
-.system-bar:not(.system-bar--scrolled) .status-chip {
-  background: var(--surface-raised);
-  border-color: var(--structure-faint);
-}
-
 .status-chip__dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: var(--signal-active);
-  box-shadow: 0 0 8px var(--signal-active-glow);
+  box-shadow: 0 0 10px var(--signal-active-glow);
   animation: statusPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile Toggle */
+.system-bar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--border-dark-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 10px;
+}
+
+.system-bar__toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #FFFFFF;
+  transition: transform var(--duration-fast) ease, opacity var(--duration-fast) ease;
 }
 
 /* ==========================================================================
@@ -201,11 +207,12 @@
   justify-content: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--type-meta);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
   padding: 14px 28px;
+  min-height: 44px; /* Touch target accessibility */
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
@@ -213,10 +220,8 @@
   line-height: 1;
   white-space: nowrap;
   position: relative;
-  /* GPU acceleration */
   transform: translateZ(0);
   will-change: transform;
-  /* Uses a very smooth spring transition for magnetic resetting */
   transition: transform var(--duration-fast) var(--ease-spring),
               background-color var(--duration-fast) ease,
               border-color var(--duration-fast) ease,
@@ -227,56 +232,47 @@
 .btn--primary {
   background-color: var(--signal-action);
   color: #FFFFFF;
-  border-color: rgba(255,255,255,0.1);
-  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-sm), 0 0 16px var(--signal-action-glow);
 }
 
 .btn--primary:hover {
   background-color: var(--signal-action-hover);
-  /* The translateY is handled by magnetic JS if active, but as a fallback: */
-  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.2);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-md), 0 0 24px var(--signal-action-glow);
+  transform: translateY(-2px);
 }
 
 .btn--primary:active {
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn--ghost {
   background-color: transparent;
-  color: var(--structure-primary);
-  border-color: var(--structure-faint);
-  backdrop-filter: blur(4px);
-}
-
-.dark-context .btn--ghost,
-.system-bar:not(.system-bar--scrolled) .btn--ghost {
-  color: #fff;
-  border-color: rgba(255,255,255,0.2);
+  color: var(--text-dark-primary);
+  border-color: var(--border-dark-strong);
+  backdrop-filter: blur(6px);
 }
 
 .btn--ghost:hover {
-  background-color: var(--structure-primary);
-  color: var(--surface-base);
-  border-color: var(--structure-primary);
-  box-shadow: var(--shadow-md);
-}
-
-.dark-context .btn--ghost:hover,
-.system-bar:not(.system-bar--scrolled) .btn--ghost:hover {
-  background-color: #fff;
-  color: #000;
-  border-color: #fff;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .btn--sm {
   padding: 10px 20px;
   font-size: var(--type-micro);
+  min-height: 38px;
 }
 
 .btn__arrow {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.9em;
+  font-size: 1em;
   transition: transform var(--duration-fast) var(--ease-spring);
 }
 
@@ -284,36 +280,38 @@
   transform: translateX(4px);
 }
 
-.btn-group {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
-}
-
 /* ==========================================================================
-   03. HARDWARE PANELS & INTERACTIVE CARDS
+   03. HARDWARE PANELS & INTERACTIVE PLATES
    ========================================================================== */
 .panel {
   background: var(--surface-raised);
-  border: 1px solid var(--structure-faint);
+  border: 1px solid var(--border-muted);
   padding: var(--space-lg);
   position: relative;
   border-radius: var(--radius-md);
-  transition: border-color var(--duration-fast) ease, box-shadow var(--duration-standard) var(--ease-spring), transform var(--duration-standard) var(--ease-spring);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--duration-standard) ease, 
+              box-shadow var(--duration-standard) var(--ease-spring), 
+              transform var(--duration-standard) var(--ease-spring);
+}
+
+.panel:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
 }
 
 .panel--structural {
-  border: 1px solid var(--structure-primary);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-raised);
 }
 
 .panel--recessed {
   background: var(--surface-recessed);
   box-shadow: var(--shadow-recessed);
+  border: 1px solid var(--border-faint);
 }
 
-/* Hardware Registration Screws */
+/* Registration Screws */
 .has-screws {
   position: relative;
 }
@@ -322,24 +320,29 @@
   content: "+";
   position: absolute;
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--structure-faint);
+  font-size: 0.75rem;
+  color: var(--text-muted);
   line-height: 1;
   pointer-events: none;
+  opacity: 0.5;
+  transition: opacity var(--duration-fast) ease, transform var(--duration-fast) ease;
 }
-.has-screws::before { top: 8px; left: 8px; }
-.has-screws::after { top: 8px; right: 8px; }
-
-/* Tilt card logic handled by JS now */
+.has-screws::before { top: 10px; left: 10px; }
+.has-screws::after { top: 10px; right: 10px; }
+.has-screws:hover::before,
+.has-screws:hover::after {
+  opacity: 1;
+  transform: rotate(45deg);
+}
 
 /* ==========================================================================
-   04. BADGES & LABELS
+   04. BADGES, TAGS & SPECS
    ========================================================================== */
 .sys-label {
   font-family: var(--font-mono);
-  font-size: var(--type-label);
+  font-size: var(--type-micro);
   font-weight: 700;
-  color: var(--structure-tertiary);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
   display: inline-flex;
@@ -347,9 +350,11 @@
   gap: 8px;
   margin-bottom: var(--space-sm);
 }
+
 .dark-context .sys-label {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-dark-muted);
 }
+
 .sys-label::before {
   content: "";
   display: inline-block;
@@ -365,66 +370,127 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--tracking-label);
-  color: var(--structure-secondary);
+  color: var(--text-primary);
   background: var(--surface-recessed);
-  border: 1px solid var(--structure-faint);
-  padding: 4px 10px;
+  border: 1px solid var(--border-muted);
+  padding: 6px 12px;
   border-radius: var(--radius-sm);
   white-space: nowrap;
   line-height: 1.2;
+  transition: transform var(--duration-fast) var(--ease-spring),
+              border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
 }
-.tech-badge--accent {
-  background: var(--signal-action-subtle);
+
+.tech-badge:hover {
+  transform: translateY(-2px);
   border-color: var(--signal-action);
-  color: var(--signal-action);
+  background-color: var(--surface-raised);
+}
+
+.dark-context .tech-badge {
+  color: var(--text-dark-primary);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-dark-muted);
+}
+
+.dark-context .tech-badge:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   05. FORM CONTROLS
+   05. FORM CONTROLS & ANIMATED FEEDBACK
    ========================================================================== */
-/* ... existing form logic preserved but refined ... */
-.form-field { display: flex; flex-direction: column; }
+.form-field { 
+  display: flex; 
+  flex-direction: column; 
+  position: relative;
+}
+
 .form-field label {
   font-family: var(--font-mono);
-  font-size: var(--type-label);
+  font-size: var(--type-meta);
   font-weight: 600;
-  color: var(--structure-secondary);
+  color: var(--text-dark-secondary);
   margin-bottom: 8px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  transition: color var(--duration-fast) ease;
 }
-.form-field input, .form-field select, .form-field textarea {
+
+.form-field:focus-within label {
+  color: var(--glass-amber);
+}
+
+.form-field input, 
+.form-field select, 
+.form-field textarea {
   width: 100%;
-  background: var(--surface-base);
-  border: 1px solid var(--structure-faint);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border-dark-strong);
   border-radius: var(--radius-sm);
-  color: var(--structure-primary);
+  color: #FFFFFF;
   font-family: var(--font-sans);
   font-size: var(--type-body);
   padding: 14px 16px;
+  min-height: 48px;
   outline: none;
-  transition: all var(--duration-fast) ease;
+  transition: border-color var(--duration-fast) ease, 
+              background-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
 }
-.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-  border-color: var(--signal-action);
-  background: var(--surface-raised);
-  box-shadow: 0 0 0 4px var(--signal-action-subtle);
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-dark-muted);
+  opacity: 0.7;
 }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+
+.form-field input:focus, 
+.form-field select:focus, 
+.form-field textarea:focus {
+  border-color: var(--glass-amber);
+  background: rgba(10, 10, 10, 0.8);
+  box-shadow: 0 0 0 3px rgba(212, 140, 39, 0.25), 0 0 15px rgba(212, 140, 39, 0.1);
+}
+
+.form-field--error input,
+.form-field--error textarea {
+  border-color: var(--signal-error) !important;
+  box-shadow: 0 0 0 3px rgba(212, 39, 73, 0.25) !important;
+}
+
+.form-row { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: var(--space-md); 
+}
+
+.form-status {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-meta);
+  margin-bottom: var(--space-md);
+  display: none;
+}
+.form-status--success {
+  display: block;
+  background: rgba(39, 212, 129, 0.15);
+  border: 1px solid var(--signal-active);
+  color: var(--signal-active);
+}
+.form-status--error {
+  display: block;
+  background: rgba(212, 39, 73, 0.15);
+  border: 1px solid var(--signal-error);
+  color: var(--signal-error);
+}
 
 /* ==========================================================================
-   06. GSAP TARGET CLASSES
-   ========================================================================== */
-.reveal {
-  opacity: 0;
-  will-change: opacity, transform;
-}
-
-@keyframes statusPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-/* ==========================================================================
-   07. AMBIENT SYSTEMS (GRAIN & LIGHT)
+   06. AMBIENT SYSTEMS (GRAIN, LIGHT & PULSES)
    ========================================================================== */
 .ambient-grain {
   position: fixed;
@@ -434,7 +500,7 @@
   height: 200%;
   pointer-events: none;
   z-index: var(--z-nav);
-  opacity: 0.04;
+  opacity: 0.035;
   background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');
   animation: grainShift 8s steps(10) infinite;
 }
@@ -452,15 +518,104 @@
   90% { transform: translate(-10%, 10%); }
 }
 
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+@keyframes idleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes idlePulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.45; }
+}
+
+@keyframes signalFlicker {
+  0%, 100% { opacity: 1; }
+  2%, 4% { opacity: 0.25; }
+  3%, 5% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+/* Independent randomized ambient timing */
+.ambient-float-1 { animation: idleFloat 5.8s ease-in-out infinite; }
+.ambient-float-2 { animation: idleFloat 8.2s ease-in-out infinite; animation-delay: -2.3s; }
+.ambient-float-3 { animation: idleFloat 11.4s ease-in-out infinite; animation-delay: -4.7s; }
+
+.ambient-pulse-1 { animation: idlePulse 6.4s ease-in-out infinite; }
+.ambient-pulse-2 { animation: idlePulse 9.1s ease-in-out infinite; animation-delay: -3.5s; }
+
+.signal-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--signal-active);
+  border-radius: 50%;
+  animation: signalFlicker 12s infinite;
+  box-shadow: 0 0 8px var(--signal-active-glow);
+}
+
+/* ==========================================================================
+   07. DRAW-IN DIVIDERS & SECTION NUMBERS
+   ========================================================================== */
+.sys-divider {
+  position: relative;
+  height: 1px;
+  background: var(--border-dark-muted);
+  width: 100%;
+  margin: var(--space-xl) 0 var(--space-lg);
+  transform-origin: left;
+  overflow: visible;
+}
+
+.sys-divider::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background-color: var(--signal-action);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--signal-action-glow);
+  opacity: 0.8;
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: var(--type-micro);
+  font-weight: 700;
+  color: var(--text-dark-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease;
+}
+
+.section-num span:first-child {
+  color: var(--signal-action);
+}
+
+.section-num::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--border-dark-strong);
+}
+
 /* ==========================================================================
    08. CUSTOM CURSOR
    ========================================================================== */
-body {
-  @media (pointer: fine) { cursor: none; }
-}
-
 @media (pointer: fine) {
-  a, button, select, input, textarea, .project-spread, .btn {
+  body { cursor: none; }
+  a, button, select, input, textarea, .project-spread, .btn, .brand-mark {
     cursor: none;
   }
 }
@@ -469,8 +624,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: var(--glass-amber);
   border-radius: 50%;
   pointer-events: none;
@@ -482,16 +637,22 @@ body {
 }
 
 @media (pointer: fine) {
-  .custom-cursor { display: flex; align-items: center; justify-content: center; }
+  .custom-cursor { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
 }
 
 .custom-cursor::after {
   content: '';
   position: absolute;
-  top: 50%; left: 50%;
-  width: 40px; height: 40px;
+  top: 50%; 
+  left: 50%;
+  width: 36px; 
+  height: 36px;
   background: transparent;
-  border: 1px solid rgba(212, 140, 39, 0.4);
+  border: 1px solid rgba(212, 140, 39, 0.5);
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.4s var(--ease-spring), border-color 0.3s ease;
@@ -504,23 +665,32 @@ body {
 }
 .custom-cursor--hover::after {
   transform: translate(-50%, -50%) scale(1);
-  border-color: rgba(39, 212, 129, 0.4);
+  border-color: rgba(39, 212, 129, 0.6);
 }
 
 .custom-cursor--project {
-  width: 80px;
-  height: 80px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(4px);
+  width: 84px;
+  height: 84px;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   mix-blend-mode: normal;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(255, 255, 255, 0.1);
 }
 .custom-cursor--project::before {
-  content: 'VIEW';
+  content: 'EXPLORE';
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  letter-spacing: 0.12em;
 }
 
+/* ==========================================================================
+   09. REVEAL TARGETS
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
