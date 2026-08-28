@@ -330,30 +330,7 @@
 .has-screws::before { top: 8px; left: 8px; }
 .has-screws::after { top: 8px; right: 8px; }
 
-/* Interactive Glare Cards */
-.tilt-card {
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-.tilt-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  background: radial-gradient(
-    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.08),
-    transparent 40%
-  );
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--duration-fast) ease;
-}
-.tilt-card:hover::before {
-  opacity: 1;
-}
+/* Tilt card logic handled by JS now */
 
 /* ==========================================================================
    04. BADGES & LABELS
@@ -434,25 +411,116 @@
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
 
 /* ==========================================================================
-   06. ANIMATIONS & REVEALS
+   06. GSAP TARGET CLASSES
    ========================================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(24px) scale(0.98);
-  transition: opacity var(--duration-slow) var(--ease-spring),
-              transform var(--duration-slow) var(--ease-spring);
   will-change: opacity, transform;
 }
-.reveal--visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-.reveal--delay-1 { transition-delay: 100ms; }
-.reveal--delay-2 { transition-delay: 200ms; }
-.reveal--delay-3 { transition-delay: 300ms; }
-.reveal--delay-4 { transition-delay: 400ms; }
 
 @keyframes statusPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.85); }
 }
+
+/* ==========================================================================
+   07. AMBIENT SYSTEMS (GRAIN & LIGHT)
+   ========================================================================== */
+.ambient-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: var(--z-nav);
+  opacity: 0.04;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');
+  animation: grainShift 8s steps(10) infinite;
+}
+
+@keyframes grainShift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* ==========================================================================
+   08. CUSTOM CURSOR
+   ========================================================================== */
+body {
+  @media (pointer: fine) { cursor: none; }
+}
+
+@media (pointer: fine) {
+  a, button, select, input, textarea, .project-spread, .btn {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--glass-amber);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: exclusion;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), background 0.3s ease;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor { display: flex; align-items: center; justify-content: center; }
+}
+
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 40px; height: 40px;
+  background: transparent;
+  border: 1px solid rgba(212, 140, 39, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s ease;
+}
+
+.custom-cursor--hover {
+  width: 8px;
+  height: 8px;
+  background: var(--signal-active);
+}
+.custom-cursor--hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  border-color: rgba(39, 212, 129, 0.4);
+}
+
+.custom-cursor--project {
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  mix-blend-mode: normal;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.custom-cursor--project::before {
+  content: 'VIEW';
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
