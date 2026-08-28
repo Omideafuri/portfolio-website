@@ -1,6 +1,5 @@
 /* ==========================================================================
-   OMID MOHAMMADI PORTFOLIO — RESPONSIVE BREAKPOINTS V2
-   Desktop ≥ 1024px  |  Tablet 768px–1023px  |  Mobile < 768px
+   OMID MOHAMMADI PORTFOLIO — RESPONSIVE BREAKPOINTS V3
    ========================================================================== */
 
 /* ==========================================================================
@@ -8,7 +7,6 @@
    ========================================================================== */
 @media (max-width: 1023px) {
 
-  /* ── Navigation ──────────────────────────────────────────────────────── */
   .system-bar__link {
     padding: 8px 8px;
     font-size: 0.6875rem;
@@ -19,41 +17,9 @@
     font-size: 0.5625rem;
   }
 
-  .rate-chip {
-    display: none;
-  }
-
-  /* ── Hero ────────────────────────────────────────────────────────────── */
-  .hero__layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-
-  .hero__content {
-    max-width: 100%;
-  }
-
-  .hero__visual-panel {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  /* ── Projects ────────────────────────────────────────────────────────── */
-  .project-spread {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-
-  /* ── Capabilities ────────────────────────────────────────────────────── */
-  .capabilities__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* ── About ───────────────────────────────────────────────────────────── */
-  .about__content {
-    max-width: 100%;
-  }
+  .hero__content { max-width: 100%; }
+  .project-spread { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .capabilities__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ==========================================================================
@@ -62,22 +28,26 @@
 @media (max-width: 767px) {
 
   :root {
-    --margin: 18px;
     --nav-height: 52px;
   }
 
-  /* ── Reduce section spacing ──────────────────────────────────────────── */
   .section {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
   }
 
+  /* ── Hero ────────────────────────────────────────────────────────────── */
   .hero {
     min-height: auto;
-    padding: calc(var(--nav-height) + var(--space-md)) 0 var(--space-xl);
+    padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-2xl);
   }
 
-  /* ── Navigation — Mobile Instrument Drawer ───────────────────────────── */
+  .hero__headline { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .hero__subline { font-size: 1rem; }
+  .hero__specs { gap: 6px; padding: var(--space-sm); }
+  .spec-chip { font-size: 0.625rem; padding: 4px 8px; }
+
+  /* ── Navigation Drawer ───────────────────────────────────────────────── */
   .system-bar__links {
     display: none;
     position: fixed;
@@ -85,170 +55,67 @@
     left: 0;
     width: 100%;
     height: calc(100vh - var(--nav-height));
-    background-color: var(--surface-base);
+    background-color: var(--surface-dark); /* Match cinematic dark */
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: var(--space-2xs);
+    gap: var(--space-xs);
     padding: var(--space-md);
     z-index: 999;
     overflow-y: auto;
-    border-bottom: 2px solid var(--structure-primary);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   }
 
   .system-bar__links--open {
     display: flex;
-    animation: menuDrawerReveal var(--duration-standard) var(--ease-spring);
+    animation: menuDrawerReveal var(--duration-fast) var(--ease-spring);
   }
 
   @keyframes menuDrawerReveal {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .system-bar__link {
     width: 100%;
-    padding: 14px 18px;
+    padding: 16px 18px;
     font-size: 0.875rem;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--surface-raised);
-    border: 1px solid var(--structure-faint);
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
-    text-align: left;
-  }
-
-  .system-bar__link::after {
-    display: none;
   }
 
   .system-bar__link:hover,
   .system-bar__link--active {
-    background-color: var(--signal-action-subtle);
-    border-color: var(--signal-action);
-    color: var(--signal-action);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
   }
 
-  .system-bar__toggle {
-    display: flex;
-  }
+  .system-bar__toggle { display: flex; }
+  .status-chip { display: none; }
+  .system-bar__actions .btn { display: none; } /* Hide initialize btn on small mobile nav */
 
-  .status-chip {
-    display: none;
-  }
-
-  .rate-chip {
-    display: none;
-  }
-
-  /* ── Hero Mobile ─────────────────────────────────────────────────────── */
-  .hero__grid {
-    display: none;
-  }
-
-  .hero__layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-
-  .hero__headline {
-    font-size: clamp(2.2rem, 9vw, 3rem);
-  }
-
-  .hero__specs {
-    gap: 6px;
-  }
-
-  .spec-chip {
-    font-size: 0.625rem;
-    padding: 4px 8px;
-  }
-
-  .hero__visual-panel {
-    max-width: 100%;
-  }
-
-  /* ── Projects Mobile ─────────────────────────────────────────────────── */
+  /* ── Projects ────────────────────────────────────────────────────────── */
   .project-spread {
     padding: var(--space-md);
+    border-radius: var(--radius-md);
   }
+  .project-spread__num { font-size: 1.5rem; }
+  .tech-row { gap: 6px; }
 
-  .project-breakdown {
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
-  }
+  /* ── Capabilities ────────────────────────────────────────────────────── */
+  .capabilities__grid { grid-template-columns: 1fr; }
 
-  .project-spread__actions {
-    flex-direction: column;
-    width: 100%;
-  }
+  /* ── Form ────────────────────────────────────────────────────────────── */
+  .form-row { grid-template-columns: 1fr; }
+  .lead-form { padding: var(--space-md); }
 
-  .project-spread__actions .btn {
-    width: 100%;
-  }
+  /* ── Buttons ─────────────────────────────────────────────────────────── */
+  .btn-group { flex-direction: column; width: 100%; }
+  .btn-group .btn { width: 100%; }
 
-  /* ── Capabilities Mobile ─────────────────────────────────────────────── */
-  .capabilities__grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── Record Mobile ───────────────────────────────────────────────────── */
-  .data-plate {
-    padding: var(--space-md);
-  }
-
-  .data-plate__header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* ── Contact Form Mobile ─────────────────────────────────────────────── */
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .lead-form {
-    padding: var(--space-md);
-  }
-
-  .form-submit .btn {
-    width: 100%;
-  }
-
-  /* ── Footer Mobile ───────────────────────────────────────────────────── */
-  .footer__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-md);
-  }
-
-  .footer__links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  /* ── Buttons Mobile ──────────────────────────────────────────────────── */
-  .btn-group {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .btn-group .btn {
-    width: 100%;
-  }
-
-  /* ── Screws & Micro Annotations ──────────────────────────────────────── */
-  .has-screws::before,
-  .has-screws::after {
-    display: none;
-  }
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  .footer__inner { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
 }

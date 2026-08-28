@@ -1,70 +1,44 @@
 /* ==========================================================================
-   LAYOUT
-   12-column grid system, containers, and structural utilities.
+   OMID MOHAMMADI PORTFOLIO — LAYOUT V3
    ========================================================================== */
 
-/* ── Container ────────────────────────────────────────────────────────── */
+/* ── Container ───────────────────────────────────────────────────────────── */
 .container {
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--margin);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 .container--narrow {
   max-width: var(--max-width-narrow);
 }
 
-.container--text {
-  max-width: var(--max-width-text);
-}
-
-/* ── Section spacing ──────────────────────────────────────────────────── */
-.section {
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
-  position: relative;
-}
-
-.section + .section {
-  border-top: 1px solid var(--structure-faint);
-}
-
-/* ── Grid (explicit use via utility) ──────────────────────────────────── */
+/* ── Grid System ─────────────────────────────────────────────────────────── */
 .grid {
   display: grid;
-  gap: var(--gutter);
+  gap: var(--space-xl);
 }
 
-.grid--12 {
-  grid-template-columns: repeat(12, 1fr);
+.grid--2col {
+  grid-template-columns: 1fr 1fr;
 }
 
-.grid--4 {
-  grid-template-columns: repeat(4, 1fr);
+@media (max-width: 900px) {
+  .grid--2col {
+    grid-template-columns: 1fr;
+  }
 }
 
-.grid--3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+/* ── Utility Classes for Spacing ─────────────────────────────────────────── */
+.margin-top-sm { margin-top: var(--space-sm); }
+.margin-top-md { margin-top: var(--space-md); }
+.margin-top-lg { margin-top: var(--space-lg); }
+.margin-top-xl { margin-top: var(--space-xl); }
 
-.grid--2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* ── Span utilities ───────────────────────────────────────────────────── */
-.span-8  { grid-column: span 8; }
-.span-7  { grid-column: span 7; }
-.span-6  { grid-column: span 6; }
-.span-5  { grid-column: span 5; }
-.span-4  { grid-column: span 4; }
-.span-3  { grid-column: span 3; }
-.span-12 { grid-column: span 12; }
-
-/* ── Section divider ──────────────────────────────────────────────────── */
-.divider {
-  border: 0;
-  height: 1px;
-  background: var(--structure-faint);
-  margin: 0;
-}
+.margin-bottom-sm { margin-bottom: var(--space-sm); }
+.margin-bottom-md { margin-bottom: var(--space-md); }
+.margin-bottom-lg { margin-bottom: var(--space-lg); }
+.margin-bottom-xl { margin-bottom: var(--space-xl); }

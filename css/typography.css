@@ -1,14 +1,9 @@
 /* ==========================================================================
-   OMID MOHAMMADI PORTFOLIO — TYPOGRAPHY V2
-   Display: FLIEGE / Space Grotesk / Syne (Architectural Grotesque)
-   Technical: JetBrains Mono / SF Mono (Precision Instrument Mono)
-   Body: Inter (Neutral Optical Sans)
+   OMID MOHAMMADI PORTFOLIO — TYPOGRAPHY V3
    ========================================================================== */
 
-/* ── Web Font Imports ────────────────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
 
-/* ── Local Font Declaration (Fliege & Fliege Mono) ────────────────────────── */
 @font-face {
   font-family: "Fliege";
   src: local("Fliege"), local("Fliege-Regular"), local("FliegeRegular"),
@@ -29,12 +24,18 @@
   font-display: swap;
 }
 
+/* Base resets for optical alignment */
+h1, h2, h3, h4, p, span {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* ── Heading Hierarchy ───────────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--structure-primary);
-  line-height: 1.08;
+  color: inherit; /* Allow inheritance for dark mode sections */
+  line-height: 1.05;
   letter-spacing: var(--tracking-tight);
 }
 
@@ -46,6 +47,7 @@ h1 {
 h2 {
   font-size: var(--type-h2);
   letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-md);
 }
 
 h3 {
@@ -57,7 +59,7 @@ h3 {
 .font-display {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.04;
+  line-height: 1;
   letter-spacing: var(--tracking-tightest);
 }
 
@@ -72,14 +74,22 @@ h3 {
 
 /* ── Body Copy ───────────────────────────────────────────────────────────── */
 p {
-  margin-bottom: 1.2em;
+  margin-bottom: var(--space-md);
   color: var(--structure-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
   font-family: var(--font-sans);
+  font-size: var(--type-body);
 }
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.lead-text {
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--structure-primary);
 }
 
 strong {
@@ -87,18 +97,18 @@ strong {
   font-weight: 600;
 }
 
-/* ── Technical Calibration Accents ───────────────────────────────────────── */
-.text-accent {
-  color: var(--signal-action);
+/* Dynamic context adjustments */
+.dark-context p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.dark-context h1, .dark-context h2, .dark-context h3, .dark-context strong, .dark-context .lead-text {
+  color: #FFFFFF;
 }
 
-.text-active {
-  color: var(--signal-active);
-}
-
-.text-muted {
-  color: var(--structure-tertiary);
-}
+/* ── Technical Accents ───────────────────────────────────────────────────── */
+.text-accent { color: var(--signal-action); }
+.text-active { color: var(--signal-active); }
+.text-muted { color: var(--structure-tertiary); }
 
 .text-mono-sm {
   font-family: var(--font-mono);
