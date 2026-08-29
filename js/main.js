@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let lenis = null;
-  let scrollVelocity = 0;
 
   if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
     lenis = new Lenis({
@@ -29,21 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       touchMultiplier: 2,
     });
 
-    lenis.on('scroll', (e) => {
+    lenis.on('scroll', () => {
       if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.update();
-      }
-      scrollVelocity = e.velocity;
-      
-      // Macro Ambient System: Scroll velocity subtly affects background overlay luminance
-      const ambientGlow = document.querySelector('.hero__overlay');
-      if (ambientGlow) {
-        const intensity = Math.min(Math.abs(scrollVelocity) * 0.04, 0.25);
-        gsap.to(ambientGlow, {
-          opacity: 1 + intensity,
-          duration: 0.4,
-          ease: 'power2.out'
-        });
       }
     });
 
