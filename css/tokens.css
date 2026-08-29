@@ -132,7 +132,7 @@
   --max-width:        1280px;
   --max-width-narrow: 840px;
   --max-width-text:   680px;
-  --gutter:           clamp(16px, 4vw, 48px);
+  --gutter:           clamp(16px, 4vw, 40px);
   --nav-height:       64px;
 
   /* ── 10. Z-INDEX SYSTEM ─────────────────────────────────────────────────── */

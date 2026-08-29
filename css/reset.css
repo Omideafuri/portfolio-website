@@ -72,6 +72,37 @@ button {
   color: #FFFFFF;
 }
 
+/* ── Skip Link (accessible, visually hidden until focused) ───────────── */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 10000;
+  padding: 12px 24px;
+  background: var(--signal-action);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: var(--type-meta);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  left: 16px;
+  opacity: 1;
+  pointer-events: auto;
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
 /* ── Focus ────────────────────────────────────────────────────────────── */
 :focus-visible {
   outline: none;

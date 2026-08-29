@@ -176,8 +176,8 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
-  transition: border-color var(--duration-standard) ease,
-              box-shadow var(--duration-standard) var(--ease-spring);
+  transition: border-color 250ms ease,
+              box-shadow 250ms ease;
 }
 
 .project-spread:hover {
@@ -207,7 +207,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--duration-cinematic) var(--ease-out-expo);
+  transition: transform 500ms var(--ease-out-expo);
   z-index: 1;
 }
 
@@ -361,6 +361,13 @@
   padding-bottom: var(--space-xs);
 }
 
+.credibility-panel {
+  background: var(--surface-recessed);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-muted);
+}
+
 /* ==========================================================================
    05. CONTACT SECTION
    ========================================================================== */
@@ -372,6 +379,8 @@
 .lead-form {
   padding: var(--space-2xl);
   border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
 }
 
 /* ==========================================================================

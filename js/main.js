@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.7,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
+      mouseMultiplier: 1.2,
       smoothTouch: false,
       touchMultiplier: 2,
     });
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetId === '#' || targetId === '') return;
       e.preventDefault();
       if (lenis) {
-        lenis.scrollTo(targetId, { offset: -70, duration: 1.4 });
+        lenis.scrollTo(targetId, { offset: -70, duration: 0.8 });
       } else {
         document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
       }
@@ -207,18 +207,18 @@ document.addEventListener('DOMContentLoaded', () => {
       // Choreographed Entrance Sequence
       const heroTl = gsap.timeline();
       heroTl.fromTo(headline, 
-        { y: 50, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 1.4, ease: 'power4.out', delay: 0.1 }
+        { y: 30, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 0.7, ease: 'power4.out', delay: 0.05 }
       )
       .fromTo(subline,
-        { y: 25, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.0, ease: 'power3.out' },
-        "-=1.0"
+        { y: 15, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
+        "-=0.4"
       )
       .fromTo('.hero__telemetry-tag, .hero__specs',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power2.out' },
-        "-=0.8"
+        { y: 12, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power2.out' },
+        "-=0.3"
       );
     }
   }
@@ -235,11 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { scaleX: 0 },
         {
           scaleX: 1,
-          duration: 1.4,
+          duration: 0.6,
           ease: 'power3.inOut',
           scrollTrigger: {
             trigger: divider,
-            start: 'top 88%',
+            start: 'top 90%',
             toggleActions: 'play none none reverse'
           }
         }
@@ -250,15 +250,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => {
       gsap.fromTo(el, 
-        { y: 35, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
           y: 0, 
           opacity: 1,
-          duration: 1.1,
+          duration: 0.5,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: el,
-            start: 'top 85%',
+            start: 'top 90%',
             toggleActions: 'play none none reverse'
           }
         }
@@ -271,14 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Entrance reveal
       gsap.fromTo(card,
-        { y: 40, opacity: 0 },
+        { y: 25, opacity: 0 },
         {
           y: 0, opacity: 1,
-          duration: 1.2,
+          duration: 0.6,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: card,
-            start: 'top 82%',
+            start: 'top 88%',
             toggleActions: 'play none none reverse'
           }
         }
@@ -336,14 +336,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataPlates = document.querySelectorAll('.data-plate');
     dataPlates.forEach(plate => {
       gsap.fromTo(plate,
-        { y: 30, opacity: 0 },
+        { y: 18, opacity: 0 },
         {
           y: 0, opacity: 1,
-          duration: 1.0,
+          duration: 0.45,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: plate,
-            start: 'top 85%',
+            start: 'top 90%',
             toggleActions: 'play none none reverse'
           }
         }

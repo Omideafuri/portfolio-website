@@ -47,19 +47,19 @@
 
   :root {
     --nav-height: 56px;
-    --gutter: 18px;
+    --gutter: clamp(16px, 4.5vw, 24px);
   }
 
   .section {
-    padding-top: var(--space-2xl);
-    padding-bottom: var(--space-2xl);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 
   /* ── Hero ────────────────────────────────────────────────────────────── */
   .hero {
     min-height: auto;
     padding-top: calc(var(--nav-height) + var(--space-lg));
-    padding-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
   }
 
   .hero__headline {
@@ -102,11 +102,11 @@
 
   .system-bar__links--open {
     display: flex;
-    animation: menuDrawerReveal 0.3s var(--ease-spring);
+    animation: menuDrawerReveal 0.2s ease-out;
   }
 
   @keyframes menuDrawerReveal {
-    from { opacity: 0; transform: translateY(-12px); }
+    from { opacity: 0; transform: translateY(-8px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
@@ -151,6 +151,10 @@
     padding-left: 0 !important;
   }
 
+  .credibility-panel {
+    padding: var(--space-md);
+  }
+
   .project-spread {
     padding: var(--space-md);
     border-radius: var(--radius-md);
@@ -164,12 +168,13 @@
     font-size: 1.5rem;
   }
 
+  /* Force all capability grid items to single column on mobile */
   .capabilities__grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
 
-  .capabilities__grid .panel--recessed {
+  .capabilities__grid > * {
     grid-column: 1 !important;
   }
 
@@ -179,7 +184,7 @@
   }
 
   .lead-form {
-    padding: var(--space-lg);
+    padding: var(--space-md);
   }
 
   .lead-form input,
@@ -193,5 +198,14 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-lg);
+  }
+}
+
+/* ==========================================================================
+   VERY SMALL PHONES (< 360px)
+   ========================================================================== */
+@media (max-width: 359px) {
+  :root {
+    --gutter: 14px;
   }
 }
